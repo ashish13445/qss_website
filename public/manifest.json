@@ -1,0 +1,17 @@
+{
+    "name": "QSS",
+    "short_name": "QSS",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "permissions": ["geolocation"],
+    "icons": [
+      {
+        "src": "/images/logo.png",
+        "sizes": "160x160",
+        "type": "image/png"
+      }
+    ]
+  }
+  

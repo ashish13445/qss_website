@@ -1,0 +1,46 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@inertiajs/vue3": "^1.0.0",
+        "@tailwindcss/forms": "^0.5.3",
+        "@types/leaflet": "^1.9.9",
+        "@vitejs/plugin-vue": "^5.0.0",
+        "autoprefixer": "^10.4.12",
+        "axios": "^1.6.4",
+        "laravel-vite-plugin": "^1.0.0",
+        "postcss": "^8.4.31",
+        "tailwindcss": "^3.2.1",
+        "vite": "^5.0.0",
+        "vue": "^3.4.0"
+    },
+    "dependencies": {
+        "@fullcalendar/core": "^6.1.10",
+        "@fullcalendar/daygrid": "^6.1.10",
+        "@fullcalendar/timegrid": "^6.1.10",
+        "@popperjs/core": "^2.11.8",
+        "aos": "^2.3.4",
+        "chart.js": "^4.4.1",
+        "fullcalendar": "^6.1.10",
+        "izitoast": "^1.4.0",
+        "leaflet": "^1.9.4",
+        "material-icons": "^1.13.12",
+        "moment": "^2.30.1",
+        "primeicons": "^6.0.1",
+        "primevue": "^3.49.1",
+        "sass": "^1.70.0",
+        "source-map-js": "^1.0.2",
+        "v-calendar": "^3.1.2",
+        "vue-full-calendar": "^2.8.1-0",
+        "vue-fullcalendar": "^1.0.9",
+        "vue-simple-calendar": "^7.0.1",
+        "vue3-datepicker": "^0.4.0",
+        "workbox-routing": "^7.0.0",
+        "workbox-strategies": "^7.0.0",
+        "workbox-sw": "^7.0.0"
+    }
+}
