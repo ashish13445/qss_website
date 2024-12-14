@@ -930,38 +930,34 @@ console.log(user)
   isUpdateModalOpen.value = true;
   assigned_project.value = user.assigned_project;
   assigned_area.value = JSON.parse(user.assigned_area);
-  form.value= {
-    id:user.id,
-    employee_id:user.employee_id
-  }
   form.id = user.id,
   form.employee_id =  user.employee_id;
-  // form.reporting_manager_ids = user.reporting_managers;
-  // form.name = user.name;
-  // form.email = user.email;
-  // form.designation= user.designation;
-  // form.domain = user.domain;
-  // form.joining_date = user.joining_date;
-  // form.mobile_no = user.mobile_no;
-  // form.address = user.address;
-  // form.dob = user.dob;
-  // form.emergency_no = user.emergency_no;
-  // form.highest_qualification = user.highest_qualification;
-  // form.adhaar_no = user.adhaar_no;
-  // form.pan_no = user.pan_no;
-  // form.bank_name = user.bank_name;
-  // form.account_holder_name = user.account_holder_name;
-  // form.account_no = user.account_no;
-  // form.ifsc = user.ifsc;
-  // form.uan = user.uan;
-  // form.esic = user.esic;
-  // form.salary = user.salary;
-  // form.manday = user.manday;
-  // form.paid_leaves = user.paid_leaves;
-  // form.sick_leaves = user.sick_leaves;
-  // form.casual_leaves = user.casual_leaves;
-  // form.rest_days = user.rest_days;
-  // console.log(form);
+  form.reporting_manager_ids = user.reporting_managers;
+  form.name = user.name;
+  form.email = user.email;
+  form.designation= user.designation;
+  form.domain = user.domain;
+  form.joining_date = user.joining_date;
+  form.mobile_no = user.mobile_no;
+  form.address = user.address;
+  form.dob = user.dob;
+  form.emergency_no = user.emergency_no;
+  form.highest_qualification = user.highest_qualification;
+  form.adhaar_no = user.adhaar_no;
+  form.pan_no = user.pan_no;
+  form.bank_name = user.bank_name;
+  form.account_holder_name = user.account_holder_name;
+  form.account_no = user.account_no;
+  form.ifsc = user.ifsc;
+  form.uan = user.uan;
+  form.esic = user.esic;
+  form.salary = user.salary;
+  form.manday = user.manday;
+  form.paid_leaves = user.paid_leaves;
+  form.sick_leaves = user.sick_leaves;
+  form.casual_leaves = user.casual_leaves;
+  form.rest_days = user.rest_days;
+  console.log(form);
 }
 const closeUpdateModal = ()=>{
   isUpdateModalOpen.value = false;
