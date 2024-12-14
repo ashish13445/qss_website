@@ -159,7 +159,6 @@
     
 <!-- Update User Modal -->
 <Modal :show="isUpdateModalOpen" @close="closeUpdateModal" >
-  {{ form }}
       <div class="p-5">
         <span class="close" @click="closeUpdateModal"><i class="material-icons" style="cursor: pointer;">close</i></span>
         <form @submit.prevent="updateUser">
@@ -931,8 +930,8 @@ console.log(user)
   isUpdateModalOpen.value = true;
   assigned_project.value = user.assigned_project;
   assigned_area.value = JSON.parse(user.assigned_area);
-  form.id = user.id,
-  form.employee_id =  user.employee_id;
+  form.value.id = user.id,
+  form.value.employee_id =  user.employee_id;
   form.reporting_manager_ids = user.reporting_managers;
   form.name = user.name;
   form.email = user.email;
