@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('end_date');
             $table->text('reason');
             $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
-            $table->enum('type', ['privilege_leave', 'sick_leave', 'casual_leave','WFH'])->default('privilege_leave');
+            $table->enum('type', ['privilege_leave', 'sick_leave', 'casual_leave','work_from_home'])->default('privilege_leave');
             $table->timestamps();
         });
     }
