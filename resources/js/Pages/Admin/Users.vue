@@ -957,7 +957,7 @@ console.log(user)
   form.sick_leaves = user.sick_leaves;
   form.casual_leaves = user.casual_leaves;
   form.rest_days = user.rest_days;
-  console.log(form.id);
+  console.log(form);
 }
 const closeUpdateModal = ()=>{
   isUpdateModalOpen.value = false;
