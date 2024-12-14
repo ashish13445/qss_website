@@ -797,7 +797,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch ,computed} from 'vue';
+import { ref, onMounted, watch ,computed,reactive} from 'vue';
 import DataTable from 'primevue/datatable';
 import InputText from 'primevue/inputtext';
 import Column from 'primevue/column';
@@ -846,7 +846,7 @@ const generatePdf = async(data)=>{
   }
  
 }
-const form = useForm({
+const form = reactive({
   id:'',
   employee_id: '',
   reporting_manager_ids: [],
@@ -930,8 +930,8 @@ console.log(user)
   isUpdateModalOpen.value = true;
   assigned_project.value = user.assigned_project;
   assigned_area.value = JSON.parse(user.assigned_area);
-  form.id.value = user.id,
-  form.employee_id.value =  user.employee_id;
+  form.id = user.id,
+  form.employee_id =  user.employee_id;
   form.reporting_manager_ids = user.reporting_managers;
   form.name = user.name;
   form.email = user.email;
