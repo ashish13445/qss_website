@@ -930,8 +930,8 @@ console.log(user)
   isUpdateModalOpen.value = true;
   assigned_project.value = user.assigned_project;
   assigned_area.value = JSON.parse(user.assigned_area);
-  form.value.id = user.id,
-  form.value.employee_id =  user.employee_id;
+  form.id.value = user.id,
+  form.employee_id.value =  user.employee_id;
   form.reporting_manager_ids = user.reporting_managers;
   form.name = user.name;
   form.email = user.email;
