@@ -71,6 +71,7 @@ class UserController extends Controller
     
     public function update(Request $request)
     {
+        dump($request);
         // Validate the request
         $validated = $request->validate([
        
