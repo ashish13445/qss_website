@@ -18,7 +18,7 @@ return new class extends Migration
             $table->datetime('clock_out')->nullable();
             $table->date('date')->nullable();
             $table->time('working_hours')->nullable();
-            $table->enum('remarks', ['present', 'leave', 'rest','holiday'])->default('present');
+            $table->enum('remarks', ['present', 'leave', 'rest','holiday','work from home'])->default('present');
             $table->unsignedInteger('shift_no')->nullable();
             $table->timestamps();
 
