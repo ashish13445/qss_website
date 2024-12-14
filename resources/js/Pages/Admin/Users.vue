@@ -797,7 +797,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch ,computed,reactive} from 'vue';
+import { ref, onMounted, watch ,computed} from 'vue';
 import DataTable from 'primevue/datatable';
 import InputText from 'primevue/inputtext';
 import Column from 'primevue/column';
@@ -846,7 +846,7 @@ const generatePdf = async(data)=>{
   }
  
 }
-const form = reactive({
+const form = useForm({
   id:'',
   employee_id: '',
   reporting_manager_ids: [],
