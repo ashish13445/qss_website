@@ -926,6 +926,7 @@ const closeRegisterModal = ()=>{
 
 const isUpdateModalOpen  = ref(false);
 const openUpdateModal =(user)=>{
+console.log(user);
   isUpdateModalOpen.value = true;
   assigned_project.value = user.assigned_project;
   assigned_area.value = JSON.parse(user.assigned_area);
