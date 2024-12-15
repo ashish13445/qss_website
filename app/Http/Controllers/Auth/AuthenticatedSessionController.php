@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -29,13 +30,25 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(LoginRequest $request)
     {
+        $request->session()->start();
+
         $request->authenticate();
-
         $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $token = $request->user()->createToken('Qss')->plainTextToken;
+        if ($request->wantsJson()) {
+        return response()->json([
+            'message' => 'Login successful',
+            'user' => Auth::user(),
+            'token'=>$token
+        ], 200);
+    }
+        $redirectTo = $request->session()->get('url.intended');
+        if ($redirectTo) {
+            return redirect()->to($redirectTo);
+        
+        } 
     }
 
     /**

@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\NotificationController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/notifications', [NotificationController::class, 'index']);
 Route::get('/notifications/markAsRead/{id}', [NotificationController::class, 'markNotificationAsRead']);
+Route::post('login', [AuthenticatedSessionController::class, 'store']);
