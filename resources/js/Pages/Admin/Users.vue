@@ -927,11 +927,11 @@ const closeRegisterModal = ()=>{
 
 const isUpdateModalOpen  = ref(false);
 const openUpdateModal = (data) => {
-console.log(data)
+console.log(data);
   isUpdateModalOpen.value = true;
   assigned_project.value = data.assigned_project;
   assigned_area.value = JSON.parse(data.assigned_area);
-  form.id = data.id,
+  form.id = data.id;
   form.employee_id =  data.employee_id;
   form.reporting_manager_ids = data.reporting_managers;
   form.name = data.name;
