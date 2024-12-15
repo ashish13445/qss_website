@@ -1126,6 +1126,7 @@ const exportCSV = () => {
 
 
 const updateUser = ()=>{
+  console.log(form);
   axios.post('/admin/users/update',{
     id:form.id,
     employee_id:form.employee_id,
