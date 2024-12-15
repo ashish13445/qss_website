@@ -925,38 +925,38 @@ const closeRegisterModal = ()=>{
 }
 
 const isUpdateModalOpen  = ref(false);
-const openUpdateModal =(user)=>{
-console.log(user)
+const openUpdateModal = (data) => {
+console.log(data)
   isUpdateModalOpen.value = true;
-  assigned_project.value = user.assigned_project;
-  assigned_area.value = JSON.parse(user.assigned_area);
-  form.id = user.id,
-  form.employee_id =  user.employee_id;
-  form.reporting_manager_ids = user.reporting_managers;
-  form.name = user.name;
-  form.email = user.email;
-  form.designation= user.designation;
-  form.domain = user.domain;
-  form.joining_date = user.joining_date;
-  form.mobile_no = user.mobile_no;
-  form.address = user.address;
-  form.dob = user.dob;
-  form.emergency_no = user.emergency_no;
-  form.highest_qualification = user.highest_qualification;
-  form.adhaar_no = user.adhaar_no;
-  form.pan_no = user.pan_no;
-  form.bank_name = user.bank_name;
-  form.account_holder_name = user.account_holder_name;
-  form.account_no = user.account_no;
-  form.ifsc = user.ifsc;
-  form.uan = user.uan;
-  form.esic = user.esic;
-  form.salary = user.salary;
-  form.manday = user.manday;
-  form.paid_leaves = user.paid_leaves;
-  form.sick_leaves = user.sick_leaves;
-  form.casual_leaves = user.casual_leaves;
-  form.rest_days = user.rest_days;
+  assigned_project.value = data.assigned_project;
+  assigned_area.value = JSON.parse(data.assigned_area);
+  form.id = data.id,
+  form.employee_id =  data.employee_id;
+  form.reporting_manager_ids = data.reporting_managers;
+  form.name = data.name;
+  form.email = data.email;
+  form.designation= data.designation;
+  form.domain = data.domain;
+  form.joining_date = data.joining_date;
+  form.mobile_no = data.mobile_no;
+  form.address = data.address;
+  form.dob = data.dob;
+  form.emergency_no = data.emergency_no;
+  form.highest_qualification = data.highest_qualification;
+  form.adhaar_no = data.adhaar_no;
+  form.pan_no = data.pan_no;
+  form.bank_name = data.bank_name;
+  form.account_holder_name = data.account_holder_name;
+  form.account_no = data.account_no;
+  form.ifsc = data.ifsc;
+  form.uan = data.uan;
+  form.esic = data.esic;
+  form.salary = data.salary;
+  form.manday = data.manday;
+  form.paid_leaves = data.paid_leaves;
+  form.sick_leaves = data.sick_leaves;
+  form.casual_leaves = data.casual_leaves;
+  form.rest_days = data.rest_days;
   console.log(form);
 }
 const closeUpdateModal = ()=>{
