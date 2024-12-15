@@ -929,8 +929,7 @@ const isUpdateModalOpen  = ref(false);
 const openUpdateModal = (data) => {
 console.log(data.assigned_area);
   isUpdateModalOpen.value = true;
-  assigned_project.value = data.assigned_project;
-  assigned_area.value = JSON.parse(data.assigned_area);
+
   form.id = data.id;
   form.employee_id =  data.employee_id;
   form.reporting_manager_ids = data.reporting_managers;
@@ -958,6 +957,8 @@ console.log(data.assigned_area);
   form.sick_leaves = data.sick_leaves;
   form.casual_leaves = data.casual_leaves;
   form.rest_days = data.rest_days;
+  assigned_project.value = data.assigned_project;
+  assigned_area.value = JSON.parse(data.assigned_area);
   console.log(form);
 }
 const closeUpdateModal = ()=>{
