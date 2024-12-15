@@ -123,6 +123,8 @@ Route::get('/projects', function () {
     }
 })->middleware(['auth', 'verified', 'role:admin'])->name('projects');
 
+Route::get('user/upload',[UserController::class,'showUploadForm'])->name('user.upload');
+Route::post('/user/import', [UserController::class, 'import'])->name('user.import');
 
 
 Route::middleware('auth')->group(function () {
@@ -169,7 +171,6 @@ Route::get('/test-mark-rest-days', function () {
 });
 
 Route::middleware(['auth', 'verified', 'role:admin,project admin'])->group(function () {
-   
     Route::post('/admin/users/create/{project_id}/{area_id}', [UserController::class, 'store'])->name('admin.users.create');
     Route::post('/admin/users/role/update', [UserController::class, 'updateRole'])->name('admin.users.role.update');
     Route::post('/admin/users/delete/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');

@@ -12,13 +12,68 @@ use Illuminate\Auth\Events\Registered;
 use App\Events\UserCreating;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UsersImport;
+use Shuchkin\SimpleXLSX;
 
 class UserController extends Controller
 {
+    public function showUploadForm()
+    {
+        return view('user.upload'); // This is the view where users can upload the file
+    }
     /**
      * Display a listing of the resource.
      */
+    public function import(Request $request)
+{
+    $request->validate([
+        'file' => 'required|mimes:xlsx,xls'
+    ]);
 
+    $xlsx = SimpleXLSX::parse($request->file('file'));
+
+    foreach ($xlsx->rows() as $row) {
+        // Map each row to the User model
+        User::create([
+            'employee_id' => $row[0],
+            'name' => $row[1],
+            'email' => $row[2],
+            'password' => bcrypt('password'),
+            // 'assigned_project' => $row[28] ?? 0,
+            // 'assigned_area'=> $row[29] ,// Set default value
+            'project_id' => $row[3] ?? 1,
+            'area_id' => $row[4] ?? null,
+            'reporting_manager_ids' => $row[5] ?? null,
+            'assigned_project' => 0,
+            'assigned_area' => null,
+            'designation' => $row[6],
+            'domain' => $row[7],
+            'joining_date' => $row[8],
+            'mobile_no' => $row[9],
+            'address' => $row[10],
+            'dob' => $row[11],
+            'emergency_no' => $row[12],
+            'highest_qualification' => $row[13],
+            'adhaar_no' => $row[14],
+            'pan_no' => $row[15],
+            'bank_name' => $row[16],
+            'account_no' => $row[17],
+            'account_holder_name' => $row[18],
+            'ifsc' => $row[19],
+            'uan' => $row[20],
+            'esic' => $row[21],
+            'salary' => $row[22],
+            'manday' => $row[23],
+            'rest_days' => $row[24],
+            'paid_leaves' => $row[25],
+            'sick_leaves' => $row[26],
+            'casual_leaves' => $row[27]
+        ]);
+    }
+
+    return back()->with('success', 'Users have been imported successfully!');
+}
     
     public function store(Request $request,$project_id,$area_id)
     {
