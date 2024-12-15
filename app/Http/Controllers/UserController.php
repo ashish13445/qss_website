@@ -34,42 +34,77 @@ class UserController extends Controller
     $xlsx = SimpleXLSX::parse($request->file('file'));
 
     foreach ($xlsx->rows() as $row) {
-        // Map each row to the User model
-        User::create([
-            'employee_id' => $row[0],
-            'name' => $row[1],
-            'email' => $row[2],
-            'password' => bcrypt('password'),
-            // 'assigned_project' => $row[28] ?? 0,
-            // 'assigned_area'=> $row[29] ,// Set default value
-            'project_id' => $row[3] ?? 1,
-            'area_id' => $row[4] ?? null,
-            'reporting_manager_ids' => $row[5] ?? null,
-            'assigned_project' => 0,
-            'assigned_area' => null,
-            'designation' => $row[6],
-            'domain' => $row[7],
-            'joining_date' => $row[8],
-            'mobile_no' => $row[9],
-            'address' => $row[10],
-            'dob' => $row[11],
-            'emergency_no' => $row[12],
-            'highest_qualification' => $row[13],
-            'adhaar_no' => $row[14],
-            'pan_no' => $row[15],
-            'bank_name' => $row[16],
-            'account_no' => $row[17],
-            'account_holder_name' => $row[18],
-            'ifsc' => $row[19],
-            'uan' => $row[20],
-            'esic' => $row[21],
-            'salary' => $row[22],
-            'manday' => $row[23],
-            'rest_days' => $row[24],
-            'paid_leaves' => $row[25],
-            'sick_leaves' => $row[26],
-            'casual_leaves' => $row[27]
-        ]);
+        // Check if a user with this employee_id already exists
+        $user = User::where('employee_id', $row[0])->first();
+
+        if ($user) {
+            // Update the existing user
+            $user->update([
+                'name' => $row[1],
+                'email' => $row[2],
+                'password' => bcrypt('password'),
+                'project_id' => $row[3] ?? 1,
+                'area_id' => $row[4] ?? null,
+                'reporting_manager_ids' => $row[5] ?? null,
+                'designation' => $row[6],
+                'domain' => $row[7],
+                'joining_date' => $row[8],
+                'mobile_no' => $row[9],
+                'address' => $row[10],
+                'dob' => $row[11],
+                'emergency_no' => $row[12],
+                'highest_qualification' => $row[13],
+                'adhaar_no' => $row[14],
+                'pan_no' => $row[15],
+                'bank_name' => $row[16],
+                'account_no' => $row[17],
+                'account_holder_name' => $row[18],
+                'ifsc' => $row[19],
+                'uan' => $row[20],
+                'esic' => $row[21],
+                'salary' => $row[22],
+                'manday' => $row[23],
+                'rest_days' => $row[24],
+                'paid_leaves' => $row[25],
+                'sick_leaves' => $row[26],
+                'casual_leaves' => $row[27]
+            ]);
+        } else {
+            // Create a new user
+            User::create([
+                'employee_id' => $row[0],
+                'name' => $row[1],
+                'email' => $row[2],
+                'password' => bcrypt('password'),
+                'project_id' => $row[3] ?? 1,
+                'area_id' => $row[4] ?? null,
+                'reporting_manager_ids' => $row[5] ?? null,
+                'assigned_project' => 0,
+                'assigned_area' => null,
+                'designation' => $row[6],
+                'domain' => $row[7],
+                'joining_date' => $row[8],
+                'mobile_no' => $row[9],
+                'address' => $row[10],
+                'dob' => $row[11],
+                'emergency_no' => $row[12],
+                'highest_qualification' => $row[13],
+                'adhaar_no' => $row[14],
+                'pan_no' => $row[15],
+                'bank_name' => $row[16],
+                'account_no' => $row[17],
+                'account_holder_name' => $row[18],
+                'ifsc' => $row[19],
+                'uan' => $row[20],
+                'esic' => $row[21],
+                'salary' => $row[22],
+                'manday' => $row[23],
+                'rest_days' => $row[24],
+                'paid_leaves' => $row[25],
+                'sick_leaves' => $row[26],
+                'casual_leaves' => $row[27]
+            ]);
+        }
     }
 
     return back()->with('success', 'Users have been imported successfully!');
