@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignId('project_id')->constrained()->default(1); 
             $table->unsignedBigInteger('area_id')->nullable();
             $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
-            $table->string('reporting_manager_id')->nullable();
+            $table->longText('reporting_manager_ids')->nullable();
             $table->string('designation');
             $table->string('domain');
             $table->date('joining_date');
