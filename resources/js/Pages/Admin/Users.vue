@@ -159,6 +159,7 @@
     
 <!-- Update User Modal -->
 <Modal :show="isUpdateModalOpen" @close="closeUpdateModal" >
+  {{ form }}
       <div class="p-5">
         <span class="close" @click="closeUpdateModal"><i class="material-icons" style="cursor: pointer;">close</i></span>
         <form @submit.prevent="updateUser">
