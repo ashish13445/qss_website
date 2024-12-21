@@ -24,3 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/notifications', [NotificationController::class, 'index']);
 Route::get('/notifications/markAsRead/{id}', [NotificationController::class, 'markNotificationAsRead']);
 Route::post('login', [AuthenticatedSessionController::class, 'store']);
+Route::middleware(['auth', 'verified', 'role:admin,project admin'])->group(function () {
+Route::get('/area/user/{id}', [AreaController::class, 'getUser'])->name('area.user');
+});
