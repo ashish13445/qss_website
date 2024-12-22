@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\NotificationController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\AreaController;
+use App\Http\Controllers\TimeEntryController;
 
 /*
 |--------------------------------------------------------------------------
