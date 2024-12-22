@@ -27,4 +27,6 @@ Route::get('/notifications/markAsRead/{id}', [NotificationController::class, 'ma
 Route::post('login', [AuthenticatedSessionController::class, 'store']);
 Route::middleware(['auth:sanctum', 'verified', 'role:admin,project admin'])->group(function () {
 Route::get('/area/user/{id}', [AreaController::class, 'getUser'])->name('area.user');
+Route::post('/mark-rest',[TimeEntryController::class,'markRest'])->name('mark.rest');
+Route::post('/mark_rest', [TimeEntryController::class,'markRestForProjectUsers'])->name('markRest');
 });
