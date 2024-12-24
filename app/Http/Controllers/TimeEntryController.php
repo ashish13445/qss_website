@@ -142,7 +142,6 @@ foreach ($request->updates as $update) {
     $user_id = $update['user_id'];
     $date = $update['date'];
     $shift = $update['shift'];
-dump($request);
     // Check if attendance is already marked for the given user, date, and shift
     $existingAttendance = TimeEntry::where('user_id', $user_id)
         ->where('date', $date)
