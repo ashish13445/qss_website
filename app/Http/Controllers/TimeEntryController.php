@@ -175,9 +175,9 @@ TimeEntry::whereIn('user_id', $clockedInUsers)
 
 // Redirect with appropriate message
 if (!empty($clockedInUsers)) {
-    return redirect()->back()->with('success', 'Clocked in successfully.');
+    return response()->json('Clocked in successfully.');
 } else {
-    return redirect()->back()->with('info', 'Attendance already marked for selected shifts.');
+    return response()->json('Attendance already marked for selected shifts.');
 }
 }  
 
