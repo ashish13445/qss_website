@@ -293,4 +293,33 @@ public function markRestDaysForMonth($nextMonth)
         $entry->delete();
         return response()->json('deleted');
     }
+    public function bulkDestroy(Request $request)
+{
+    $users = $request->input('users'); // Expecting an array of user IDs
+    $date = $request->input('date');
+    $status = $request->input('status');
+
+    if (!is_array($users) || empty($users)) {
+        return response()->json(['error' => 'Invalid or empty users list'], 400);
+    }
+
+    foreach ($users as $userId) {
+        $entry = TimeEntry::where('user_id', $userId)->where('date', $date)->first();
+
+        if ($entry) {
+            // Update rest days if the status is "rest"
+            if ($status === 'rest') {
+                $user = User::find($userId);
+                if ($user) {
+                    $user->increment('rest_days');
+                }
+            }
+            
+            // Delete the entry
+            $entry->delete();
+        }
+    }
+
+    return response()->json(['message' => 'Entries deleted successfully']);
+}
 }

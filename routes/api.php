@@ -32,5 +32,6 @@ Route::post('/mark-rest',[TimeEntryController::class,'markRest'])->name('mark.re
 Route::post('/mark_rest', [TimeEntryController::class,'markRestForProjectUsers'])->name('markRest');
 Route::get('/attendance_by_date/user', [TimeEntryController::class,'getTimeEntriesByDate'])->name('attendance.date');
 Route::post('/attendance_by_date/user', [TimeEntryController::class,'addTimeEntriesByDate'])->name('attendance.date.add');
+Route::post('/attendance/bulkdelete',[TimeEntryController::class,'bulkDestroy']);
 
 });
