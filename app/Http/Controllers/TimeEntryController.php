@@ -311,10 +311,10 @@ public function markRestDaysForMonth($nextMonth)
                 $query->where('remarks', 'rest');
                 break;
             case 'normal_shift':
-                $query->where('shift', 1);
+                $query->where('shift_no', 1);
                 break;
             case 'overtime':
-                $query->where('shift', 2);
+                $query->where('shift_no', 2);
                 break;
             default:
                 return response()->json(['error' => 'Invalid status provided'], 400);
@@ -330,7 +330,6 @@ public function markRestDaysForMonth($nextMonth)
                     $user->increment('rest_days');
                 }
             }
-
             // Delete the entry
             $entry->delete();
         }
