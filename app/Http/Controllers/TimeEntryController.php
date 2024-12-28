@@ -304,21 +304,38 @@ public function markRestDaysForMonth($nextMonth)
     }
 
     foreach ($users as $userId) {
-        $entry = TimeEntry::where('user_id', $userId)->where('date', $date)->first();
+        $query = TimeEntry::where('user_id', $userId)->where('date', $date);
+
+        switch ($status) {
+            case 'rest':
+                $query->where('remarks', 'rest');
+                break;
+            case 'normal_shift':
+                $query->where('shift', 1);
+                break;
+            case 'overtime':
+                $query->where('shift', 2);
+                break;
+            default:
+                return response()->json(['error' => 'Invalid status provided'], 400);
+        }
+
+        $entry = $query->first();
 
         if ($entry) {
-            // Update rest days if the status is "rest"
             if ($status === 'rest') {
+                // Increment rest days for the user
                 $user = User::find($userId);
                 if ($user) {
                     $user->increment('rest_days');
                 }
             }
-            
+
             // Delete the entry
             $entry->delete();
         }
     }
+
 
     return response()->json(['message' => 'Entries deleted successfully']);
 }
