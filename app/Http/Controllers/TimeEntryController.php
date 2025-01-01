@@ -186,7 +186,7 @@ public function markRestDaysForMonth($nextMonth)
         // Get the office users
         $officeUsers = User::where('project_id', 1)->get();
         
-        User::query()->update(['rest_days'=>4]);
+        User::query()->update(['rest_days'=>5]);
         // Get the next month
         $firstDayOfMonth = Carbon::parse($nextMonth)->startOfMonth();
         $lastDayOfMonth = Carbon::parse($nextMonth)->endOfMonth();
