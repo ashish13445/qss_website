@@ -13,7 +13,7 @@ class ProjectController extends Controller
     public function index()
     {
         // $projects = Project::with('users.roles')->get();
-        $projects = Project::with('areas.users.roles')->get();
+        $projects = Project::with('areas.users')->get();
         return response()->json($projects);
     }
 
