@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('time_entries', function (Blueprint $table) {
-            $table->enum('remarks', ['present', 'leave', 'rest', 'holiday', 'work_from_home'])->default('present')->change();
+            $table->string('remarks')->default('present')->change();
         });
     }
 
