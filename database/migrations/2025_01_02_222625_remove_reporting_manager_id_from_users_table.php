@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('reporting_manager_id');
+            $table->dropColumn('reporting_manager_ids');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('reporting_manager_id')->nullable(); // Adjust the column type as needed
+            $table->integer('reporting_manager_ids')->nullable(); // Adjust the column type as needed
         });
     }
 };
