@@ -584,7 +584,7 @@ const exportCSV = () => {
   const currentDate = new Date();
 
   // Calculate the previous month
-  const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth()-1 ,1);
+  const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() ,1);
   
   // Get all dates of the previous month
   const datesOfPreviousMonth = getDatesOfPreviousMonth(previousMonth.getFullYear(), previousMonth.getMonth());
