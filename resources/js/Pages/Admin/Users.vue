@@ -224,8 +224,10 @@
                     autocomplete="reporting_manager_ids"
                 >
                 <option value="">Choose Reporting Manager</option>  
-                <option :value="user.id" v-for="user in AllUsers">{{ user.name }}</option>
-                </select>
+                <option :value="user.id" v-for="user in AllUsers[0].areas[0].users">{{ user.name }}</option>
+              </select>
+                <!-- <MultiSelect v-model="form" :options="areas" optionLabel="name"  placeholder="Select Areas"
+                      :maxSelectedLabels="10" class="w-full md:w-[20rem]" /> -->
                 
 
                 <InputError class="mt-2" :message="form.errors.reporting_manager_ids" />
@@ -297,7 +299,7 @@
                 </select> -->
               <div class="card flex justify-center">
                   <MultiSelect v-model="assigned_area" :options="areas" optionLabel="name"  placeholder="Select Areas"
-                      :maxSelectedLabels="5" class="w-full md:w-[20rem]" />
+                      :maxSelectedLabels="10" class="w-full md:w-[20rem]" />
               </div>
                 <InputError class="mt-2" :message="form.errors.assigned_area" />
             </div>
