@@ -18,7 +18,7 @@
       <Tag class="md:m-3 mr-3" icon="pi pi-user" severity="info" ><span class="mx-2">On Rest: {{ restUsers.length }}  </span></Tag>
       <Tag class="md:m-3 mr-3" icon="pi pi-user" severity="danger" ><span class="mx-2">on Overtime: {{ overtimeUsers.length }}  </span></Tag>
 
-      <PrimaryButton v-tooltip="'Export as CSV'" class="my-2 mr-2" @click="exportCSV"><i class="pi pi-file-export"></i></PrimaryButton>
+      <PrimaryButton v-tooltip="'Export as CSV'" class="my-2 mr-2" @click="exportAllCSV"><i class="pi pi-file-export"></i></PrimaryButton>
     </h1>
     
     <Modal :show="isRegisterModalOpen" @close="closeRegisterModal" >
@@ -655,9 +655,18 @@
                 </Modal>
 
 <DataTable v-model:filters="filters" filterDisplay="row" :value="users" showGridlines :sortOrder="-1" paginator :rows="10"  tableStyle="min-width: 50rem" class="text-xs md:text-sm" 
-:globalFilterFields="['name']"
+:globalFilterFields="['employee_id','name','email']"
 >
-    <Column field="employee_id" header="Employee Id" sortable style="border: 2px solid black;width: 20%;font-weight: bolder" header-style="background-color: #2196F3;color: #ffff; font-weight: bolder"></Column>
+<Column  field="employee_id" header="Employee Id" sortable style="border: 2px solid black;width: 40%;font-weight: bolder" header-style="background-color: #2196F3;color: #ffff; font-weight: bolder">
+  <template #filter="{ filterModel, filterCallback }">
+        <InputText
+          v-model="filterModel.value"
+          type="text"
+          @input="filterCallback()"
+          class="p-column-filter"
+          placeholder="Search by name"
+        />        </template>
+    </Column>
     <Column  field="name" header="Name" sortable style="border: 2px solid black;width: 40%;font-weight: bolder" header-style="background-color: #2196F3;color: #ffff; font-weight: bolder">
       <template #filter="{ filterModel, filterCallback }">
         <InputText
@@ -668,7 +677,9 @@
           placeholder="Search by name"
         />        </template>
     </Column>
-    <Column field="email" header=" Email Id" sortable style="border: 2px solid black;width: 20%;font-weight: bolder" header-style="background-color: #2196F3;color: #ffff; font-weight: bolder"></Column>
+    <Column field="email" header=" Email Id" sortable style="border: 2px solid black;width: 20%;font-weight: bolder" header-style="background-color: #2196F3;color: #ffff; font-weight: bolder">
+     
+    </Column>
     <Column header="Permission" style="border: 2px solid black;width: 20%" header-style="background-color: #2196F3;color: #ffff; font-weight: bolder">
   <template #body="{ data }">
     <div class="flex justify-center">
@@ -816,7 +827,9 @@ import iziToast from 'izitoast';
 import Tag  from 'primevue/tag';  
 import 'izitoast/dist/css/iziToast.min.css';
 const filters = ref({
-      'name': { value: null, matchMode: 'contains' }
+      'name': { value: null, matchMode: 'contains' },
+      'employee_id': { value: null, matchMode: 'contains' },
+
     });
 const generatePdf = async(data)=>{
   try {
@@ -1122,6 +1135,107 @@ const exportCSV = () => {
       document.body.appendChild(link);
       link.click();
     };
+
+
+    const exportAllCSV = () => {
+  let csvContent = 'data:text/csv;charset=utf-8,';
+  csvContent += 'Name,Employee Id,Designation,Manday,Location,SubLocation,'; // Header row
+
+  // Helper function to get all dates of the previous month
+  const getDatesOfPreviousMonth = (year, month) => {
+    let dates = [];
+    let date = new Date(year, month, 1);
+    while (date.getMonth() === month) {
+      dates.push(new Date(date));
+      date.setDate(date.getDate() + 1);
+    }
+    return dates;
+    
+  }
+
+  // Get the current date
+  const currentDate = new Date();
+
+  // Calculate the previous month
+  const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth()-1 ,1);
+  
+  // Get all dates of the previous month
+  const datesOfPreviousMonth = getDatesOfPreviousMonth(previousMonth.getFullYear(), previousMonth.getMonth());
+
+  // Construct the header row with dates
+  datesOfPreviousMonth.forEach(date => {
+    const dateString = date.toDateString(); // Get date in 'YYYY-MM-DD' format
+    csvContent += `${dateString},`;
+  });
+  csvContent += 'Total Present, Total Absent, Rest, Overtime\r\n'; // Add extra columns
+
+  // Iterate over users
+  AllUsers.value.forEach(project => {
+    project.areas.forEach(area => {
+      area.users.forEach(user => {
+    // Filter entries from the previous month
+    const previousMonthTimeEntries = user.time_entries.filter(entry => {
+      const entryDate = new Date(entry.date); // Assuming each time entry has a 'date' property
+      return entryDate.getFullYear() === previousMonth.getFullYear() && entryDate.getMonth() === previousMonth.getMonth();
+    });
+
+    // Create a map of entries by date for quick lookup
+    const entriesByDate = new Map();
+    previousMonthTimeEntries.forEach(entry => {
+      const entryDate = new Date(entry.date).toDateString() // Get date in 'YYYY-MM-DD' format
+      entriesByDate.set(entryDate, entry);
+    });
+
+   
+    // Initialize the CSV row with user data
+    let csvRow = `${user.name},${user.employee_id},${user.designation},${user.manday},${project.title},${area.name}`;
+    
+    // Variables to track total present and absent days
+    let totalPresent = 0;
+    let totalAbsent = 0;
+    let totalRest = 0;
+    let totalOverTime = 0;
+    // Iterate over all dates of the previous month
+    datesOfPreviousMonth.forEach(date => {
+      const dateString = date.toDateString(); // Get date in 'YYYY-MM-DD' format
+      if (entriesByDate.has(dateString)) {
+        const entry = entriesByDate.get(dateString);
+        csvRow += `,${entry.remarks}`; // Modify to include relevant entry details
+        if(entry.remarks == 'present'){
+          if(entry.shift_no == 1 || entry.shift_no == null){
+            totalPresent++;
+          }
+          else{
+            totalOverTime++;
+          }
+
+        }
+        else{
+          totalRest++;
+        }
+      } else {
+        csvRow += `,A`;
+        totalAbsent++;
+      }
+    });
+
+    // Add total present, total absent, rest, and overtime
+    csvRow += `,${totalPresent},${totalAbsent},${totalRest},${totalOverTime}\r\n`; // Assuming rest and overtime values are 0 for now
+
+    csvContent += csvRow;
+  });
+});
+});
+   // Output the final CSV content
+      // Create a link element and trigger a click to download the CSV
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement('a');
+      link.setAttribute('href', encodedUri);
+      link.setAttribute('download', 'users_atendance.csv');
+      document.body.appendChild(link);
+      link.click();
+    };
+
 
 
 const updateUser = ()=>{

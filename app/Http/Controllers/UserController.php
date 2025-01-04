@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\TimeEntryController;
 use App\Models\User;
+use App\Models\Project;
+
 use App\Models\Role;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
@@ -195,7 +197,7 @@ class UserController extends Controller
     public function viewAllUsers()
     {
         // Use the CheckRole middleware to ensure the user has the 'admin' role
-        $users = User::with('project')->get();
+        $users = Project::with('areas.users.timeEntries')->get();
         return response()->json($users);
        
      
