@@ -264,7 +264,7 @@ public function markRestDaysForMonth($nextMonth)
             $user->update(['rest_days' => $user->rest_days - 1]);
         }
 
-    
+        return response()->json('time entry created');
  
         
     }

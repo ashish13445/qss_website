@@ -116,9 +116,9 @@
         </div>
         <PrimaryButton v-tooltip="'Export as CSV'" class="my-2 mr-2" @click="exportCSV"><i class="pi pi-file-export"></i></PrimaryButton>
 
-    <!-- <div class="flex flex-col"> -->
+    <div v-if="allowed" class="flex flex-col">
 
-        <!-- <DataTable v-model:filters="filters" filterDisplay="row" :value="users" showGridlines :sortOrder="-1" paginator :rows="10"  tableStyle="min-width: 50rem" class="text-xs md:text-sm" 
+         <DataTable v-model:filters="filters" filterDisplay="row" :value="users" showGridlines :sortOrder="-1" paginator :rows="10"  tableStyle="min-width: 50rem" class="text-xs md:text-sm" 
 :globalFilterFields="['name']"
 >    <Column field="employee_id" header="Employee Id" sortable  style="border: 2px solid black;width: 25%; color:black; font-weight: bolder;" header-style="background-color: #2196F3;color: #ffff; font-weight: bolder"></Column>
     <Column field="name" header="Name" sortable style="border: 2px solid black;width: 40%;color:black; font-weight: bolder;" header-style="background-color: #2196F3;color: #ffff; font-weight: bolder">
@@ -282,7 +282,10 @@
     
 
 </DataTable>
-        </div>-->
+        </div>
+        </div>
+        <div class="flex flex-direction-column justify-end">
+          <input type="checkbox" v-model="allowed" /> 
         </div>
         <!-- </div>
         </div>
@@ -331,6 +334,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { watch } from 'vue';
 const assigned_area = ref([]);
 const selectedArea = ref();
+const allowed = ref(false);
 const filters = ref({
       'name': { value: null, matchMode: 'contains' }
     });
