@@ -34,6 +34,8 @@ Route::post('/mark_rest/date', [TimeEntryController::class,'markRestForProjectUs
 Route::get('/attendance_by_date/user', [TimeEntryController::class,'getTimeEntriesByDate'])->name('attendance.date');
 Route::post('/attendance_by_date/user', [TimeEntryController::class,'addTimeEntriesByDate'])->name('attendance.date.add');
 Route::post('/attendance/bulkdelete',[TimeEntryController::class,'bulkDestroy']);
-Route::post('/clock-in', [TimeEntryController::class,'clockIn'])->name('clock.in');
+
+
+Route::middleware('auth:sanctum')->post('clock-in', [TimeEntryController::class, 'clockIn']);
 
 });
