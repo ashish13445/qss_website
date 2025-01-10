@@ -249,16 +249,16 @@ public function markRestDaysForMonth($nextMonth)
     }
 
     public function markRestForProjectUsers(Request $request){
-        foreach( $request->users as $userId){
-            TimeEntry::create([
-                'user_id' => $userId,
-                'date' => today()->toDateString(),
-                'remarks' => 'rest',
-                'shift_no'=>1
-            ]);
-            $user = User::find($userId);
-            $user->update(['rest_days' => $user->rest_days - 1]);
-        }
+        // foreach( $request->users as $userId){
+        //     TimeEntry::create([
+        //         'user_id' => $userId,
+        //         'date' => today()->toDateString(),
+        //         'remarks' => 'rest',
+        //         'shift_no'=>1
+        //     ]);
+        //     $user = User::find($userId);
+        //     $user->update(['rest_days' => $user->rest_days - 1]);
+        // }
 
     
  
