@@ -154,9 +154,16 @@ Route::get('/test-mark-rest-days', function () {
     $nextMonth = now()->startOfMonth(); // Get the first day of the next month
     return $timeEntryController->markRestDaysForMonth($nextMonth);
 });
+Route::get('/fix-rest-days', function () {
+    $timeEntryController = new TimeEntryController();
 
+    // Get the current year and month
+    $currentYear = now()->year; // Current year
+    $currentMonth = now()->month; // Current month
 
-
+    // Call the fixRestDays method with the current year and month
+    return $timeEntryController->fixRestDays($currentYear, $currentMonth);
+});
     Route::post('/clock-in', [TimeEntryController::class,'clockIn'])->name('clock.in');
     Route::get('/clock-out', [TimeEntryController::class,'clockOut'])->name('clock.out');
     Route::get('/check-clock-in', [TimeEntryController::class,'checkClockIn'])->name('check.clock.in');

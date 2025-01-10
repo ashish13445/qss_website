@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\TimeEntry;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class TimeEntryController extends Controller
 {
@@ -249,21 +250,67 @@ public function markRestDaysForMonth($nextMonth)
     }
 
     public function markRestForProjectUsers(Request $request){
-        // foreach( $request->users as $userId){
-        //     TimeEntry::create([
-        //         'user_id' => $userId,
-        //         'date' => today()->toDateString(),
-        //         'remarks' => 'rest',
-        //         'shift_no'=>1
-        //     ]);
-        //     $user = User::find($userId);
-        //     $user->update(['rest_days' => $user->rest_days - 1]);
-        // }
+        foreach( $request->users as $userId){
+            TimeEntry::create([
+                'user_id' => $userId,
+                'date' => today()->toDateString(),
+                'remarks' => 'rest',
+                'shift_no'=>1
+            ]);
+            $user = User::find($userId);
+            $user->update(['rest_days' => $user->rest_days - 1]);
+        }
 
     
  
         
     }
+    function fixRestDays($year, $month)
+{
+    // Step 1: Count the Sundays in the given month
+    $totalSundays = $this->countSundaysInMonth($year,$month);
+    // Step 2: Get all users and calculate their adjusted rest_days
+    $users = DB::table('users')->get();
+
+    foreach ($users as $user) {
+        // Count the "rest" entries in the timeentries table for the user in the specified month
+        $restEntriesCount = TimeEntry::where('user_id', $user->id)
+            ->whereYear('date', $year)
+            ->whereMonth('date', $month)
+            ->where('remarks', 'rest')
+            ->count();
+        dump($restEntriesCount);
+        // Calculate the new rest_days
+        $newRestDays = max(0, $totalSundays - $restEntriesCount);
+
+        // Update the user's rest_days in the database
+        DB::table('users')
+            ->where('id', $user->id)
+            ->update(['rest_days' => $newRestDays]);
+    }
+}
+
+function countSundaysInMonth($year, $month)
+{
+    $startOfMonth = Carbon::create($year, $month, 1);
+    $endOfMonth = $startOfMonth->copy()->endOfMonth();
+
+    // Find the first Sunday of the month
+    $firstSunday = $startOfMonth->copy()->next(Carbon::SUNDAY);
+
+    // If the month starts on a Sunday, adjust
+    if ($startOfMonth->isSunday()) {
+        $firstSunday = $startOfMonth;
+    }
+
+    // Calculate the total number of Sundays
+    $totalSundays = 0;
+    for ($date = $firstSunday; $date->lte($endOfMonth); $date->addWeek()) {
+        $totalSundays++;
+    }
+
+    return $totalSundays;
+}
     public function markRestForProjectUsersForDate(Request $request){
         foreach( $request->users as $userId){
             TimeEntry::create([
