@@ -39,3 +39,4 @@ Route::post('/attendance/bulkdelete',[TimeEntryController::class,'bulkDestroy'])
 
 });
 Route::middleware('auth:sanctum')->post('clock-in', [TimeEntryController::class, 'clockIn']);
+Route::middleware('auth:sanctum')->post('clock-out', [TimeEntryController::class, 'clockOut']);
