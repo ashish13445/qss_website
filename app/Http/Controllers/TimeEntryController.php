@@ -12,36 +12,48 @@ class TimeEntryController extends Controller
 {
     public function clockIn(Request $request)
     {
-
+        $id = null;
+        if($request->id){
+            $id=$request->id;
+        }else {
+            $id = auth()->id();
+        }
 $date = Carbon::now()->format('Y-m-d');
         // Check if the user is already clocked in
-        $existingEntry = TimeEntry::where('user_id', auth()->id())
+        $existingEntry = TimeEntry::where('user_id', $id)
             ->where('date',$date)
             ->first();
         
         if ($existingEntry) {
             return response()->json(['error' => 'Cannot clock in today'], 500);
         }
-
+        
         // Create a new time entry for clocking in
         TimeEntry::create([
-            'user_id' => auth()->id(),
+            'user_id' => $id,
             'clock_in' => now(),
             'date'=>today(),
             'location'=>$request->location
 
         ]);
-
+dump($id);
+dump($request->id);
         // return redirect()->back()->with('success', 'Clocked in successfully.');
         return response()->json('clocked in');
     }
 
     
 
-    public function clockOut()
+    public function clockOut(Request $request)
     {
+        $id = null;
+        if($request->id){
+            $id=$request->id;
+        }else {
+            $id = auth()->id();
+        }
         // Find the user's open time entry
-        $entry = TimeEntry::where('user_id', auth()->id())
+        $entry = TimeEntry::where('user_id', $id)
             ->whereNull('clock_out')
             ->whereNotNull('clock_in')
             ->first();
