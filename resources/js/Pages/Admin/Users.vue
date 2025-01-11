@@ -271,7 +271,7 @@
                     type="select"
                     class="mt-1 block w-full"
                     v-model="assigned_project"
-                    
+                    @change="fetchAssignedAreas"
                     autocomplete="asssigned_project"
                 >
                 <option value="">Choose Project</option>
@@ -285,21 +285,10 @@
             </div>
             <div class="mt-4">
                 <InputLabel for="assigned_area" value="Assigned Area" />
-<!--                 
-                <select
-                    id="assigned_area"
-                    type="select"
-                    class="mt-1 block w-full"
-                    v-model="assigned_area"
-                    
-                    autocomplete="assigned_area"
-                >
-                <option value="">Choose Area</option>
-                <option :value="area.id" v-for="area in areas">{{ area.name }}</option>
-                </select> -->
+
               <div class="card flex justify-center">
-                  <MultiSelect v-model="assigned_area" :options="areas" optionLabel="name"  placeholder="Select Areas"
-                      :maxSelectedLabels="10" class="w-full md:w-[20rem]" />
+                  <MultiSelect v-model="assigned_area" :options="assignable_areas" optionLabel="name"  placeholder="Select Areas"
+                       class="w-full md:w-[20rem]" />
               </div>
                 <InputError class="mt-2" :message="form.errors.assigned_area" />
             </div>
@@ -916,6 +905,7 @@ const restUsers = ref([]);
 const overtimeUsers = ref([]);
 
 const areas = ref([]);
+const assignable_areas = ref([]);
 const areasToAssign = ref();
 const selectedArea = ref(1);
 const isRegisterModalOpen  = ref(false);
@@ -1394,9 +1384,22 @@ async function fetchUsers() {
 
 async function fetchAreas() {
   try {
+  
     // Fetch users based on the selected project
     const response = await axios.get(`/areas/${selectedProject.value}`);
     areas.value = response.data;
+  } catch (error) {
+    console.error('Error fetching users:', error);
+  }
+}
+
+
+async function fetchAssignedAreas() {
+  try {
+  
+    // Fetch users based on the selected project
+    const response = await axios.get(`/areas/${assigned_project.value}`);
+    assignable_areas.value = response.data;
   } catch (error) {
     console.error('Error fetching users:', error);
   }
