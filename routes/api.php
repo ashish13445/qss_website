@@ -30,7 +30,7 @@ Route::middleware(['auth:sanctum', 'verified', 'role:admin,project admin'])->gro
 Route::get('/area/user/{id}', [AreaController::class, 'getUser'])->name('area.user');
 Route::post('/mark-rest',[TimeEntryController::class,'markRest'])->name('mark.rest');
 Route::post('/mark_rest', [TimeEntryController::class,'markRestForProjectUsers'])->name('markRest');
-Route::post('/mark_rest/date', [TimeEntryController::class,'markRestForProjectUsersForDate'])->name('markRest');
+Route::post('/mark_rest/date', [TimeEntryController::class,'markRestForProjectUsersForDate']);
 Route::get('/attendance_by_date/user', [TimeEntryController::class,'getTimeEntriesByDate'])->name('attendance.date');
 Route::post('/attendance_by_date/user', [TimeEntryController::class,'addTimeEntriesByDate'])->name('attendance.date.add');
 Route::post('/attendance/bulkdelete',[TimeEntryController::class,'bulkDestroy']);
@@ -38,6 +38,8 @@ Route::post('/attendance/bulkdelete',[TimeEntryController::class,'bulkDestroy'])
 
 
 });
+Route::middleware('auth:sanctum','role:admin')->get('/area/user/{id}/{date}', [AreaController::class, 'getUserWithDate']);
+
 Route::middleware('auth:sanctum')->post('clock-in', [TimeEntryController::class, 'clockIn']);
 Route::middleware('auth:sanctum')->post('clock-out', [TimeEntryController::class, 'clockOut']);
 Route::middleware('auth:sanctum')->get('/clock-status', [TimeEntryController::class, 'checkClockIn']);
