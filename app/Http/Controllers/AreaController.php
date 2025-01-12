@@ -113,44 +113,50 @@ class AreaController extends Controller
         ]);
     }
 
-    public function getUserWithDate($id,$date,Request $request){
-        $today = Carbon::parse($date);
-        $area = Area::findOrFail($id);
-        $usersWithAttendance = $area->users()
-        ->with(['roles','project' ,'area','reportingManagers','timeEntries' => function ($query) {
-            $query->whereYear('date', now()->year)
-                //   ->whereMonth('date', now()->month)
+    public function getUserWithDate($id, $date, Request $request)
+{
+    $providedDate = Carbon::parse($date);
+
+    // Fetch the area
+    $area = Area::findOrFail($id);
+
+    // Fetch users with attendance and filter by the provided date
+    $usersWithAttendance = $area->users()
+        ->with(['roles', 'project', 'area', 'reportingManagers'])
+        ->with(['timeEntries' => function ($query) use ($date) {
+            $query->whereDate('date', $date) // Filter by the provided date
                   ->orderBy('date');
         }])
         ->paginate(500);
 
-        $presentUsers = $usersWithAttendance->flatMap(function ($user) use ($today) {
-            $attendanceToday = $user->timeEntries->filter(function ($entry) use ($today) {
-                return Carbon::parse($entry->date)->isToday() && $entry->remarks === 'present' && ($entry->shift_no== 1 || $entry->shift_no == null);
-            });
-            return $attendanceToday->isNotEmpty() ? $attendanceToday : [];
-        });
-        $restUsers = $usersWithAttendance->flatMap(function ($user) use ($today) {
-            $attendanceToday = $user->timeEntries->filter(function ($entry) use ($today) {
-                return Carbon::parse($entry->date)->isToday() && $entry->remarks === 'rest';
-            });
-            return $attendanceToday->isNotEmpty() ? $attendanceToday : [];
-        });
-        $overtimeUsers = $usersWithAttendance->flatMap(function ($user) use ($today) {
-            $attendanceToday = $user->timeEntries->filter(function ($entry) use ($today) {
-                return Carbon::parse($entry->date)->isToday() && $entry->remarks === 'present' && ($entry->shift_no== 2 || $entry->shift_no == 3);
-            });
-            return $attendanceToday->isNotEmpty() ? $attendanceToday : [];
-        });
-    
-        // Return users with attendance records and present users for today separately
-        return response()->json([
-            'usersWithAttendance' => $usersWithAttendance,
-            'presentUsersToday' => $presentUsers,
-            'restUsersToday'=> $restUsers,
-            'overtimeUsersToday' =>$overtimeUsers
-        ]);
+    // Initialize arrays for categorizing users
+    $presentUsers = [];
+    $restUsers = [];
+    $overtimeUsers = [];
+
+    // Loop through users to categorize their attendance
+    foreach ($usersWithAttendance as $user) {
+        foreach ($user->timeEntries as $entry) {
+            if (Carbon::parse($entry->date)->isSameDay($providedDate)) {
+                if ($entry->remarks === 'present' && ($entry->shift_no === 1 || $entry->shift_no === null)) {
+                    $presentUsers[] = $entry;
+                } elseif ($entry->remarks === 'rest') {
+                    $restUsers[] = $entry;
+                } elseif ($entry->remarks === 'present' && in_array($entry->shift_no, [2, 3])) {
+                    $overtimeUsers[] = $entry;
+                }
+            }
+        }
     }
+
+    // Return response
+    return response()->json([
+        'usersWithAttendance' => $usersWithAttendance,
+        'presentUsers' => $presentUsers,
+        'restUsers' => $restUsers,
+        'overtimeUsers' => $overtimeUsers,
+    ]);
+}
 
     public function getAreas($id){
         $project = Project::findOrFail($id);
