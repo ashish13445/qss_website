@@ -312,10 +312,12 @@ function countSundaysInMonth($year, $month)
     return $totalSundays;
 }
     public function markRestForProjectUsersForDate(Request $request){
+        $date = Carbon::parse($request->rest_date);
+
         foreach( $request->users as $userId){
             TimeEntry::create([
                 'user_id' => $userId,
-                'date' => $request->date->toDateString(),
+                'date' => $date->toDateString(),
                 'remarks' => 'rest',
                 'shift_no'=>1
             ]);
