@@ -116,13 +116,9 @@ class AreaController extends Controller
     public function getUserWithDate($id, $date, Request $request)
 {
     try {
-        // Parse and validate the provided date
         $providedDate = Carbon::parse($date);
-
-        // Find the area or return an error if not found
         $area = Area::findOrFail($id);
 
-        // Fetch users and filter time entries by the provided date
         $usersWithAttendance = $area->users()
             ->with(['roles', 'project', 'area', 'reportingManagers'])
             ->with(['timeEntries' => function ($query) use ($providedDate) {
@@ -131,26 +127,33 @@ class AreaController extends Controller
             }])
             ->paginate(500);
 
-        // Categorize users based on time entries
-        $presentUsers = [];
-        $restUsers = [];
-        $overtimeUsers = [];
+        // Ensure timeEntries is always an array or collection
+        $presentUsers = $usersWithAttendance->flatMap(function ($user) use ($providedDate) {
+            $attendanceToday = optional($user->timeEntries)->filter(function ($entry) use ($providedDate) {
+                return Carbon::parse($entry->date)->isSameDay($providedDate) 
+                    && $entry->remarks === 'present' 
+                    && ($entry->shift_no == 1 || $entry->shift_no === null);
+            });
+            return $attendanceToday ? $attendanceToday : [];
+        });
 
-        foreach ($usersWithAttendance as $user) {
-            foreach ($user->timeEntries as $entry) {
-                if (Carbon::parse($entry->date)->isSameDay($providedDate)) {
-                    if ($entry->remarks === 'present' && ($entry->shift_no === 1 || $entry->shift_no === null)) {
-                        $presentUsers[] = $entry;
-                    } elseif ($entry->remarks === 'rest') {
-                        $restUsers[] = $entry;
-                    } elseif ($entry->remarks === 'present' && in_array($entry->shift_no, [2, 3])) {
-                        $overtimeUsers[] = $entry;
-                    }
-                }
-            }
-        }
+        $restUsers = $usersWithAttendance->flatMap(function ($user) use ($providedDate) {
+            $attendanceToday = optional($user->timeEntries)->filter(function ($entry) use ($providedDate) {
+                return Carbon::parse($entry->date)->isSameDay($providedDate) 
+                    && $entry->remarks === 'rest';
+            });
+            return $attendanceToday ? $attendanceToday : [];
+        });
 
-        // Return data in a structured response
+        $overtimeUsers = $usersWithAttendance->flatMap(function ($user) use ($providedDate) {
+            $attendanceToday = optional($user->timeEntries)->filter(function ($entry) use ($providedDate) {
+                return Carbon::parse($entry->date)->isSameDay($providedDate) 
+                    && $entry->remarks === 'present' 
+                    && in_array($entry->shift_no, [2, 3]);
+            });
+            return $attendanceToday ? $attendanceToday : [];
+        });
+
         return response()->json([
             'usersWithAttendance' => $usersWithAttendance,
             'presentUsers' => $presentUsers,
@@ -158,7 +161,6 @@ class AreaController extends Controller
             'overtimeUsers' => $overtimeUsers,
         ]);
     } catch (\Exception $e) {
-        // Handle errors and return a user-friendly response
         return response()->json(['error' => $e->getMessage()], 500);
     }
 }
