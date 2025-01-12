@@ -156,9 +156,9 @@ class AreaController extends Controller
 
         return response()->json([
             'usersWithAttendance' => $usersWithAttendance,
-            'presentUsers' => $presentUsers,
-            'restUsers' => $restUsers,
-            'overtimeUsers' => $overtimeUsers,
+            'presentUsersToday' => $presentUsers,
+            'restUsersToday' => $restUsers,
+            'overtimeUsersToday' => $overtimeUsers,
         ]);
     } catch (\Exception $e) {
         return response()->json(['error' => $e->getMessage()], 500);
