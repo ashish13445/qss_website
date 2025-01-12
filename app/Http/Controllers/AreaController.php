@@ -113,44 +113,56 @@ class AreaController extends Controller
         ]);
     }
 
-    public function getUserWithDate($id,$date,Request $request){
-        $today = Carbon::parse($date);
-        $area = Area::findOrFail($id);
-        $usersWithAttendance = $area->users()
-        ->with(['roles','project' ,'area','reportingManagers','timeEntries' => function ($query) {
-            $query->whereYear('date', now()->year)
-                //   ->whereMonth('date', now()->month)
-                  ->orderBy('date');
-        }])
-        ->paginate(500);
+    public function getUserWithDate($id, $date, Request $request)
+{
+    try {
+        // Parse and validate the provided date
+        $providedDate = Carbon::parse($date);
 
-        $presentUsers = $usersWithAttendance->flatMap(function ($user) use ($today) {
-            $attendanceToday = $user->timeEntries->filter(function ($entry) use ($today) {
-                return Carbon::parse($entry->date)->isToday() && $entry->remarks === 'present' && ($entry->shift_no== 1 || $entry->shift_no == null);
-            });
-            return $attendanceToday->isNotEmpty() ? $attendanceToday : [];
-        });
-        $restUsers = $usersWithAttendance->flatMap(function ($user) use ($today) {
-            $attendanceToday = $user->timeEntries->filter(function ($entry) use ($today) {
-                return Carbon::parse($entry->date)->isToday() && $entry->remarks === 'rest';
-            });
-            return $attendanceToday->isNotEmpty() ? $attendanceToday : [];
-        });
-        $overtimeUsers = $usersWithAttendance->flatMap(function ($user) use ($today) {
-            $attendanceToday = $user->timeEntries->filter(function ($entry) use ($today) {
-                return Carbon::parse($entry->date)->isToday() && $entry->remarks === 'present' && ($entry->shift_no== 2 || $entry->shift_no == 3);
-            });
-            return $attendanceToday->isNotEmpty() ? $attendanceToday : [];
-        });
-    
-        // Return users with attendance records and present users for today separately
+        // Find the area or return an error if not found
+        $area = Area::findOrFail($id);
+
+        // Fetch users and filter time entries by the provided date
+        $usersWithAttendance = $area->users()
+            ->with(['roles', 'project', 'area', 'reportingManagers'])
+            ->with(['timeEntries' => function ($query) use ($providedDate) {
+                $query->whereDate('date', $providedDate->toDateString())
+                      ->orderBy('date');
+            }])
+            ->paginate(500);
+
+        // Categorize users based on time entries
+        $presentUsers = [];
+        $restUsers = [];
+        $overtimeUsers = [];
+
+        foreach ($usersWithAttendance as $user) {
+            foreach ($user->timeEntries as $entry) {
+                if (Carbon::parse($entry->date)->isSameDay($providedDate)) {
+                    if ($entry->remarks === 'present' && ($entry->shift_no === 1 || $entry->shift_no === null)) {
+                        $presentUsers[] = $entry;
+                    } elseif ($entry->remarks === 'rest') {
+                        $restUsers[] = $entry;
+                    } elseif ($entry->remarks === 'present' && in_array($entry->shift_no, [2, 3])) {
+                        $overtimeUsers[] = $entry;
+                    }
+                }
+            }
+        }
+
+        // Return data in a structured response
         return response()->json([
             'usersWithAttendance' => $usersWithAttendance,
-            'presentUsersToday' => $presentUsers,
-            'restUsersToday'=> $restUsers,
-            'overtimeUsersToday' =>$overtimeUsers
+            'presentUsers' => $presentUsers,
+            'restUsers' => $restUsers,
+            'overtimeUsers' => $overtimeUsers,
         ]);
+    } catch (\Exception $e) {
+        // Handle errors and return a user-friendly response
+        return response()->json(['error' => $e->getMessage()], 500);
     }
+}
+
 
     public function getAreas($id){
         $project = Project::findOrFail($id);
