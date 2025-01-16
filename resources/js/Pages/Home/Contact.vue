@@ -15,11 +15,15 @@
         >
 
         <template v-else>
-
+            <Link
+                :href="route('contact')"
+                class=" text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
+                ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
+            >
             <Link
                 :href="route('login')"
                 class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class="border-2  p-2 text-sm  border-red-600 font-extrabold text-red-600 ">Employee Login </Button></Link
+                ><Button class="border-2 rounded-full p-2 text-sm  border-red-600 font-extrabold text-red-600 ">Employee Login </Button></Link
             >
           
     
@@ -30,8 +34,10 @@
     </div>
   </div>
       </NavBar2>
+      
       <div class="md:mt-20 ">
-        <div id="map" class="md:border-4 border-black" style="height: 400px;z-index: 0;"></div>
+
+        <div id="map" class="" style="height: 400px;z-index: 0;"></div>
        </div> 
        
     </div>
@@ -68,9 +74,12 @@
         2nd Floor, 13 Charotar Society, Opp. New Alka Restaurant, Manisha Char Rasta, Old Padra Road, Baroda, Gujarat – 390 020.</p>
 </Fieldset>
  </div>
- <div class="md:py-36 md:flex  w-full">
+ <h1 class="text-4xl md:text-5xl font-medium flex justify-center pt-20 "><span class="font-extrabold pr-1">CONTACT </span>US</h1>
+
+<div class="py-10  md:flex  w-full items-center">
+  
     <div class="w-full flex flex-col justify-center items-start  h-content  gap-4 p-10 md:px-20 ">
-    
+
     <InputGroup class="">
         <InputGroupAddon>
             <i class="pi pi-user"></i>
@@ -103,30 +112,31 @@
     <PrimaryButton class="">Submit</PrimaryButton>
      </div>
     
-     <Divider layout="vertical" class="md:border-2 border-red-600" />
+     <!-- <Divider layout="vertical" class="md:border-2 border-red-600" /> -->
+      <img src="/images/contact-us.png" class="w-auto h-96 hidden md:block">
 
-     <div class="w-full md:m-20 p-10 md:p-0 flex flex-col items-center ">
-        <div class="bg-black text-white p-5 rounded font-extrabold m-2 w-full">
+     <div class="w-full   md:m-20 p-10 md:p-0 flex flex-col items-center ">
+        <div class="bg-orange-100  p-5 rounded font-medium m-2 w-full">
             <a href="tel:+918591924990">
             <span><i class="pi pi-phone pr-2"></i>8591924990</span>
             
             </a>
         </div>
-<div class="bg-black text-white  rounded font-extrabold m-2 w-full flex items-center">
+<div class="border-2  border-orange-900   rounded font-extrabold m-2 w-full flex items-center">
     <div>
         <span class="p-5"><i class="pi pi-google"></i></span>
         </div>
         <div class="font-medium p-4">
-            <p class="pl-5 p-2 underline"> office@qssindia.in</p>
-            <p class="pl-5 p-2 underline"> info@qssindia.in</p>
-            <p class="pl-5 p-2 underline"><i class=""></i> coal@qssindia.in</p>
+            <p class="pl-5 p-2 hover:underline"> office@qssindia.in</p>
+            <p class="pl-5 p-2 hover:underline"> info@qssindia.in</p>
+            <p class="pl-5 p-2 hover:underline"><i class=""></i> coal@qssindia.in</p>
     
             </div>
             
 </div>
 
-     </div>
- </div>
+    </div></div>
+
  <Footer/>
 </template>
 

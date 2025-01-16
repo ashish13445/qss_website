@@ -41,15 +41,15 @@ defineProps({
 
         <template v-else>
             
-                <Link
+            <Link
                 :href="route('contact')"
-                class="text-black hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class="  p-2 text-sm md:font-extrabold  ">Contact Us</Button></Link
+                class=" text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
+                ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
             >
             <Link
                 :href="route('login')"
                 class="font-semibold  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class="border-2  p-2  text-sm border-red-600 md:font-extrabold text-red-600 ">Employee Login </Button></Link
+                ><Button class="border-2  p-2 rounded-full text-sm border-red-600 md:font-extrabold text-red-600 ">Employee Login </Button></Link
             >
 
             
@@ -103,7 +103,9 @@ defineProps({
         <div>
             <img src="../../../images/background.png" class="w-full" data-aos="fade" data-aos-duration="3000" >
         </div>
-        <p class="px-10 md:px-20 py-10">QSS has been established by like - minded, former Senior Executives, Directors and Professionals of one of the worlds leading multinational Inspection Company. This highly experienced core team with rich, multifaceted, local and international experience of several decades in various sectors, got together to create QSS with the sole intention of facilitating high quality international and local trade - creating confidence between sellers and buyers.<br/><br/>
+        <h1 class="text-2xl md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 "><span class="font-extrabold pr-2">OUR</span>BACKGROUND</h1>
+
+        <p class="px-10 md:px-20 py-10 text-xs md:text-sm">QSS has been established by like - minded, former Senior Executives, Directors and Professionals of one of the worlds leading multinational Inspection Company. This highly experienced core team with rich, multifaceted, local and international experience of several decades in various sectors, got together to create QSS with the sole intention of facilitating high quality international and local trade - creating confidence between sellers and buyers.<br/><br/>
 
 Starting at Mumbai the Company today has grown to have offices& laboratories to support Mineral Divisions across India.<br/><br/>
 

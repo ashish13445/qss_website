@@ -46,15 +46,15 @@ defineProps({
         >
 
         <template v-else>
-            <Link
-            :href="route('contact')"
-                class="text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class="  p-2  md:font-extrabold text-sm ">Contact Us</Button></Link
+          <Link
+                :href="route('contact')"
+                class=" text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
+                ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
             >
             <Link
                 :href="route('login')"
                 class="font-semibold  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class="border-2 p-2 text-sm  border-red-600 text-red-600 md:font-extrabold">Employee Login </Button></Link
+                ><Button class="border-2 p-2 text-sm rounded-full  border-red-600 text-red-600 md:font-extrabold">Employee Login </Button></Link
             >
           
     
@@ -65,15 +65,19 @@ defineProps({
     </div>
   </div>
       </NavBar2>
-<div class="w-full md:mt-20 tracking-wider	">
+<div class="w-full md:tracking-wider	">
 
-        <div class="100svh  bg-tint-primary md:flex justify-evenly md:p-10  w-full">
-          <section class="md:pb-5 md:w-2/6">
-<img class="h-full object-cover" src="../../../../public/images/coal.webp" data-aos="fade" data-aos-duration="3000">
+        <div class=" flex justify-evenly   w-full">
+          
+          <section class="relative ">
+<img class="h-full object-cover opacity-50" src="../../../../public/images/grain.png" >
           </section>
 
-            <section class=" font-medium text-sm md:text-medium  flex justify-center md:p-5">
-              <div class="p-5 py-10 md:p-10 border-t-2 md:border-2   border-red-500 hover:border-red-800 rounded ">
+            <section class="absolute font-medium text-sm md:text-medium    md:p-5">
+              <h1 class="text-2xl md:text-5xl font-medium flex justify-center pt-10 md:pt-20 md:pb-10"><span class="font-extrabold pr-1">ABOUT </span>US</h1>
+
+              <div class="py-10 px-5 hover:border-red-800 rounded text-xs md:text-sm ">
+
                 Quality Services and Solutions Pvt. Ltd. is a leading Indian Inspection, Testing and Certification Group with an operational network in more than 18 cities across India and an associated network in 11 countries within the Asian Continent.<br/><br/>
 
 Established in the year 1999, our Company has already set up a comprehensive, meticulous and efficient services and systems network in various sectors such as Agriculture, Engineering, Minerals and Metals - both locally and on an international scale. More than 450 highly trained, dedicated and specialized workforce support us in all our endeavors across the country. QSSPL presence in the global arena is ensured through our International Association.<br/><br/>
@@ -105,43 +109,20 @@ QSSPL Services are customer focused and customized, dedicated to the customers c
               </div>
              
             </section>
-            <section class="py-10 md:py-5 w-2/6 hidden md:block">
-              <img class="h-full object-cover"   src="../../../images/coal.png" data-aos="fade" data-aos-duration="3000">
-            </section>
+            
             </div>
-            <div class="">
 
             
-            <p  class=" p-10 md:p-20 h-3/6  font-bold md:flex  items-center">
-                
-                <span class="text-center"><Knob  value-color="darkred" range-color="lightgray" :size= "300" class="w-1/6 " v-model="value" :step="10" readonly /></span>
-                <span class="w-5/6 px-5">
-                  <h1 class="text-4xl md:text-7xl font-extrabold" data-aos="fade-up" data-aos-duration="1500">
-                     Years of Experience of Delivering Quality & Third Party Inspections
-                  </h1>
-                  
-                </span> 
-            </p>
-            </div>
-            <div  class=" bg-tint-primary h-5/6 p-10 md:p-20   font-bold md:flex  items-center">
-                
-                <span><Knob  value-color="darkred" range-color="white" :size= "300" class="w-1/6 " v-model="value2" :step="10" readonly/></span>
-                <span class="w-5/6 px-10" >
-                  <h1 class="text-4xl  md:text-7xl font-extrabold" data-aos="fade-up" data-aos-duration="1500">
-                     Years of Experience in Coal Quality Sampling and Analysis    
-                  </h1>
-                      
-                       </span> 
-                      </div>
-                      <div class="md:p-20">
+            
+                      <div class="pt-96 md:p-20 relative ">
             <div class="flex text-center">
-              <div data-aos="slide-right" data-aos-duration="1500"class=" w-1/2 m-3  bg-gray-100 font-bold md:flex pb-3 md:pb-0 items-center">
+              <div class=" w-1/2 m-3  bg-gray-100 md:flex pb-3 md:pb-0 items-center">
                 <div class="md:w-2/5"><img src="../../../images/employees.png" ></div>
                 <div class="md:w-3/5 p-3 md:text-xl ">
                   1000+ Employees      
                 </div> 
               </div>
-              <div data-aos="slide-left" data-aos-duration="1500" class=" w-1/2 m-3  bg-gray-100 font-bold md:flex pb-3 md:pb-0 items-center">
+              <div  class=" w-1/2 m-3  bg-gray-100  md:flex pb-3 md:pb-0 items-center">
                 <div class="md:w-1/3"><img src="../../../images/testing.png" ></div>
                 <div class="md:w-2/3 p-3 md:text-xl">
                   Coal Sampling & Testing     
@@ -150,13 +131,13 @@ QSSPL Services are customer focused and customized, dedicated to the customers c
         
             </div>
             <div class="flex text-center">
-              <div data-aos="slide-right" data-aos-duration="1500" class=" w-1/2 m-3  bg-gray-100 font-bold md:flex  md:pb-0 items-center">
+              <div  class=" w-1/2 m-3  bg-gray-100  md:flex  md:pb-0 items-center">
                 <div class="md:w-2/5"><img src="../../../images/certified.png" ></div>
                 <div class="md:w-3/5 p-3 md:text-xl">
                   NABL, NABCB,ISO 9001:2015    
                 </div> 
               </div>
-              <div data-aos="slide-left" data-aos-duration="1500" class=" w-1/2 m-3  bg-gray-100 font-bold md:flex pb-3 md:pb-0 items-center">
+              <div class=" w-1/2 m-3  bg-gray-100  md:flex pb-3 md:pb-0 items-center">
                 <div class="md:w-1/3"><img src="../../../images/hydrocarbon.png" ></div>
                 <div class="md:w-2/3 p-3 md:text-xl">
                   Hydrocarbon Safety Audits    
@@ -164,13 +145,13 @@ QSSPL Services are customer focused and customized, dedicated to the customers c
               </div>
             </div>
             <div class="flex text-center">
-              <div data-aos="slide-right" data-aos-duration="1500" class=" w-1/2 m-3  bg-gray-100 font-bold md:flex pb-3 md:pb-0 items-center">
+              <div  class=" w-1/2 m-3  bg-gray-100  md:flex pb-3 md:pb-0 items-center">
                 <div class="md:w-2/5"><img src="../../../images/office.png" ></div>
                 <div class="md:w-3/5 p-3 md:text-xl">
                   5 Offices across India    
                 </div> 
               </div>
-              <div data-aos="slide-left" data-aos-duration="1500" class=" w-1/2 m-3  bg-gray-100 font-bold md:flex pb-3 md:pb-0 items-center">
+              <div  class=" w-1/2 m-3  bg-gray-100  md:flex pb-3 md:pb-0 items-center">
                 <div class="md:w-2/5"><img src="../../../images/engineer.png" ></div>
                 <div class="md:w-3/5 p-3 md:text-xl">
                   Engineering Equipments Inspection   

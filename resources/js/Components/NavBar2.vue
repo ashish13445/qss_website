@@ -31,10 +31,10 @@ import { ref } from 'vue';
           <div class="flex  justify-between items-center h-full">
             <div class="flex space-x-4">
                 <NavLink :href="route('home')" :active="route().current('home')" class=" text-black hover:text-gray-700  p-3 xl:px-7 text-base font-bol" ><i class="material-icons text-blue-300">home</i></NavLink>
-            <NavLink :href="route('about')" :active="route().current('about')" class="text-black  hover:text-gray-700  p-3  xl:px-7 text-base font-bol">About Us</NavLink>
-            <NavLink :href="route('sector')" :active="route().current('sector')" class="text-black  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">Our Sectors</NavLink>
-            <NavLink :href="route('background')" :active="route().current('background')" class="  text-black  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">Our Background</NavLink>
-            <NavLink :href="route('certificates')" :active="route().current('certficates')" class="  text-black  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">Certificates</NavLink>
+            <NavLink :href="route('about')" :active="route().current('about')" class="text-black  hover:text-gray-700  p-3  xl:px-7 text-base font-bol">ABOUT US</NavLink>
+            <NavLink :href="route('sector')" :active="route().current('sector')" class="text-black  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">OUR SECTORS</NavLink>
+            <NavLink :href="route('background')" :active="route().current('background')" class="  text-black  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">OUR BACKGROUND</NavLink>
+            <NavLink :href="route('certificates')" :active="route().current('certficates')" class="  text-black  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">CERTIFICATES</NavLink>
             
         </div>
                 
@@ -68,11 +68,11 @@ import { ref } from 'vue';
         <div v-if="isMobileMenuOpen" class="flex justify-end ">
           <div class="px-2 py-3 relative top-5 z-50 bg-white flex flex-col w-1/2 ">
             <!-- Nav Links -->
-            <Link class="py-2 mx-5 focus:text-red-600 font-bold" :href="route('home')" :active="route().current('home')"><i class="material-icons text-red-600">home</i></Link>
-            <Link class="py-2 mx-5 focus:text-red-600 font-bold" :href="route('about')" :active="route().current('about')">About Us</Link>
-            <Link class="py-2 mx-5 focus:text-red-600 font-bold" :href="route('sector')" :active="route().current('sector')">Our Sectors</Link>
-            <Link class="py-2 mx-5 focus:text-red-600 font-bold" :href="route('background')" :active="route().current('background')">Our Background</Link>
-            <Link class="py-2 mx-5 focus:text-red-600 font-bold" :href="route('certificates')" :active="route().current('certificates')">Certificates</Link>
+            <Link class="py-2 mx-5 focus:text-red-600 " :href="route('home')" :active="route().current('home')"><i class="material-icons text-red-600">home</i></Link>
+            <Link class="py-2 mx-5 focus:text-red-600 " :href="route('about')" :active="route().current('about')">ABOUT US</Link>
+            <Link class="py-2 mx-5 focus:text-red-600 " :href="route('sector')" :active="route().current('sector')">OUR SECTORS</Link>
+            <Link class="py-2 mx-5 focus:text-red-600 " :href="route('background')" :active="route().current('background')">OUR BACKGROUND</Link>
+            <Link class="py-2 mx-5 focus:text-red-600 " :href="route('certificates')" :active="route().current('certificates')">CERTIFICATES</Link>
             <div class="font-bold px-1"><slot/></div>
           </div>
         </div>

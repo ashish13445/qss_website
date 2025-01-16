@@ -13,7 +13,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-               sans : ['Montserrat', ...defaultTheme.fontFamily.sans],
+              sans: ['Inter', 'Poppins', 'Lato', ...defaultTheme.fontFamily.sans], // Add your preferred fonts
             },
             colors: {
               // 'tint-primary': '#fcd891' 

@@ -14,6 +14,8 @@
         <script src="https://storage.googleapis.com/workbox-cdn/releases/6.2.4/workbox-sw.js"></script>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
+
         <!-- Scripts -->
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])

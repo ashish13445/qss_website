@@ -41,14 +41,14 @@ defineProps({
 
         <template v-else>
             <Link
-            :href="route('contact')"
-                class="text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class=" p-2 text-sm  md:font-extrabold  ">Contact Us</Button></Link
+                :href="route('contact')"
+                class=" text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
+                ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
             >
             <Link
                 :href="route('login')"
                 class="font-semibold  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class="border-2 p-2 text-sm  border-red-600 md:font-extrabold text-red-600 ">Employee Login </Button></Link
+                ><Button class="border-2 p-2 rounded-full text-sm  border-red-600 md:font-extrabold text-red-600 ">Employee Login </Button></Link
             >
           
     
@@ -60,6 +60,8 @@ defineProps({
   </div>
       </NavBar2>
       <div class="bg-tint-primary h-content md:mt-20">
+        <h1 class="text-2xl md:text-5xl font-extrabold flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400  ">CERTIFICATES</h1>
+
       <div  class="p-5 md:p-10  grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade" data-aos-duration="3000">
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/NABCB.pdf" pdfImage="../../../images/certificates/NABCB.png" pdfName="NABCB" /></div>
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/PNGRB.pdf" pdfImage="../../../images/certificates/PNGRB.png" pdfName="PNGRB" /></div>

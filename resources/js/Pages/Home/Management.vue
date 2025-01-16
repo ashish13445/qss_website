@@ -48,13 +48,13 @@ const data = [{name: 'Shashank Mehta',
         <template v-else>
             <Link
                 :href="route('contact')"
-                class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class=" p-2 text-sm font-extrabold  ">Contact Us</Button></Link
+                class=" text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
+                ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
             >
             <Link
                 :href="route('login')"
                 class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class="border-2  p-2 text-sm border-red-600 font-extrabold text-red-600 ">Employee Login </Button></Link
+                ><Button class="border-2 rounded-full p-2 text-sm border-red-600 font-extrabold text-red-600 ">Employee Login </Button></Link
             >
           
     

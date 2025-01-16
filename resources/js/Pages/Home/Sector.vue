@@ -41,13 +41,13 @@ defineProps({
         <template v-else>
             <Link
                 :href="route('contact')"
-                class="text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class=" p-2 text-sm md:font-extrabold  ">Contact Us</Button></Link
+                class=" text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
+                ><Button class="  p-2 text-xs md:text-sm ">CONTACT US</Button></Link
             >
             <Link
                 :href="route('login')"
                 class="text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class="border-2  p-2 text-sm border-red-600 md:font-extrabold text-red-600 ">Employee Login </Button></Link
+                ><Button class="border-2  rounded-full p-2 text-xs md:text-sm border-red-600 md:font-extrabold text-red-600 ">Employee Login </Button></Link
             >
           
     
@@ -63,39 +63,51 @@ defineProps({
 
 
     <div>
-        <img src="../../../images/sectors.png" class="w-full" data-aos="fade" data-aos-duration="3000"
+        <img src="../../../images/sectors.png" class="w-full" 
     </div>
-    <div class="px-5 md:px-20 py-10">
-        <section class="pb-10" data-aos="fade-left" data-aos-duration="1500">
-            <h1 class="text-medium md:text-xl font-bold py-2 text-red-600">Consumer Goods Service Sector</h1>
-            <p class="text-sm">
+    <h1 class="text-2xl md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 "><span class="font-extrabold pr-1">OUR </span>SECTORS</h1>
+
+    <div class="px-5 md:px-20 pb-10">
+        <section class="pb-10 flex flex-col md:flex-row items-center" >
+            <div class="md:w-1/3">
+                <img src="../../../images/consumer-goods.png" class="w-40 md:w-full">
+            </div>
+            <div class="md:w-2/3">
+                <h1 class="text-medium md:text-xl font-semibold py-2 text-red-600">Consumer Goods Service Sector</h1>
+            <p class="text-xs md:text-sm">
                 QSS offers a range of services across 2 broad categories of Consumer Goods namely,<br/>
 1.  Consumer Non Durables - <strong>F</strong>ast <strong>M</strong>oving <strong>C</strong>onsumer <strong>G</strong>oods (FMCG)<br/>
 2.  Soft Goods <br/>
 Our Consumer Non Durables team has the expertise to provide quality and quantity services for Edible Items (perishable items such as frozen fruits & vegetables, meat, sea food & processed food items) and Water.
             </p>
+            </div>
+            
         </section>
-        <section class="pb-10" data-aos="fade-left" data-aos-duration="1500">
+        <section class="pb-10 flex flex-col md:flex-row items-center" >
+            <div class="md:w-1/3">
+                <img src="../../../images/agriculture-products.png" class="w-40 md:w-full pr-10">
+            </div>
+            <div class="md:w-2/3">
             <h1 class="text-medium md:text-xl font-bold py-2 text-red-600">Agriculture Produce & Products </h1>
-            <p class="text-sm">
+            <p class="text-xs md:text-sm">
                 QSS provides a range of services including procurement supervision, weight control, systematic sampling, process monitoring, laboratory services, commissioning supervision, material balancing, various surveys (insurance, draught, break bulk), cleanliness inspection, loading/discharge supervision, photographic evidence, damage surveys, plant monitoring, warehouse management, and quality management auditing. They issue quality and quantity certificates for products such as animal feeds, food grains, oilseeds, spices, oils, and fats.
 </p>
             <ul class="list-disc">
                 <li>
-                    <h3 class="text-sm md:text-md font-bold py-2 text-gray-600">
+                    <h3 class="text-xs md:text-sm md:text-md font-bold py-2 text-gray-600">
                         Animal Feeds: Soybean meal, rapeseed meal, cotton seed cake, castor seed meal, guar korma, etc.
                     </h3>
-                    <p class="text-sm">
+                    <p class="text-xs md:text-sm">
                         Tests: Moisture, protein, sand/silica, oil, fiber, urease activity, self-heating test.
                     </p>
 
                 </li>
                 <li>
-                    <h3 class="text-sm md:text-md font-bold py-2 text-gray-600">
+                    <h3 class="text-xs md:text-sm md:text-md font-bold py-2 text-gray-600">
                         Agricultural Products:
                     </h3>
-<p class="text-sm">
-    <ul class="list-disc px-5 text-sm">
+<p class="text-xs md:text-sm">
+    <ul class="list-disc px-5 text-xs md:text-sm">
     <li>Food grains: Chickpeas, wheat, rice, jowar, bajra, maize, etc.
     </li>
     <li>Oilseeds: Sesame, groundnut, soya, sunflower, castor, etc.
@@ -118,11 +130,15 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
                 </li>
 
             </ul>
-
+        </div>
         </section>
-        <section class="pb-10" data-aos="fade-left" data-aos-duration="1500">
+        <section class="pb-10 flex flex-col md:flex-row items-center" >
+            <div class="md:w-1/3">
+                <img src="../../../images/engineer.png" class="w-40 md:w-full">
+            </div>
+            <div class="md:w-2/3">
             <h1 class="text-medium md:text-xl font-bold py-2 text-red-600">Engineering Service Sector</h1>
-            <div class="text-sm">
+            <div class="text-xs md:text-sm">
                 <p><span class="px-2">Our Engineering Division Services cover all types of inspection activities in various sectors namely <b>General Engineering Industry, Telecom Industry, Foundries, Power &amp; Energy Sector, Electrical and Electronic Industries, Generation, Transmission and Distribution, Cement Industry, Automobile Industry, Material Handling equipments, Oil &amp; Gas Sector, etc. </b></span></p><br/>
 <span class="px-2">Some of the specific services are listed below:</span>
 <ul>
@@ -147,10 +163,15 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
     </li>
 </ul>
 </div>
+</div>
         </section>
-        <section class="pb-10" data-aos="fade-left" data-aos-duration="1500">
+        <section class="pb-10 flex flex-col md:flex-row items-center" >
+            <div class="md:w-1/3">
+                <img src="../../../images/hydrocarbon.png" class="w-40 md:w-full md:p-10">
+            </div>
+            <div class="md:w-2/3">
             <h1 class="text-medium md:text-xl font-bold py-2 text-red-600">Hydrocarbons Service Sector</h1>
-            <div class="text-sm">
+            <div class="text-xs md:text-sm">
                 <p><span class="px-2">Today&rsquo;s Oil &amp; Gas Sector is continuously evolving with the ever-increasing demand due to voracious consumption patterns. The global crude oil production is characteristically on the decline. Hardly any confidence is being generated considering the conservative figures reflected on the existing deposits front. Keeping this in mind and the surging demand, the existing reserves need to be utilized prudently and with utmost safety.</span></p>
 <p><span class="px-2">We at QSS provide a wide range of inspection services provided to ascertain Quality, and safety to reduce risks across the various stages of supply and demand across the Oil &amp; Gas sector through a team of highly trained technical experts.</span></p>
 <p><span class="px-2">Our scopes have included:</span></p>
@@ -161,18 +182,28 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
     <li>4. <span class="px-2">Technical Safety audit of Cross Country Hydrocarbon Pipeline &amp;                     its utilities.</span></li>
     <li>5. <span class="px-2">Technical Safety audit of City Gas distribution network including                     CNG stations -Domestic, Commercial &amp; Industrial Consumers of                     Natural Gas.</span></li>
 </ul></div>
+</div>
         </section>
-        <section class="pb-10" data-aos="fade-left" data-aos-duration="1500">
+        <section class="pb-10 flex flex-col md:flex-row items-center" >
+            <div class="md:w-1/3">
+                <img src="../../../images/microscope.png" class="w-40 md:w-full md:p-10">
+            </div>
+            <div class="md:w-2/3">
             <h1 class="text-medium md:text-xl font-bold py-2 text-red-600">Laboratories Service Sector</h1>
-            <div class="text-sm">
+            <div class="text-xs md:text-sm">
                 <p><span class="px-2">QSS laboratories offer the much-needed <b>independent</b> and <b>impartial</b> assistance to your business in the form of most reliable and accurate analytical results with a rapid turn around. Our laboratories undertake product evaluation to ascertain the product conformity to the specifications and standards as required by the local and international norms across the various stages such as exploration, prospecting, processing and delivery through shipment.</span></p>
 <p><span class="px-2">We offer a range of testing services through a team of appropriately and highly experienced professionals who are adept with time-tested classical analysis and the modern instrumental methods.</span></p>
 <p><span class="px-2">All our laboratories are governed by the QSS quality system based as per <b>ISO/IEC 17025:2005</b>.The main laboratories testing&nbsp; Minerals &amp; Ores are approved and accredited by <b>NABL</b> and <b>EIC</b>.</span></p>
  </div>
+ </div>
         </section>
-        <section class="pb-10" data-aos="fade-left" data-aos-duration="1500">
+        <section class="pb-10 flex flex-col md:flex-row items-center" >
+            <div class="md:w-1/3">
+                <img src="../../../images/coal.svg" class="w-40 md:w-full md:p-20">
+            </div>
+            <div class="md:w-2/3">
             <h1 class="text-medium md:text-xl font-bold py-2 text-red-600">Metals, Minerals, Ores & Chemicals Service Sector</h1>
-            <div class="text-sm">
+            <div class="text-xs md:text-sm">
                 <p><span class="px-2">QSS provides a wide range of services to the Metals, Minerals, Ores and Chemicals sectors.</span></p>
 <p><span class="px-2">We offer <b>Inspection</b>, <b>Supervision</b>, <b>Sampling</b>, <b>Testing</b> services as required for</span></p>
 <ul>
@@ -202,6 +233,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
     <li>13. <span class="px-2">Provision of Photographic Evidence across various stages as required.</span></li>
 </ul>
 <span class="px-2">Over the last few years QSS has emerged as one of the leading independent third party surveyors in the mineral sector both locally and internationally.</span>
+</div>
 </div>
         </section>
     </div>
