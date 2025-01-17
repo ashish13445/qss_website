@@ -160,7 +160,7 @@ const getUserName = async (id) => {
   <AuthenticatedLayout>
     <div class="py-12" >
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
+        <div class="bg-white dark:bg-gray-800 dark:text-white  overflow-hidden shadow-sm sm:rounded-lg p-5">
           
           <div class="flex flex-col">
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -212,7 +212,7 @@ const getUserName = async (id) => {
 
     <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
+        <div class="bg-white dark:bg-gray-800 dark:text-white  overflow-hidden shadow-sm sm:rounded-lg p-5">
           <div class="md:flex">
             <PrimaryButton v-tooltip="'request a privelege leave'" @click="()=>openAddLeaveModal('PL')" class="m-3 md:mr-4" :disabled="$page.props.auth.user.paid_leaves<1">
               <i class="material-icons mx-1">add</i>

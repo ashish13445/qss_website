@@ -35,7 +35,7 @@
   </div>
       </NavBar2>
       
-      <div class="md:mt-20 ">
+      <div class="md:mt-20 dark:bg-black">
 
         <div id="map" class="" style="height: 400px;z-index: 0;"></div>
        </div> 
@@ -43,7 +43,7 @@
     </div>
  
     <div class="p-5 md:flex justify-between w-full">
-    <Fieldset class="md:w-1/3 " toggleable="true">
+    <Fieldset class="md:w-1/3 m-2 dark:bg-black dark:text-white" toggleable="true">
     <template #legend>
         <div class="flex items-center gap-2 px-2">
             <i class="material-icons text-red-600">apartment</i>
@@ -53,7 +53,7 @@
     <p class="m-0">
         Flat-8, Wing-A, 3rd Floor, Moiz Apartment, 12th Tps Road, Santacruz (East), Mumbai 400 055, Maharashtra, India</p>
 </Fieldset>
-<Fieldset class="md:w-1/3" toggleable="true">
+<Fieldset class="md:w-1/3 m-2 dark:bg-black dark:text-white" toggleable="true">
     <template #legend>
         <div class="flex items-center gap-2 px-2">
             <i class="material-icons text-blue-600">science</i>
@@ -63,7 +63,7 @@
     <p class="m-0">
         Vigyan Vihar Colony, Near Airport, Barwadda, Dhanbad, Jharkhand - 826 004. </p>
 </Fieldset>
-<Fieldset class="md:w-1/3" toggleable="true">
+<Fieldset class="md:w-1/3 m-2 dark:bg-black dark:text-white" toggleable="true">
     <template #legend>
         <div class="flex items-center gap-2 px-2">
             <i class="material-icons text-green-600 ">support_agent</i>
@@ -74,9 +74,10 @@
         2nd Floor, 13 Charotar Society, Opp. New Alka Restaurant, Manisha Char Rasta, Old Padra Road, Baroda, Gujarat – 390 020.</p>
 </Fieldset>
  </div>
+ <div class="dark:bg-black dark:text-white">
  <h1 class="text-4xl md:text-5xl font-medium flex justify-center pt-20 "><span class="font-extrabold pr-1">CONTACT </span>US</h1>
 
-<div class="py-10  md:flex  w-full items-center">
+<div class="py-10  md:flex  w-full items-center dark:bg-black dark:text-white">
   
     <div class="w-full flex flex-col justify-center items-start  h-content  gap-4 p-10 md:px-20 ">
 
@@ -136,7 +137,7 @@
 </div>
 
     </div></div>
-
+</div>
  <Footer/>
 </template>
 

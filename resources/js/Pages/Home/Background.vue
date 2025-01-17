@@ -99,11 +99,11 @@ defineProps({
     </div>
   </div>
       </nav-bar> -->
-      <div class="bg-white  font-medium ">
+      <div class="bg-white dark:bg-black dark:text-white font-medium ">
         <div>
             <img src="../../../images/background.png" class="w-full" data-aos="fade" data-aos-duration="3000" >
         </div>
-        <h1 class="text-2xl md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 "><span class="font-extrabold pr-2">OUR</span>BACKGROUND</h1>
+        <h1 class="text-2xl md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 dark:text-black "><span class="font-extrabold pr-2">OUR</span>BACKGROUND</h1>
 
         <p class="px-10 md:px-20 py-10 text-xs md:text-sm">QSS has been established by like - minded, former Senior Executives, Directors and Professionals of one of the worlds leading multinational Inspection Company. This highly experienced core team with rich, multifaceted, local and international experience of several decades in various sectors, got together to create QSS with the sole intention of facilitating high quality international and local trade - creating confidence between sellers and buyers.<br/><br/>
 

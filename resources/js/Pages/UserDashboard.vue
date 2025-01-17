@@ -367,8 +367,8 @@ const closeSearchModal = ()=>{
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <h3 class=" p-4 text-gray-400 font-extrabold text-2xl">Time & Attendance</h3>
+                <div class="bg-white dark:bg-gray-800 dark:text-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <h3 class=" p-4 text-gray-400 dark:text-white font-extrabold text-2xl">Time & Attendance</h3>
                     <div class="lg:flex p-4">
                         <div v-if="timerRunning" class="p-4 text-blue-800 font-bold mr-4 lg:w-1/4 my-auto">
                             <span class="text-blue-600 font-extrabold text-6xl">{{ formatTime(timer) }}</span>
@@ -379,9 +379,9 @@ const closeSearchModal = ()=>{
                             <p class="text-small text-gray-400">Time spent</p>
                         </div>
                         <div class="mr-4 lg:w-1/4 my-auto">
-                            <div class="p-4 bg-blue-100 rounded font-bold">
+                            <div class="p-4 bg-blue-100 dark:bg-black rounded font-bold">
                             <span class="text-blue-600 text-xl font-bold">{{ log_in_time }}</span>
-                            <p class="text-small text-gray-400 ">Clock In Time</p>
+                            <p class="text-small text-gray-400 dark:text-white ">Clock In Time</p>
                         </div>
                     </div>
                         <div class="lg:w-1/2">
@@ -397,7 +397,7 @@ const closeSearchModal = ()=>{
         </div>
         <div class="py-6">
             <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
+                <div class="bg-white dark:bg-gray-800 dark:text-white overflow-hidden shadow-sm sm:rounded-lg p-5">
                     <Birthday/>
                 </div>
             </div>

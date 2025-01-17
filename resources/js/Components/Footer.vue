@@ -1,5 +1,5 @@
 <template>
-    <div class=" md:flex justify-between   text-gray-700 h-68  px-2 py-5 bg-gray-100 md:px-20 ">
+    <div class=" md:flex justify-between   text-gray-700 h-68  px-2 py-5 bg-gray-100 dark:bg-gray-400  md:px-20 ">
         <div class="flex flex-col items-center md:w-1/3 justify-center">
             <ApplicationLogo class="pl-5 text-center" />
             <p class="md:w-80 text-center text-xs md:text-lg p-5">
@@ -30,7 +30,7 @@
     </div>
 
     </div>
-    <div class=" flex justify-center w-full p-1 md:px-40   bg-gray-200">
+    <div class=" flex justify-center w-full p-1 md:px-40   bg-gray-200 dark:bg-black dark:text-white">
         <div class="text-center">Copyright &copy 2024</div>
         
     </div>

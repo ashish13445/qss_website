@@ -9,7 +9,7 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
-
+import DarkModeToggle from '@/Components/DarkModeToggle.vue';
 const notifications = ref([]);
 const count = ref(0);
 const showingNavigationDropdown = ref(false);
@@ -56,8 +56,8 @@ onUnmounted(stopPolling);
 <template>
     
     <div>
-        <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100 ">
+        <div class="min-h-screen bg-gray-100 dark:bg-black dark:text-white">
+            <nav class="bg-white dark:bg-black dark:text-white border-b border-gray-100 ">
 
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -66,7 +66,7 @@ onUnmounted(stopPolling);
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
                                     <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800"
+                                        class="block h-9 w-auto fill-current text-gray-800 dark:text-white"
                                     />
                                 </Link>
                             </div>
@@ -89,8 +89,12 @@ onUnmounted(stopPolling);
                                 </NavLink>    
                                 <NavLink :href="route('salary')" :active="route().current('salary')">
                                     <span><i class="material-icons mr-2 text-purple-600">money</i></span> Salary
-                                </NavLink>                        
+                                </NavLink> 
+                                <DarkModeToggle/>
+
+                    
                             </div>
+
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -101,7 +105,7 @@ onUnmounted(stopPolling);
                                         <span class="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                                 @click="fetchNotifications"
                                                 >
                                             <svg height="30px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M381.7,225.9c0-97.6-52.5-130.8-101.6-138.2c0-0.5,0.1-1,0.1-1.6c0-12.3-10.9-22.1-24.2-22.1c-13.3,0-23.8,9.8-23.8,22.1   c0,0.6,0,1.1,0.1,1.6c-49.2,7.5-102,40.8-102,138.4c0,113.8-28.3,126-66.3,158h384C410.2,352,381.7,339.7,381.7,225.9z"/><path d="M256.2,448c26.8,0,48.8-19.9,51.7-43H204.5C207.3,428.1,229.4,448,256.2,448z"/></g></svg>
@@ -217,6 +221,8 @@ onUnmounted(stopPolling);
                         <ResponsiveNavLink :href="route('holidays')" :active="route().current('holidays')">
                             Holidays
                         </ResponsiveNavLink>
+                        <DarkModeToggle/>
+
                     </div>
 
                     <div class="pt-4 pb-1 border-t border-gray-200">
@@ -237,7 +243,7 @@ onUnmounted(stopPolling);
                 </div>
             </nav>
 
-            <header class="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ... text-white" v-if="$slots.header">
+            <header class="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ... text-white dark:bg-gradient-to-r dark:from-indigo-900 dark:from-10% dark:via-sky-900 dark:via-30% dark:to-emerald-900 dark:to-90%" v-if="$slots.header">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>

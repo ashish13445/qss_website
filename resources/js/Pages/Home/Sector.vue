@@ -59,13 +59,13 @@ defineProps({
   </div>
       </NavBar2>
       <div class="bg-tint-primary h-content  md:mt-0 tracking-wider	">
-<div class="bg-white">
+<div class="bg-white dark:bg-black dark:text-white">
 
 
     <div>
         <img src="../../../images/sectors.png" class="w-full" 
     </div>
-    <h1 class="text-2xl md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 "><span class="font-extrabold pr-1">OUR </span>SECTORS</h1>
+    <h1 class="text-2xl md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 dark:text-black"><span class="font-extrabold pr-1">OUR </span>SECTORS</h1>
 
     <div class="px-5 md:px-20 pb-10">
         <section class="pb-10 flex flex-col md:flex-row items-center" >

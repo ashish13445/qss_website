@@ -65,12 +65,12 @@ defineProps({
     </div>
   </div>
       </NavBar2>
-<div class="w-full md:tracking-wider	">
+<div class="w-full md:tracking-wider ">
 
-        <div class=" flex justify-evenly   w-full">
+        <div class=" flex justify-evenly   w-full ">
           
           <section class="relative ">
-<img class="h-full object-cover opacity-50" src="../../../../public/images/grain.png" >
+<img class="h-full object-cover opacity-50 " src="../../../../public/images/grain.png" >
           </section>
 
             <section class="absolute font-medium text-sm md:text-medium    md:p-5">
