@@ -155,11 +155,11 @@ meticulous and efficient services and systems network in various sectors such as
    QSSPL presence in the global arena is ensured through our International Association.
       </p>
       <div class="flex justify-center relative">
-        <div class="p-5 flex flex-col items-center">
+        <div class="md:p-5 flex flex-col items-center">
           <img src="/images/25.png" class="w-40 h-40 md:w-60 md:h-60 ">
           <p class="text-lg w-48 text-center">Experience of Delivering Quality & Third Party Inspections</p>
         </div>
-        <div class="p-5 flex flex-col items-center">
+        <div class="md:p-5 flex flex-col items-center">
           <img src="/images/9.png" class="w-40 h-40 md:w-60 md:h-60 ">
           <p class="text-lg w-48 text-center">
             Experience in Coal Quality Sampling and Analysis
