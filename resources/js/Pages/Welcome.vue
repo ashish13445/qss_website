@@ -56,11 +56,11 @@
           />
           
           <div 
-            class="text-center absolute inset-0 flex flex-col items-center justify-center text-white   bg-black bg-opacity-25 px-5 md:px-40" data-aos="fade-up" data-aos-duration="1500"
+            class="text-center absolute inset-0 flex flex-col items-center justify-center text-white   bg-black bg-opacity-25 px-5 md:px-40" 
           >
-          <h1 class="text-2xl md:text-6xl font-black md:pb-5">QUALITY IS OUR BUSINESS</h1>
-            <p class="text-sm md:text-2xl md:px-20">{{ slotProps.item.title }}</p>
-            <div class="m-5">
+          <h1 class="hidden md:block text-2xl md:text-6xl font-black md:pb-5 " data-aos="fade-up" data-aos-duration="1500">QUALITY IS OUR BUSINESS</h1>
+            <p class="hidden md:block text-sm md:text-2xl md:px-20" data-aos="fade-up" data-aos-duration="1500">{{ slotProps.item.title }}</p>
+            <div class="m-5 hidden md:block">
               <Link
                 :href="route('sector')"
                 class="font-semibold  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500 m-2"
@@ -96,7 +96,7 @@
     <div class='grid grid-rows-2 xl:grid-rows-1 grid-flow-col gap-3 xl:gap-28 tracking-wide p-5' >
   
 
-    <div class='h-72 sm:h-96 relative  flex flex-col items-center border-4 border-orange-500 hover:bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl hover:text-white'>
+    <div class='h-72 sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl hover:text-white'>
             <img class='absolute w-40 md:w-60 -top-16 md:-top-28  ' src="/images/consumer-goods.png" width={200} height={200} alt="consulting"/>
             <h2 class='text-md md:text-xl font-extrabold pt-14 md:pt-20 px-5 text-center'>Consumer Goods</h2>
             <p class='px-5 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2'>
@@ -105,7 +105,7 @@
 2. Soft Goods
 Our Consumer Non Durables team has the expertise to provide quality and quantity services for Edible Items (perishable items such as frozen fruits & vegetables, meat, sea food & processed food items) and Water.            </p>
         </div>
-        <div class='mt-5 md:mt-0 h-72 sm:h-96 relative  flex flex-col items-center border-4 border-orange-500 hover:bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl  hover:text-white'>
+        <div class='mt-5 md:mt-0 h-72 sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
           <img class='absolute w-32 md:w-60 -top-16 md:-top-36 mr-5' src="/images/agriculture-products.png" width={200} height={200} alt="marketing"/>
             <h2 class='text-md md:text-xl font-extrabold pt-14 md:pt-20  px-5 text-center'>Agriculture Produce & Products</h2>
             <p class='px-5 md:px-10 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2'>
@@ -117,7 +117,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
             </p>
         </div>
         
-        <div class='h-72  sm:h-96 relative  flex flex-col items-center border-4 border-orange-500 hover:bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl  hover:text-white'>
+        <div class='h-72  sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
           <img class='absolute w-32 md:w-60 -top-16 md:-top-32 ' src="/images/engineer.png" width={200} height={200} alt="staffing"/>
             <h2 class='text-md md:text-xl font-extrabold pt-14 md:pt-20  px-5 text-center'>Engineering </h2>
             <p class='px-5 md:px-10 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
@@ -135,7 +135,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
       <Link
                 :href="route('sector')"
                 class="  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500 m-2"
-                ><Button class="px-5 py-3  md:px-10 md:py-5 bg-gradient-to-r from-orange-500 to-red-500 rounded-full border-orange-400 text-medium border-2 hover:border-orange-400 hover:bg-transparent">Check out more </Button></Link
+                ><Button class="px-5 py-3  md:px-10 md:py-5 bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-full border-orange-400 text-medium border-2 hover:border-orange-400 hover:bg-transparent">Check out more </Button></Link
             >    </div>
 
     </div>
