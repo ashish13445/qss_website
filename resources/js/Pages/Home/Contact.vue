@@ -4,7 +4,7 @@
     <div class="bg-tint-primary h-content">
       <NavBar2 class="">
         <div class="flex align-items-center gap-2">
-    
+    <DarkModeToggle/>
     <div class="">
         <div v-if="canLogin" class="p-2">
         <Link
@@ -17,7 +17,7 @@
         <template v-else>
             <Link
                 :href="route('contact')"
-                class=" text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
+                class=" text-black dark:text-white hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
                 ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
             >
             <Link
@@ -42,8 +42,8 @@
        
     </div>
  
-    <div class="p-5 md:flex justify-between w-full">
-    <Fieldset class="md:w-1/3 m-2 dark:bg-black dark:text-white" toggleable="true">
+    <div class="p-5 md:flex justify-between w-full dark:bg-black">
+    <Fieldset class="md:w-1/3 m-2 dark:bg-black dark:text-white border-2" toggleable="true">
     <template #legend>
         <div class="flex items-center gap-2 px-2">
             <i class="material-icons text-red-600">apartment</i>
@@ -53,7 +53,7 @@
     <p class="m-0">
         Flat-8, Wing-A, 3rd Floor, Moiz Apartment, 12th Tps Road, Santacruz (East), Mumbai 400 055, Maharashtra, India</p>
 </Fieldset>
-<Fieldset class="md:w-1/3 m-2 dark:bg-black dark:text-white" toggleable="true">
+<Fieldset class="md:w-1/3 m-2 dark:bg-black dark:text-white border-2" toggleable="true">
     <template #legend>
         <div class="flex items-center gap-2 px-2">
             <i class="material-icons text-blue-600">science</i>
@@ -63,7 +63,7 @@
     <p class="m-0">
         Vigyan Vihar Colony, Near Airport, Barwadda, Dhanbad, Jharkhand - 826 004. </p>
 </Fieldset>
-<Fieldset class="md:w-1/3 m-2 dark:bg-black dark:text-white" toggleable="true">
+<Fieldset class="md:w-1/3 m-2 dark:bg-black dark:text-white border-2" toggleable="true">
     <template #legend>
         <div class="flex items-center gap-2 px-2">
             <i class="material-icons text-green-600 ">support_agent</i>
@@ -117,7 +117,7 @@
       <img src="/images/contact-us.png" class="w-auto h-96 hidden md:block">
 
      <div class="w-full   md:m-20 p-10 md:p-0 flex flex-col items-center ">
-        <div class="bg-orange-100  p-5 rounded font-medium m-2 w-full">
+        <div class="bg-orange-100 dark:bg-black p-5 rounded font-medium m-2 w-full">
             <a href="tel:+918591924990">
             <span><i class="pi pi-phone pr-2"></i>8591924990</span>
             
@@ -178,6 +178,7 @@ defineProps({
 
 import { onMounted } from 'vue';
 import {ref} from 'vue';
+import DarkModeToggle from '@/Components/DarkModeToggle.vue';
 // Define Leaflet map as a ref
 const map = ref(null);
 onMounted(() => {

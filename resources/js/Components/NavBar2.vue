@@ -1,19 +1,44 @@
 <script setup>
-import {  Link } from '@inertiajs/vue3';
-
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { Link } from '@inertiajs/vue3';
 
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import NavLink from '@/Components/NavLink.vue';
-import { ref } from 'vue';
 
-  const isMobileMenuOpen = ref(false);
+const isMobileMenuOpen = ref(false);
 
-  const toggleMobileMenu = () => {
-    isMobileMenuOpen.value = !isMobileMenuOpen.value;
-  };
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+};
 
+// Close mobile menu on click outside
+const closeMobileMenu = (event) => {
+  const menu = document.querySelector('.mobile-menu');
+  const button = document.querySelector('.menu-button');
+  if (
+
+    isMobileMenuOpen.value &&
+    menu &&
+    !menu.contains(event.target) &&
+    !button.contains(event.target)
+  ) {
+    isMobileMenuOpen.value = false;
+  console.log('clicked');
+
+  }
+};
+
+onMounted(() => {
+  document.addEventListener('click', closeMobileMenu);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', closeMobileMenu);
+});
 </script>
+
+
 <template>
 
 <nav class=" md:fixed  md:z-10 md:top-0 md:w-full subpixel-antialiased tracking-wide	">
@@ -53,26 +78,26 @@ import { ref } from 'vue';
           <ApplicationLogo />
         </div>
         <!-- Mobile Menu Button -->
-        <button @click="toggleMobileMenu" type="button" class="inline-flex justify-center items-center w-10 h-10 text-black dark:text-white hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+        <button ref="menuButton" @click="toggleMobileMenu" type="button" class=" inline-flex justify-center items-center w-10 h-10 text-black dark:text-white hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
           <!-- Icon -->
           <svg v-if="!isMobileMenuOpen" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
-          <svg v-else class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg v-else class="w-8 h-8 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
       <!-- Mobile Menu -->
-      <transition name="slide-fade">
+      <transition name="fade">
         <div v-if="isMobileMenuOpen" class="flex justify-end ">
-          <div class="px-2 py-3 relative top-5 z-50 bg-white dark:bg-gray-800 flex flex-col w-1/2 ">
+          <div class="mobile-menu  relative top-5 z-50 bg-white dark:bg-gray-800 rounded-lg flex flex-col w-1/2 " data-aos="fade-left"  data-aos-duration="5000">
             <!-- Nav Links -->
-            <Link class="py-2 mx-5 focus:text-red-600 " :href="route('home')" :active="route().current('home')"><i class="material-icons text-red-600">home</i></Link>
-            <Link class="py-2 mx-5 focus:text-red-600 " :href="route('about')" :active="route().current('about')">ABOUT US</Link>
-            <Link class="py-2 mx-5 focus:text-red-600 " :href="route('sector')" :active="route().current('sector')">OUR SECTORS</Link>
-            <Link class="py-2 mx-5 focus:text-red-600 " :href="route('background')" :active="route().current('background')">OUR BACKGROUND</Link>
-            <Link class="py-2 mx-5 focus:text-red-600 " :href="route('certificates')" :active="route().current('certificates')">CERTIFICATES</Link>
+            <Link class=" px-2 py-2 focus:bg-orange-400  " :href="route('home')" :active="route().current('home')"><i class="material-icons text-red-600">home</i></Link>
+            <Link class="focus:bg-orange-400 py-2 px-2" :href="route('about')" :active="route().current('about')">ABOUT US</Link>
+            <Link class="focus:bg-orange-400 py-2 px-2" :href="route('sector')" :active="route().current('sector')">OUR SECTORS</Link>
+            <Link class="focus:bg-orange-400 py-2 px-2" :href="route('background')" :active="route().current('background')">OUR BACKGROUND</Link>
+            <Link class="focus:bg-orange-400 py-2 px-2" :href="route('certificates')" :active="route().current('certificates')">CERTIFICATES</Link>
             <div class="font-bold px-1"><slot/></div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import NavBar2 from '@/Components/NavBar2.vue';
 
 import Knob from 'primevue/knob';
 import Button from 'primevue/button';
+import DarkModeToggle from '@/Components/DarkModeToggle.vue';
 const value = ref(25);
 const value2 = ref(9);
 
@@ -34,9 +35,9 @@ defineProps({
     
       <NavBar2 class="">
         <div class="flex align-items-center gap-2">
-    
-    <div class="">
+          <DarkModeToggle/>
 
+    <div class="">
         <div v-if="canLogin" class="p-2">
         <Link
             v-if="$page.props.auth.user"
@@ -48,13 +49,13 @@ defineProps({
         <template v-else>
           <Link
                 :href="route('contact')"
-                class=" text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
+                class=" text-black dark:text-white hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
                 ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
             >
             <Link
                 :href="route('login')"
                 class="font-semibold  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                ><Button class="border-2 p-2 text-sm rounded-full  border-red-600 text-red-600 md:font-extrabold">Employee Login </Button></Link
+                ><Button class="border-2 p-2 text-sm rounded-full  border-red-600 text-red-600 md:font-extrabold">Login </Button></Link
             >
           
     

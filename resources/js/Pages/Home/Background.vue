@@ -4,6 +4,7 @@ import NavBar2 from '@/Components/NavBar2.vue';
 
 import Button from 'primevue/button';
 import Footer from '@/Components/Footer.vue';
+import DarkModeToggle from '@/Components/DarkModeToggle.vue';
 
 defineProps({
     canLogin: {
@@ -28,7 +29,7 @@ defineProps({
     
         <NavBar2>
             <div class="flex align-items-center gap-2">
-    
+    <DarkModeToggle/>
     <div class="">
 
         <div v-if="canLogin" class="p-2">
@@ -43,7 +44,7 @@ defineProps({
             
             <Link
                 :href="route('contact')"
-                class=" text-black  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
+                class=" text-black  dark:text-white hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
                 ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
             >
             <Link

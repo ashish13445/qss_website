@@ -96,7 +96,7 @@
     <div class='grid grid-rows-2 xl:grid-rows-1 grid-flow-col gap-3 xl:gap-28 tracking-wide p-5' >
   
 
-    <div class='h-72 sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl hover:text-white'>
+    <div class='select-none h-72 sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl hover:text-white'>
             <img class='absolute w-40 md:w-60 -top-16 md:-top-28  ' src="/images/consumer-goods.png" width={200} height={200} alt="consulting"/>
             <h2 class='text-md md:text-xl font-extrabold pt-14 md:pt-20 px-5 text-center'>Consumer Goods</h2>
             <p class='px-5 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2'>
@@ -105,7 +105,7 @@
 2. Soft Goods
 Our Consumer Non Durables team has the expertise to provide quality and quantity services for Edible Items (perishable items such as frozen fruits & vegetables, meat, sea food & processed food items) and Water.            </p>
         </div>
-        <div class='mt-5 md:mt-0 h-72 sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
+        <div class=' select-none mt-5 md:mt-0 h-72 sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
           <img class='absolute w-32 md:w-60 -top-16 md:-top-36 mr-5' src="/images/agriculture-products.png" width={200} height={200} alt="marketing"/>
             <h2 class='text-md md:text-xl font-extrabold pt-14 md:pt-20  px-5 text-center'>Agriculture Produce & Products</h2>
             <p class='px-5 md:px-10 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2'>
@@ -117,7 +117,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
             </p>
         </div>
         
-        <div class='h-72  sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
+        <div class=' select-none h-72  sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
           <img class='absolute w-32 md:w-60 -top-16 md:-top-32 ' src="/images/engineer.png" width={200} height={200} alt="staffing"/>
             <h2 class='text-md md:text-xl font-extrabold pt-14 md:pt-20  px-5 text-center'>Engineering </h2>
             <p class='px-5 md:px-10 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
@@ -139,7 +139,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
             >    </div>
 
     </div>
-    <div class="bg-white dark:bg-black text-black dark:text-white relative h-content xl:h-screen p-2  border-2 rounded-lg">
+    <div class="bg-white dark:bg-black text-black dark:text-white relative h-content  p-2  border-2 rounded-lg">
   <!-- Background Image -->
   <img src="/images/coal_in_bag.jpg" 
        class="absolute inset-0 w-full h-full opacity-30 object-cover rounded-lg" 
@@ -170,17 +170,31 @@ meticulous and efficient services and systems network in various sectors such as
       </div>
     </div>
 
-<div class="h-content bg-white dark:bg-black md:px-40 md:py-20 py-0">
-  <h1 class="text-black dark:text-white text-center  font-medium text-2xl md:text-5xl  px-10  " > <span class="font-extrabold">OUR</span> CLIENTS</h1>
-  <div class="md:py-10 ">
-    <div  class="md:border-2 border-gray-300 p-5 grid md:grid-cols-4 grid-cols-3 gap-2 dark:bg-gray-100 ">
-      
-  <div class="flex  justify-center" v-for="client in clients"><img class="md:opacity-80 hover:opacity-100 h-12 md:h-24 w-auto dark:grayscale dark:hover:grayscale-0 transition-all" :src="`../../images/clients/${client.image}`" ></div>
-</div>
+<div class="h-content bg-white dark:bg-black md:px-48 py-0 pt-10">
+  <h1 class="text-black dark:text-white text-center font-medium text-2xl md:text-5xl px-10 ">
+    <span class="font-extrabold">OUR</span> CLIENTS
+  </h1>
+  <div class="md:py-10 py-5 px-5">
+    <div
+      class="border-2 border-gray-300 dark:border-gray-700  grid md:grid-cols-5 grid-cols-3 dark:bg-black"
+    >
+      <div
+        class="flex justify-center border border-gray-300 dark:border-gray-700 p-2"
+        v-for="client in clients"
+        :key="client.id"
+      >
+        <img
+          class="md:opacity-80 hover:opacity-100 h-12 md:h-24 w-auto dark:grayscale dark:invert dark:hover:grayscale-0 dark:hover:invert-0 transition-all"
+          :src="`../../images/clients/${client.image}`"
+          alt="Client logo"
+        />
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="h-content p-10 bg-gray-200 ">
+
+<div class="h-content p-10 bg-gray-200 dark:bg-black dark:text-white">
   <h1 class="text-2xl md:text-5xl font-medium flex justify-center  md:p-10"><span class="font-extrabold pr-1">WHY </span> QSSPL ?</h1>
 
   <div class="md:flex ">
@@ -357,18 +371,18 @@ const responsiveOptions = ref([
         numVisible: 1
     }
 ]);
-const clients = [{image:'coal_india.webp'},
+const clients = [{image:'coal_india.png'},
 
 // {image:'hpgcl.png'},
-{image: 'mahagenco.webp'},
-{image: 'mp_power.webp'},
-{image: 'npl.webp'},
-{image: 'ntpc.webp'},
+{image: 'mahagenco.png'},
+{image: 'mp_power.png'},
+{image: 'npl.png'},
+{image: 'ntpc.png'},
 // {image: 'qci.png'},
-{image: 'rpcl.webp'},
-{image: 'UPRVUNL.webp'},
-{image: 'vedanta.webp'},
-{image: 'aditya_birla.webp'},
+{image: 'rpcl.png'},
+{image: 'UPRVUNL.png'},
+{image: 'vedanta.png'},
+{image: 'aditya_birla.png'},
 {image: 'HPSIBL.png'},
 {image: 'HITACHI.png'},
 {image: 'BSES_YAMUNA.png'},
@@ -385,13 +399,13 @@ const clients = [{image:'coal_india.webp'},
 {image: 'RRVUNL.png'},
 
 ];
-const certificates = [{image:'nabl-image.webp'},
+const certificates = [{image:'nabl-image.png'},
 
 // {image:'hpgcl.png'},
-{image: 'nabcb-image.webp'},
-{image: 'iso-9001-mumbai-image.webp'},
-{image: 'pngrb-image.webp'},
-{image: 'msme-qspl-image.webp'},
+{image: 'nabcb-image.png'},
+{image: 'iso-9001-mumbai-image.png'},
+{image: 'pngrb-image.png'},
+{image: 'msme-qspl-image.png'},
 {image: 'Udham_registration_QSSPL.png'},
 {image: 'HSIBL.png'},
 {image: 'HITACHI.png'},
