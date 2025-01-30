@@ -1099,6 +1099,7 @@ const exportCSV = () => {
             totalPresent++;
           }
           else{
+            totalPresent++;
             totalOverTime++;
           }
 
