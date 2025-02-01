@@ -118,7 +118,7 @@
 
     <div v-if="allowed" class="flex flex-col">
 
-         <DataTable v-model:filters="filters" filterDisplay="row" :value="users" showGridlines :sortOrder="-1" paginator :rows="10"  tableStyle="min-width: 50rem" class="text-xs md:text-sm" 
+         <!-- <DataTable v-model:filters="filters" filterDisplay="row" :value="users" showGridlines :sortOrder="-1" paginator :rows="10"  tableStyle="min-width: 50rem" class="text-xs md:text-sm" 
 :globalFilterFields="['name']"
 >    <Column field="employee_id" header="Employee Id" sortable  style="border: 2px solid black;width: 25%; color:black; font-weight: bolder;" header-style="background-color: #2196F3;color: #ffff; font-weight: bolder"></Column>
     <Column field="name" header="Name" sortable style="border: 2px solid black;width: 40%;color:black; font-weight: bolder;" header-style="background-color: #2196F3;color: #ffff; font-weight: bolder">
@@ -281,7 +281,7 @@
     
     
 
-</DataTable>
+</DataTable> -->
         </div>
         </div>
         <div class="flex flex-direction-column justify-end">
