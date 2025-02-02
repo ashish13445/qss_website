@@ -46,7 +46,7 @@
 
 <section id="consumer-goods" class=" flex flex-col md:flex-row items-center" >
             <div class="md:w-1/3">
-                <img src="../../../../images/consumer-goods.png" class="w-40 md:w-full" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="../../../../images/consumer_goods.png" class="w-40 md:w-full" data-aos="zoom-in" data-aos-duration="1000">
             </div>
             <div class="md:w-2/3 p-5" data-aos="zoom-in" data-aos-duration="1000">
                 <h1 class="text-medium md:text-xl font-semibold pt-4 pb-2 text-red-600"></h1>

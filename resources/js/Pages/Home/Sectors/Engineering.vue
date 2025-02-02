@@ -45,7 +45,7 @@
 
 <section id="engineering" class="p-10 flex flex-col md:flex-row items-center" >
             <div class="md:w-1/3">
-                <img src="../../../../images/engineer.png" class="w-40 md:w-96" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="../../../../images/engineering.png" class="w-40 md:w-96" data-aos="zoom-in" data-aos-duration="1000">
             </div>
             <div class="md:w-2/3" data-aos="zoom-in" data-aos-duration="1000">
             <h1 class="text-medium md:text-xl font-bold py-2 text-red-600"></h1>

@@ -123,7 +123,7 @@
       <Link
                 :href="route('consumer-goods')"
         data-aos="zoom-in"  class='select-none h-20 md:h-auto w-48 md:w-full  relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl hover:text-white'>
-            <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-28  ' src="/images/consumer-goods.png" width={200} height={200} alt="consulting" />
+            <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-28  ' src="/images/consumer_goods.png" width={200} height={200} alt="consulting" />
             <h2 class='text-md  md:font-extrabold  py-5  md:pt-20 px-2  text-center'>Consumer Goods</h2>
             <div class="hidden sm:block">
               <p class=' px-5 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2 '>
@@ -164,7 +164,7 @@
       <Link
                 :href="route('engineering')"
           data-aos="zoom-in"  data-aos-duration="4000" class=' select-none h-20 md:h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
-          <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/engineer.png" width={200} height={200} alt="staffing"/>
+          <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/engineering.png" width={200} height={200} alt="staffing"/>
             <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Engineering </h2>
             <div class="hidden sm:block">
             <p class='px-5   text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
