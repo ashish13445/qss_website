@@ -51,6 +51,55 @@ Route::get('/sector', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 })->name('sector');
+Route::get('/consumer-goods', function () {
+    return Inertia::render('Home/Sectors/Consumer-goods', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('consumer-goods');
+Route::get('/agriculture', function () {
+    return Inertia::render('Home/Sectors/Agriculture', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('agriculture');
+Route::get('/engineering', function () {
+    return Inertia::render('Home/Sectors/Engineering', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('engineering');
+Route::get('/hydrocarbons', function () {
+    return Inertia::render('Home/Sectors/Hydrocarbons', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('hydrocarbons');
+
+Route::get('/laboratories', function () {
+    return Inertia::render('Home/Sectors/Laboratories', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('laboratories');
+Route::get('/minerals', function () {
+    return Inertia::render('Home/Sectors/Minerals', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('minerals');
 Route::get('/services', function () {
     return Inertia::render('Home/Services', [
         'canLogin' => Route::has('login'),
@@ -59,6 +108,14 @@ Route::get('/services', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 })->name('services');
+Route::get('/locations', function () {
+    return Inertia::render('Home/Locations', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('locations');
 Route::get('/background', function () {
     return Inertia::render('Home/Background', [
         'canLogin' => Route::has('login'),

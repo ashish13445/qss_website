@@ -79,12 +79,14 @@ defineProps({
 
               <div class="py-10 px-5 hover:border-red-800 rounded text-xs md:text-sm ">
 
-                Quality Services and Solutions Pvt. Ltd. is a leading Indian Inspection, Testing and Certification Group with an operational network in more than 18 cities across India and an associated network in 11 countries within the Asian Continent.<br/><br/>
-
-Established in the year 1999, our Company has already set up a comprehensive, meticulous and efficient services and systems network in various sectors such as Agriculture, Engineering, Minerals and Metals - both locally and on an international scale. More than 450 highly trained, dedicated and specialized workforce support us in all our endeavors across the country. QSSPL presence in the global arena is ensured through our International Association.<br/><br/>
-
-QSSPL offer services that are Unique, Professional and Objective. We at QSSPL do not manufacture, buy or sell (trade) or have any financial interest in any transaction thereby working extremely professionally and independently to ensure minimal risks to customers proactively.<br/><br/>
-
+                Quality Services and Solutions Private Limited (QSSPL) is a private organization established in 1999, with a legacy
+of 25 years in delivering quality services and conducting third-party inspections. QSSPL specializes in Agriculture,
+Engineering, Minerals, and Metals, catering to both local and global markets. The organization boasts a skilled
+workforce of over 1,650 professionals and maintains a global presence through strong international associations.
+QSSPL operates across 20+ states in India, ensuring a wide-reaching market presence and the ability to meet
+diverse regional needs. The company has mastered third-party inspection services, ensuring top-notch quality
+assurance for its clients. QSSPL’s commitment to precision and excellence has solidified its reputation as a
+trusted and proficient industry leader.
 QSSPL professionalism is firmly anchored within our salient Core Values namely: <br/><br/>
 <ol class="">
   <li>

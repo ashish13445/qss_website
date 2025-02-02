@@ -48,118 +48,257 @@
     >
       <!-- Main Image Template -->
       <template #item="slotProps">
-        <div class="relative w-full h-full">
-          <img 
-            :src="slotProps.item.itemImageSrc" 
-            :alt="slotProps.item.alt" 
-            class="w-full h-full max-h-screen object-cover filter brightness-75" 
-          />
+        <div class="relative w-full h-full max-h-screen">
+  <!-- Image -->
+  <img 
+    :src="slotProps.item.itemImageSrc" 
+    :alt="slotProps.item.alt" 
+    class="w-full h-96 md:h-screen object-cover filter pointer-events-none "
+  />
+  
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black  to-transparent "></div>
           
           <div 
-            class="text-center absolute inset-0 flex flex-col items-center justify-center text-white   bg-black bg-opacity-25 px-5 md:px-40" 
+            class=" absolute inset-0 flex flex-col items-start justify-center text-white   bg-black bg-opacity-25 px-5 md:px-20" 
           >
-          <h1 class="hidden md:block text-2xl md:text-6xl font-black md:pb-5 " data-aos="fade-up" data-aos-duration="1500">QUALITY IS OUR BUSINESS</h1>
-            <p class="hidden md:block text-sm md:text-2xl md:px-20" data-aos="fade-up" data-aos-duration="1500">{{ slotProps.item.title }}</p>
-            <div class="m-5 hidden md:block">
+          <h1 class="hidden text-red-600 md:block text-2xl md:text-6xl font-black md:pb-5 relative z-20 " data-aos="fade-up" data-aos-duration="1500">
+            ASSURING 
+            <span class="text-white">QUALITY</span>; <br/>
+            ENHANCING 
+            <span class="text-white">RELIABILITY</span> <br/>
+</h1>
+            <!-- <p class="hidden md:block text-sm md:text-2xl md:px-20" data-aos="fade-up" data-aos-duration="1500">{{ slotProps.item.title }}</p> -->
+            <div class="mt-5 hidden md:block ">
               <Link
                 :href="route('sector')"
-                class="font-semibold  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500 m-2"
-                ><Button class="text-white px-6 md:px-10 py-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-full border-orange-400 text-sm border-2 hover:border-orange-400 hover:bg-transparent">SERVICES </Button></Link
+                class="font-semibold  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500 m-2 relative z-20"
+                ><Button class="text-white px-6 md:px-10 py-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-full border-orange-400 text-sm border-2 hover:border-orange-400 hover:bg-transparent">SECTORS </Button></Link
             >
             <Link
                 :href="route('contact')"
-                class="font-semibold  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500 m-2"
+                class="font-semibold  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500 m-2 relative z-20"
                 ><Button class="border-2 hover:text-white px-5 md:px-8 py-3 border-orange-400 hover:bg-gradient-to-r from-orange-500 to-red-500 rounded-full text-sm text-orange-400 ">CONTACT US </Button></Link
             >
             </div>
             
           </div>
-          
+          <div class="absolute inset-0 flex flex-col items-end justify-center text-white bg-black bg-opacity-25 px-5 md:px-40">
+  <div class="grid grid-cols-2 gap-5">
+    <div class="bg-gray-100 p-5 rounded text-center">
+      <Counter :startValue="0" :endValue="25" :duration="2000" />
+      <p class="text-gray-400">years of experience</p>
+    </div>
+    <div class="bg-gray-100 p-5 rounded text-center">
+      <Counter :startValue="0" :endValue="1650" :duration="2000" />
+      <p class="text-gray-400">professional workforce</p>
+    </div>
+    <div class="bg-gray-100 p-5 rounded text-center">
+      <Counter :startValue="0" :endValue="20" :duration="2000" />
+      <p class="text-gray-400">states presence in india</p>
+    </div>
+    <div class="bg-gray-100 p-5 rounded text-center">
+      <Counter :startValue="0" :endValue="5" :duration="2000" />
+      <p class="text-gray-400">labs</p>
+    </div>
+  </div>
+</div>
+
+  
         </div>
       </template>
     </Galleria>
     </div>
-    <!-- certificates -->
-  <!-- <div class="h-content  md:mb-10 pt-3">
-    <Carousel :value="certificates" :numVisible="4" :numScroll="1"  circular :autoplayInterval="5000">
-    <template #item="slotProps">
-        <div class="   rounded-md m-2 p-3 flex justify-center">
-                    <img :src="`../../images/certificates/${slotProps.data.image}`"  class="w-16 h-16 md:w-40 md:h-40 rounded-md" />   
-        </div>
-    </template>
-</Carousel>
-  </div> -->
-  <div class="bg-white dark:bg-black text-black dark:text-white h-content xl:h-screen md:px-20 md:py-50">
-      <h1 class="text-black dark:text-white text-center  font-medium text-2xl md:text-5xl p-5 px-5  md:mb-20" > <span class="font-extrabold">OUR</span> SECTORS</h1>
+   
+  
+  <div class="bg-white dark:bg-black text-black dark:text-white h-content md:px-20  relative">
+    <img src="../../images/bg.png" 
+       class="absolute inset-0 w-full h-full opacity-10 object-cover rounded-lg" 
+       alt="Coal in Bag Background">
+      <h1 class="text-black dark:text-white text-center  font-medium text-2xl md:text-5xl p-5 px-5  md:mb-24" > <span class="font-extrabold">OUR</span> SECTORS</h1>
       
    
-    <div class='grid grid-rows-2 xl:grid-rows-1 grid-flow-col gap-3 xl:gap-28 tracking-wide p-5' >
+    <div class='grid grid-rows-3 xl:grid-rows-2 grid-flow-col gap-2 xl:gap-28 tracking-wide p-5' >
   
-
-    <div class='select-none h-72 sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl hover:text-white'>
-            <img class='absolute w-40 md:w-60 -top-16 md:-top-28  ' src="/images/consumer-goods.png" width={200} height={200} alt="consulting"/>
-            <h2 class='text-md md:text-xl font-extrabold pt-14 md:pt-20 px-5 text-center'>Consumer Goods</h2>
-            <p class='px-5 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2'>
-              QSS offers a range of services across 2 broad categories of Consumer Goods namely,<br/>
-1. Consumer Non Durables - Fast Moving Consumer Goods (FMCG) <br/>
-2. Soft Goods
-Our Consumer Non Durables team has the expertise to provide quality and quantity services for Edible Items (perishable items such as frozen fruits & vegetables, meat, sea food & processed food items) and Water.            </p>
-        </div>
-        <div class=' select-none mt-5 md:mt-0 h-72 sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
-          <img class='absolute w-32 md:w-60 -top-16 md:-top-36 mr-5' src="/images/agriculture-products.png" width={200} height={200} alt="marketing"/>
-            <h2 class='text-md md:text-xl font-extrabold pt-14 md:pt-20  px-5 text-center'>Agriculture Produce & Products</h2>
-            <p class='px-5 md:px-10 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2'>
-              QSS provides a range of services including procurement supervision, weight control,
-               systematic sampling, process monitoring, laboratory services,
-                commissioning supervision, material balancing, various surveys (insurance, draught, break bulk),
-                 cleanliness inspection, loading/discharge supervision, photographic evidence, 
-                 damage surveys, plant monitoring, warehouse management, and quality management auditing. 
+      <Link
+                :href="route('consumer-goods')"
+        data-aos="zoom-in"  class='select-none h-20 md:h-auto w-48 md:w-full  relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl hover:text-white'>
+            <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-28  ' src="/images/consumer-goods.png" width={200} height={200} alt="consulting" />
+            <h2 class='text-md  md:font-extrabold  py-5  md:pt-20 px-2  text-center'>Consumer Goods</h2>
+            <div class="hidden sm:block">
+              <p class=' px-5 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2 '>
+              <p class=" md:mb-4 text-xs md:text-sm px-5 ">
+    QSS specializes in two key categories:
+  </p>
+  <ul class="px-5 list-disc list-inside space-y-1 text-xs md:text-sm  text-ellipsis overflow-hidden whitespace-pre-wrap ">
+    <li><span class="">Consumer Non-Durables (FMCG):</span> Expert services for perishable items like frozen fruits, vegetables, seafood, processed foods, and water.</li>
+    <li><span class="">Soft Goods:</span> Tailored solutions to meet diverse needs.</li>
+  </ul>
+</p> 
+            </div>
+           
+</Link>
+<Link
+                :href="route('agriculture')"
+            data-aos="zoom-in"  data-aos-duration="2000" class=' select-none h-20  md:mt-0 h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
+          <img class='hidden md:block absolute w-32 md:w-60 -top-16 md:-top-36 mr-5' src="/images/agriculture-products.png" width={200} height={200} alt="marketing"/>
+            <h2 class='text-md  md:font-extrabold py-5  md:pt-20 px-2  text-center'>Agriculture Produce & Products</h2>
+            <div class="hidden sm:block">
+            <p class='px-5 pt-2 text-xs  text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2'>
+              <p class="text-xs md:text-sm px-5">We offer comprehensive solutions, including:</p>
+              <ul class="px-5 list-disc list-inside space-y-1 text-xs  md:text-sm p-2 text-ellipsis overflow-hidden whitespace-pre-wrap">
+    <li><span class="">Procurement Supervision</span></li>
+    <li><span class="">Quality & Weight Control</span></li>
+    <li><span class="">Sampling & Process Monitoring</span></li>
+    <li><span class="">Laboratory & Auditing Services</span></li>
+    <li>
+      <span class="">Surveys</span> (insurance, draught, damage, etc.)
+    </li>
+    <li><span class="">Plant & Warehouse Management</span></li>
+    <li><span class="">Loading/Discharge Supervision</span></li>
+    <li><span class="">Photographic Documentation</span></li>
+  </ul>
             </p>
+            </div>
+      </Link>
+      <Link
+                :href="route('engineering')"
+          data-aos="zoom-in"  data-aos-duration="4000" class=' select-none h-20 md:h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
+          <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/engineer.png" width={200} height={200} alt="staffing"/>
+            <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Engineering </h2>
+            <div class="hidden sm:block">
+            <p class='px-5   text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
+              <p class="text-xs md:text-sm px-5">
+    Our services encompass a wide range of inspection activities across various sectors, including:
+  </p>
+  <ul class="list-disc px-5 list-inside space-y-1 text-xs md:text-sm md:pb-5 text-xs p-2 text-ellipsis overflow-hidden whitespace-pre-wrap">
+    <li><span class="">General Engineering Industry</span></li>
+    <li><span class="">Telecom Industry</span></li>
+    <li><span class="">Foundries</span></li>
+    <li><span class="">Power & Energy Sector</span></li>
+    <li><span class="">Electrical & Electronic Industries</span></li>
+    <li><span class="">Generation, Transmission, and Distribution</span></li>
+    <li><span class="">Cement Industry</span></li>
+    <li><span class="">Automobile Industry</span></li>
+    <li><span class="">Material Handling Equipment</span></li>
+    <li><span class="">Oil & Gas Sector</span></li>
+  </ul></p>
         </div>
         
-        <div class=' select-none h-72  sm:h-96 relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
-          <img class='absolute w-32 md:w-60 -top-16 md:-top-32 ' src="/images/engineer.png" width={200} height={200} alt="staffing"/>
-            <h2 class='text-md md:text-xl font-extrabold pt-14 md:pt-20  px-5 text-center'>Engineering </h2>
-            <p class='px-5 md:px-10 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
-              Our Engineering Division Services cover all types of inspection activities in various sectors namely General Engineering Industry,
-               Telecom Industry, Foundries, Power & Energy Sector, Electrical and Electronic Industries, Generation,
-                Transmission and Distribution,
-               Cement Industry, Automobile Industry, Material Handling equipments, Oil & Gas Sector, etc.</p>
+      </Link>
+      <Link
+                :href="route('laboratories')"
+                
+         data-aos="zoom-in"  data-aos-duration="4000" class=' select-none h-20 md:h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
+          <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/microscope.png" width={200} height={200} alt="staffing"/>
+            <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Laboratories </h2>
+            <div class="hidden sm:block">
+            <p class='px-5  text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
+    
+  <ul class="list-disc px-5 list-inside space-y-1 text-xs md:text-sm md:pb-5 text-xs p-2 text-ellipsis overflow-hidden whitespace-pre-wrap">
+    <li>Independent and Impartial Assistance: Reliable, accurate, and impartial analytical results.</li>
+            <li>Comprehensive Product Analysis: Testing ensures compliance from exploration to delivery.</li>
+            <li>Skilled Team & Advanced Techniques: Staffed with experts using classical and modern techniques for reliable results.</li>
+            <li>ISO/IEC 17025:2017 Compliant: Adheres to international testing standards.</li>
+            <li>NABL & EIC Accredited: Laboratories certified for mineral and material testing and global compliance.</li>
+       
+  </ul></p>
         </div>
         
+      </Link>
+      <Link
+                :href="route('hydrocarbons')"
+           data-aos="zoom-in"  data-aos-duration="4000" class=' select-none h-20 md:h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
+          <img class='hidden md:block absolute w-20 md:w-60 -top-10 md:-top-32 ' src="/images/hydrocarbon.png" width={200} height={200} alt="staffing"/>
+            <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Hydrocarbons </h2>
+            <div class="hidden sm:block">
+            <p class='px-5 text-sm  text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
+              <h2 class="px-5 text-sm ">Core Services:</h2>
+        <ul class="list-disc list-inside  text-sm px-5">
+            <li>Pipeline Inspections</li>
+            <li>Project Construction & Shutdown Inspections</li>
+            <li>Stage-Wise Fabrication Inspections</li>
+            <li>Technical Safety Audits</li>
+        </ul>
+
+        <h2 class=" px-5 text-sm ">Key Focus Areas:</h2>
+        <ul class="list-disc list-inside  text-sm   px-5">
+            <li>Oil & Gas Pipelines</li>
+            <li>Petrochemical Plants</li>
+            <li>Refineries</li>
+            <li>Fertilizer Plants</li>
+            <li>City Gas Distribution Networks</li>
+        </ul>
+      </p>
+        </div>
+        
+      </Link>
+      <Link
+                :href="route('minerals')"
+              data-aos="zoom-in"  data-aos-duration="4000" class=' select-none h-20 md:h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
+          <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/coal.svg" width={200} height={200} alt="staffing"/>
+            <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Metals, Minerals & Ores </h2>
+            <div class="hidden sm:block">
+            <p class='px-5   text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
+              <h2 class="px-5 text-sm ">Core Services:</h2>
+        <ul class="list-disc list-inside  text-sm px-5">
+          <li>Inspection & Supervision: Quality and handling checks across the supply chain.</li>
+            <li>Sampling & Testing: Comprehensive material testing for quality assurance.</li>
+            <li>Quantity Verification: Weight and number assessments (Draught Survey, Tally).</li>
+            <li>Packaging & Transport Monitoring: Supervision of packing, labeling, and condition.</li>
+            <li>Quality Assurance & Verification: Analysis and certification for quality.</li>
+        </ul>
+
+      </p>
+        </div>
+        
+  </Link>
+      
+      </div>
         
     </div>
     
     
-    <div class="flex justify-center md:py-10">
+    <!-- <div class="flex justify-center md:py-0">
       <Link
                 :href="route('sector')"
                 class="  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500 m-2"
                 ><Button class="px-5 py-3  md:px-10 md:py-5 bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-full border-orange-400 text-medium border-2 hover:border-orange-400 hover:bg-transparent">Check out more </Button></Link
             >    </div>
 
-    </div>
+    </div> -->
+    <div class="bg-white dark:bg-black text-black dark:text-white h-content py-10   relative">
+    <img src="../../images/bg.png" 
+       class="absolute inset-0 w-full h-full opacity-10 object-cover rounded-lg" 
+       alt="Coal in Bag Background">
+      <h1 class="text-black dark:text-white text-center  font-medium text-2xl md:text-5xl p-5 px-5  md:mb-5" > <span class="font-extrabold">OUR</span> PRESENCE</h1>
+      
+    
+    <InteractivEmap data-aos="zoom-in" data-aos-duration="6000"/>
+
+  </div>
     <div class="bg-white dark:bg-black text-black dark:text-white relative h-content  p-2  border-2 rounded-lg">
   <!-- Background Image -->
   <img src="/images/coal_in_bag.jpg" 
        class="absolute inset-0 w-full h-full opacity-30 object-cover rounded-lg" 
        alt="Coal in Bag Background">
-      <h1 class=" text-center  font-medium text-2xl md:text-5xl p-5 md:p-10  opacity-90" > <span class="font-extrabold">ABOUT</span> US</h1>
-      <p class="tracking-wide font-medium text-sm md:text-xl  text-center relative md:px-40 ">
-        Quality Services and Solutions Pvt. Ltd. is a leading Indian Inspection, Testing and Certification Group with an operational network in more than 18 cities across India and an associated network in 11 countries within the Asian Continent.
-
-Established in the year 1999, our Company has already set up a comprehensive, 
-meticulous and efficient services and systems network in various sectors such as Agriculture,
- Engineering, Minerals and Metals - both locally and on an international scale. More than 450 highly trained,
-  dedicated and specialized workforce support us in all our endeavors across the country.
-   QSSPL presence in the global arena is ensured through our International Association.
+      <h1 class=" text-center  font-medium text-2xl md:text-5xl p-5 md:p-10  opacity-90" data-aos="zoom-in" data-aos-duration="2000" > <span class="font-extrabold">ABOUT</span> US</h1>
+      <p class="tracking-wide font-medium text-sm md:text-xl  text-center relative md:px-40 " data-aos="zoom-in" data-aos-duration="2000">
+        Quality Services and Solutions Private Limited (QSSPL) is a private organization established in 1999, with a legacy
+of 25 years in delivering quality services and conducting third-party inspections. QSSPL specializes in Agriculture,
+Engineering, Minerals, and Metals, catering to both local and global markets. The organization boasts a skilled
+workforce of over 1,650 professionals and maintains a global presence through strong international associations.
+QSSPL operates across 20+ states in India, ensuring a wide-reaching market presence and the ability to meet
+diverse regional needs. The company has mastered third-party inspection services, ensuring top-notch quality
+assurance for its clients. QSSPL’s commitment to precision and excellence has solidified its reputation as a
+trusted and proficient industry leader.
       </p>
       <div class="flex justify-center relative">
-        <div class="md:p-5 flex flex-col items-center">
+        <div class="md:p-5 flex flex-col items-center" data-aos="zoom-in" data-aos-duration="2000">
           <img src="/images/25.png" class="w-40 h-40 md:w-60 md:h-60 ">
           <p class="text-lg w-48 text-center">Experience of Delivering Quality & Third Party Inspections</p>
         </div>
-        <div class="md:p-5 flex flex-col items-center">
+        <div class="md:p-5 flex flex-col items-center" data-aos="zoom-in" data-aos-duration="2000">
           <img src="/images/9.png" class="w-40 h-40 md:w-60 md:h-60 ">
           <p class="text-lg w-48 text-center">
             Experience in Coal Quality Sampling and Analysis
@@ -170,7 +309,7 @@ meticulous and efficient services and systems network in various sectors such as
       </div>
     </div>
 
-<div class="h-content bg-white dark:bg-black md:px-48 py-0 pt-10">
+<div class="h-content bg-white dark:bg-black md:px-48 py-0 pt-10 " >
   <h1 class="text-black dark:text-white text-center font-medium text-2xl md:text-5xl px-10 ">
     <span class="font-extrabold">OUR</span> CLIENTS
   </h1>
@@ -345,6 +484,8 @@ import InputText from 'primevue/inputtext';
 import InputNumber from 'primevue/inputnumber';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import DarkModeToggle from '@/Components/DarkModeToggle.vue';
+import InteractivEmap from '@/Components/InteractivEmap.vue';
+import Counter from '@/Components/Counter.vue';
 
 const images = ref([
     {
@@ -359,6 +500,7 @@ const images = ref([
         alt: 'Image 2',
         title: 'We are a leading Indian Inspection, Testing and Certification Group with an operational network in more than 18 cities across India'
     }
+    
     // Add more images as needed
 ]);
 const responsiveOptions = ref([

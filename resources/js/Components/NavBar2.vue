@@ -7,7 +7,20 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import NavLink from '@/Components/NavLink.vue';
 
 const isMobileMenuOpen = ref(false);
+const isHovered = ref(false);
+const activeSubMenu = ref(null);
+const isSectorHovered = ref(false);
+// Show the specific submenu when hovered
+const showSubMenu = (service) => {
+  activeSubMenu.value = service;
+};
 
+// Hide the submenu when mouse leaves
+const hideSubMenu = (service) => {
+  if (activeSubMenu.value === service) {
+    activeSubMenu.value = null;
+  }
+};
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
 };
@@ -41,26 +54,127 @@ onBeforeUnmount(() => {
 
 <template>
 
-<nav class=" md:fixed  md:z-10 md:top-0 md:w-full subpixel-antialiased tracking-wide	">
-  <div class="mx-auto  pt-4 px-2 sm:px-6 lg:px-8 bg-white dark:bg-black dark:text-white" >
-    <div class="relative md:flex h-12 md:h-16 md:items-center justify-between border-b-2 md:border-0 ">
-      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <!-- Mobile menu button-->
-        <!--  -->
-      </div>
+<nav class="md:fixed   md:z-30 top-0 md:w-full  	">
+  <div class="mx-auto  px-2 sm:px-6 lg:px-8 bg-white  dark:bg-black   dark:text-white" >
+    <div class="relative md:flex h-16 md:h-14  md:items-center justify-between border-b-2 md:border-0 ">
+      
       <div class="flex flex-1 items-center justify-center  sm:justify-start">
         <div class="hidden md:flex flex-shrink-0 items-center">
             <ApplicationLogo/>
         </div>
         <div class="hidden sm:ml-6 md:block h-full w-full">
           <div class="flex  justify-between items-center h-full">
-            <div class="flex space-x-4">
-                <NavLink :href="route('home')" :active="route().current('home')" class=" text-black dark:text-white hover:text-gray-700  p-3 xl:px-7 text-base font-bol" ><i class="material-icons text-blue-300">home</i></NavLink>
-            <NavLink :href="route('about')" :active="route().current('about')" class="text-black dark:text-white  hover:text-gray-700  p-3  xl:px-7 text-base font-bol">ABOUT US</NavLink>
-            <NavLink :href="route('sector')" :active="route().current('sector')" class="text-black dark:text-white  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">OUR SECTORS</NavLink>
-            <NavLink :href="route('background')" :active="route().current('background')" class="  text-black dark:text-white  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">OUR BACKGROUND</NavLink>
-            <NavLink :href="route('certificates')" :active="route().current('certficates')" class="  text-black dark:text-white  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">CERTIFICATES</NavLink>
-            
+            <div class="flex ">
+                <NavLink :href="route('home')" :active="route().current('home')" class=" text-black dark:text-white hover:text-gray-700  p-3 xl:px-7 text-base " ><i class="material-icons text-blue-300">home</i></NavLink>
+           
+                  <NavLink :href="route('about')" :active="route().current('about')" class="text-black dark:text-white  hover:text-gray-700  p-3  xl:px-7 text-base ">ABOUT US</NavLink>
+                
+            <!-- <div 
+    class="relative" 
+    @mouseenter="isHovered = true" 
+    @mouseleave="isHovered = false">
+    
+    <div
+ 
+      class="text-black dark:text-white  hover:text-gray-700  p-3  xl:px-7 text-base ">
+      SERVICES
+            </div> -->
+
+    <!-- Main submenu (for Services) -->
+    <!-- <div 
+      v-if="isHovered" 
+      class="absolute left-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-lg ">
+      <ul class="py-2 md:text-sm text-gray-800 dark:text-gray-200">
+         -->
+        <!-- Service 1 with submenu -->
+        <!-- <li class="relative" 
+            @mouseenter="showSubMenu('service1')" 
+            @mouseleave="hideSubMenu('service1')">
+            <p  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Inspection</p> -->
+
+          <!-- <div 
+            v-show="activeSubMenu === 'service1'"
+            class="absolute top-0 left-full mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+            <ul class="py-2 text-gray-800 dark:text-gray-200">
+              <li>
+                <a href="/service1/sub1" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Sub-Service 1.1</a>
+              </li>
+              <li>
+                <a href="/service1/sub2" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Sub-Service 1.2</a>
+              </li>
+            </ul>
+          </div> -->
+        <!-- </li> -->
+
+        <!-- Service 2 with submenu -->
+        <!-- <li class="relative" 
+            @mouseenter="showSubMenu('service2')" 
+            @mouseleave="hideSubMenu('service2')">
+            <p class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Testing </p> -->
+
+          <!-- <div 
+            v-show="activeSubMenu === 'service2'"
+            class="absolute top-0 left-full mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+            <ul class="py-2 text-gray-800 dark:text-gray-200">
+              <li>
+                <a href="/service2/sub1" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Sub-Service 2.1</a>
+              </li>
+              <li>
+                <a href="/service2/sub2" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Sub-Service 2.2</a>
+              </li>
+            </ul>
+          </div> -->
+        <!-- </li> -->
+
+        <!-- Service 3 -->
+        <!-- <li>
+          <Link :href="route('certificates')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Certification </Link>
+        </li>
+      </ul> -->
+    <!-- </div> -->
+  <!-- </div> -->
+
+  <div 
+    class="relative" 
+    @mouseenter="isSectorHovered = true" 
+    @mouseleave="isSectorHovered = false">
+    
+    <div
+      class=" dark:text-white hover:text-gray-700 p-3 xl:px-7 text-base mb-2">
+      SECTORS
+</div>
+
+    <!-- Main submenu for SECTORS -->
+    <div 
+      v-if="isSectorHovered" 
+      class="absolute left-0 w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+      <ul class="py-2 md:text-sm text-gray-800 dark:text-gray-200">
+        <li>
+          <Link :href="route('consumer-goods')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Consumer Goods </Link>
+        </li>
+        <li>
+          <Link :href="route('agriculture')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Agriculture Products </Link>
+        </li>
+        <li>
+          <Link :href="route('engineering')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Engineering </Link>
+        </li>
+        <li>
+          <Link :href="route('hydrocarbons')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Hydrocarbons </Link>
+        </li>
+        <li>
+          <Link :href="route('laboratories')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Laboratories </Link>
+        </li>
+        <li>
+          <Link :href="route('minerals')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Metals, Minerals and Ores </Link>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <NavLink :href="route('background')" :active="route().current('background')" class="  text-black dark:text-white  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">OUR BACKGROUND</NavLink>
+            <NavLink :href="route('certificates')" :active="route().current('certificates')" class="  text-black dark:text-white  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">CERTIFICATES</NavLink>
+            <NavLink :href="route('locations')" :active="route().current('locations')" class="  text-black dark:text-white  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">LOCATIONS</NavLink>
+
         </div>
                 
             <div>
@@ -71,10 +185,10 @@ onBeforeUnmount(() => {
            </div>
         </div>
       </div>
-      <div class="md:hidden">
-      <div class="flex justify-between items-center h-10 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
+      <div class="md:hidden ">
+      <div class="flex justify-between items-center pt-2 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
         <!-- Logo -->
-        <div class="flex-shrink-0">
+        <div class="flex-shrink-0  ">
           <ApplicationLogo />
         </div>
         <!-- Mobile Menu Button -->

@@ -29,7 +29,7 @@ defineProps({
     <Head title="Certificates" />
     
       <NavBar2 class="">
-        <div class="flex align-items-center gap-2">
+        <div class="flex items-center">
     <DarkModeToggle/>
     <div class="">
         <div v-if="canLogin" class="p-2">
@@ -60,7 +60,7 @@ defineProps({
     </div>
   </div>
       </NavBar2>
-      <div class="bg-tint-primary dark:bg-black h-content md:mt-20">
+      <div class=" dark:bg-black h-content md:mt-12">
         <h1 class="text-2xl md:text-5xl font-extrabold flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400  ">CERTIFICATES</h1>
 
       <div  class="p-5 md:p-10  grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade" data-aos-duration="3000">
