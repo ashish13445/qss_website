@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col md:flex-row md:justify-between md:items-start  md:px-10">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-start  px-10">
       <!-- India Map with Image -->
-      <div class="w-full md:w-1/2 p-4 md:m-20  mb-5 bg-gray-100 dark:bg-gray-900  rounded-lg shadow-md">
+      <div class="w-full md:w-1/3 p-4 md:ml-20  mb-5 bg-gray-100 dark:bg-gray-900  rounded-lg shadow-md">
         <h2 class="text-xl font-semibold text-gray-800 dark:text-white">
           {{ selectedState ? selectedState.name : "Select a State" }}
         </h2>
@@ -13,15 +13,15 @@
         </p>
         <p v-else class="text-gray-400 dark:text-white">Click on a state to view details.</p>
       </div>
-      <div class="w-full md:w-1/2  pl-10 md:p-0 flex items-center justify-center relative">
+      <div class="w-full md:w-2/3  pl-30 md:p-0 flex items-center justify-center relative">
         <svg
           viewBox="0 0 1000 1000"
-          class="w-full h-auto invert-color "
+          class=" w-full md:h-auto invert-color "
           xmlns="http://www.w3.org/2000/svg"
           
         >
           <!-- Background Map Image -->
-          <image href="../../images/india.svg" class="w-auto" />
+          <image href="../../images/india.svg" class="w-full md:w-auto" />
           
           <!-- Clickable Paths for States -->
           <path v-for="state in indiaStates"

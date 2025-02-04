@@ -45,20 +45,47 @@
   <h1 class="text-2xl md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 dark:text-black">Laboratories Service Sector</h1>
 
  <section id="laboratories" class="p-10 flex flex-col md:flex-row items-center" >
-            <div class="md:w-1/3">
+            <div class="md:w-1/3" data-aos="zoom-in" data-aos-duration="3000">
                 <img src="../../../../images/microscope.png" class="w-40 md:w-full md:p-10" data-aos="zoom-in" data-aos-duration="1000">
             </div>
             <div class="md:w-2/3" data-aos="zoom-in" data-aos-duration="1000">
             <h1 class="text-medium md:text-xl font-bold py-2 text-red-600">r</h1>
-            <h2 class=" font-bold text-gray-800 my-2">Functionality of the Laboratories and Compliances:</h2>
-        <div class="text-gray-700 space-y-2 text-sm">
-            <p><strong class="font-semibold">Independent and Impartial Assistance:</strong> Reliable, accurate, and impartial analytical results.</p>
-            <p><strong class="font-semibold">Comprehensive Product Analysis:</strong> Testing ensures compliance from exploration to delivery.</p>
-            <p><strong class="font-semibold">Skilled Team & Advanced Techniques:</strong> Staffed with experts using classical and modern techniques for reliable results.</p>
-            <p><strong class="font-semibold">ISO/IEC 17025:2017 Compliant:</strong> Adheres to international testing standards.</p>
-            <p><strong class="font-semibold">NABL & EIC Accredited:</strong> Laboratories certified for mineral and material testing and global compliance.</p>
-        </div>
- </div>
+            <h2 class="text-lg md:text-xl font-bold  m-2">Functionality of the Laboratories and Compliances:</h2>
+            <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Independent and Impartial Assistance: Reliable, accurate, and impartial analytical results.
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Comprehensive Product Analysis: Testing ensures compliance from exploration to delivery.
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Skilled Team & Advanced Techniques: Staffed with experts using classical and modern techniques for reliable results.
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        ISO/IEC 17025:2017 Compliant: Adheres to international testing standards.
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        NABL & EIC Accredited: Laboratories certified for mineral and material testing and global compliance.
+    </span> 
+</p>
+</div>
         </section>
         </div></div>
         <Footer/>

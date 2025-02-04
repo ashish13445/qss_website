@@ -57,12 +57,12 @@
   />
   
   <!-- Gradient Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-r from-black  to-transparent "></div>
+  <div class="absolute inset-0  bg-gradient-to-t from-black to-transparent"></div>
           
           <div 
             class=" absolute inset-0 flex flex-col items-start justify-center text-white   bg-black bg-opacity-25 px-5 md:px-20" 
           >
-          <h1 class="hidden text-red-600 md:block text-2xl md:text-6xl font-black md:pb-5 relative z-20 " data-aos="fade-up" data-aos-duration="1500">
+          <h1 class="hidden text-white md:block text-2xl md:text-6xl font-black md:pb-5 relative z-20 " data-aos="fade-up" data-aos-duration="1500">
             ASSURING 
             <span class="text-white">QUALITY</span>; <br/>
             ENHANCING 
@@ -85,21 +85,21 @@
           </div>
           <div class="absolute inset-0 flex flex-col items-end justify-center text-white bg-black bg-opacity-25 px-5 md:px-40">
   <div class="grid grid-cols-2 gap-5">
-    <div class="bg-gray-100 p-5 rounded text-center">
+    <div class="bg-gradient-to-r from-orange-500 to-red-500  p-5 rounded text-center">
       <Counter :startValue="0" :endValue="25" :duration="2000" />
-      <p class="text-gray-400">years of experience</p>
+      <p class="text-white">years of experience</p>
     </div>
-    <div class="bg-gray-100 p-5 rounded text-center">
+    <div class="bg-gradient-to-r from-orange-500 to-red-500 p-5 rounded text-center">
       <Counter :startValue="0" :endValue="1650" :duration="2000" />
-      <p class="text-gray-400">professional workforce</p>
+      <p class="text-white">professional workforce</p>
     </div>
-    <div class="bg-gray-100 p-5 rounded text-center">
+    <div class="bg-gradient-to-r from-orange-500 to-red-500 p-5 rounded text-center">
       <Counter :startValue="0" :endValue="20" :duration="2000" />
-      <p class="text-gray-400">states presence in india</p>
+      <p class="text-white">states presence in india</p>
     </div>
-    <div class="bg-gray-100 p-5 rounded text-center">
+    <div class="bg-gradient-to-r from-orange-500 to-red-500 p-5 rounded text-center">
       <Counter :startValue="0" :endValue="5" :duration="2000" />
-      <p class="text-gray-400">labs</p>
+      <p class="text-white">labs</p>
     </div>
   </div>
 </div>
@@ -126,7 +126,7 @@
             <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-28  ' src="/images/consumer_goods.png" width={200} height={200} alt="consulting" />
             <h2 class='text-md  md:font-extrabold  py-5  md:pt-20 px-2  text-center'>Consumer Goods</h2>
             <div class="hidden sm:block">
-              <p class=' px-5 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2 '>
+              <div class=' px-5 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2 '>
               <p class=" md:mb-4 text-xs md:text-sm px-5 ">
     QSS specializes in two key categories:
   </p>
@@ -134,7 +134,7 @@
     <li><span class="">Consumer Non-Durables (FMCG):</span> Expert services for perishable items like frozen fruits, vegetables, seafood, processed foods, and water.</li>
     <li><span class="">Soft Goods:</span> Tailored solutions to meet diverse needs.</li>
   </ul>
-</p> 
+</div> 
             </div>
            
 </Link>
@@ -144,7 +144,7 @@
           <img class='hidden md:block absolute w-32 md:w-60 -top-16 md:-top-36 mr-5' src="/images/agriculture-products.png" width={200} height={200} alt="marketing"/>
             <h2 class='text-md  md:font-extrabold py-5  md:pt-20 px-2  text-center'>Agriculture Produce & Products</h2>
             <div class="hidden sm:block">
-            <p class='px-5 pt-2 text-xs  text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2'>
+            <div class='px-5 pt-2 text-xs  text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2'>
               <p class="text-xs md:text-sm px-5">We offer comprehensive solutions, including:</p>
               <ul class="px-5 list-disc list-inside space-y-1 text-xs  md:text-sm p-2 text-ellipsis overflow-hidden whitespace-pre-wrap">
     <li><span class="">Procurement Supervision</span></li>
@@ -158,7 +158,7 @@
     <li><span class="">Loading/Discharge Supervision</span></li>
     <li><span class="">Photographic Documentation</span></li>
   </ul>
-            </p>
+</div>
             </div>
       </Link>
       <Link
@@ -167,7 +167,7 @@
           <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/engineering.png" width={200} height={200} alt="staffing"/>
             <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Engineering </h2>
             <div class="hidden sm:block">
-            <p class='px-5   text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
+            <div class='px-5   text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
               <p class="text-xs md:text-sm px-5">
     Our services encompass a wide range of inspection activities across various sectors, including:
   </p>
@@ -182,7 +182,7 @@
     <li><span class="">Automobile Industry</span></li>
     <li><span class="">Material Handling Equipment</span></li>
     <li><span class="">Oil & Gas Sector</span></li>
-  </ul></p>
+  </ul></div>
         </div>
         
       </Link>
@@ -193,7 +193,7 @@
           <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/microscope.png" width={200} height={200} alt="staffing"/>
             <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Laboratories </h2>
             <div class="hidden sm:block">
-            <p class='px-5  text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
+            <div class='px-5  text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
     
   <ul class="list-disc px-5 list-inside space-y-1 text-xs md:text-sm md:pb-5 text-xs p-2 text-ellipsis overflow-hidden whitespace-pre-wrap">
     <li>Independent and Impartial Assistance: Reliable, accurate, and impartial analytical results.</li>
@@ -202,7 +202,7 @@
             <li>ISO/IEC 17025:2017 Compliant: Adheres to international testing standards.</li>
             <li>NABL & EIC Accredited: Laboratories certified for mineral and material testing and global compliance.</li>
        
-  </ul></p>
+  </ul></div>
         </div>
         
       </Link>
@@ -212,7 +212,7 @@
           <img class='hidden md:block absolute w-20 md:w-60 -top-10 md:-top-32 ' src="/images/hydrocarbon.png" width={200} height={200} alt="staffing"/>
             <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Hydrocarbons </h2>
             <div class="hidden sm:block">
-            <p class='px-5 text-sm  text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
+            <div class='px-5 text-sm  text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
               <h2 class="px-5 text-sm ">Core Services:</h2>
         <ul class="list-disc list-inside  text-sm px-5">
             <li>Pipeline Inspections</li>
@@ -229,7 +229,7 @@
             <li>Fertilizer Plants</li>
             <li>City Gas Distribution Networks</li>
         </ul>
-      </p>
+      </div>
         </div>
         
       </Link>
@@ -239,7 +239,7 @@
           <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/coal.svg" width={200} height={200} alt="staffing"/>
             <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Metals, Minerals & Ores </h2>
             <div class="hidden sm:block">
-            <p class='px-5   text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
+            <div class='px-5   text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
               <h2 class="px-5 text-sm ">Core Services:</h2>
         <ul class="list-disc list-inside  text-sm px-5">
           <li>Inspection & Supervision: Quality and handling checks across the supply chain.</li>
@@ -249,7 +249,7 @@
             <li>Quality Assurance & Verification: Analysis and certification for quality.</li>
         </ul>
 
-      </p>
+      </div>
         </div>
         
   </Link>
@@ -337,61 +337,53 @@ trusted and proficient industry leader.
   <h1 class="text-2xl md:text-5xl font-medium flex justify-center  md:p-10"><span class="font-extrabold pr-1">WHY </span> QSSPL ?</h1>
 
   <div class="md:flex ">
-    <Fieldset  class="border-2 my-5 bg-white dark:bg-black dark:text-white " >
-    <template #legend>
+    <div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4" >
         <div class="flex items-center gap-4 py-2 px-2 ">
-           <span><i class="material-icons text-orange-400 text-4xl">devices</i></span>
-            <span class="text-base md:text-xl">IT Solution</span>
+           <span><i class="material-icons text-orange-400 text-4xl px-2">devices</i></span>
+            <span class="text-base md:text-xl ">IT Solution</span>
         </div>
-    </template>
     <p class="m-0 text-base  px-5 pb-3">
       We would deploy digital platform for sample collection, preparation and
 tracking of samples. The platform will have live streaming of CCTV footage
 from Sample preparation room
     </p>
-</Fieldset>
-<Fieldset  class="border-2 my-5 bg-white dark:bg-black dark:text-white " >
-    <template #legend>
+  </div>
+<div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4" >
         <div class="flex items-center gap-4 py-2 px-2">
            <span><i class="material-icons text-orange-400 text-4xl">video_call</i></span>
             <span class=" text-base md:text-xl">Monitoring</span>
         </div>
-    </template>
     <p class="m-0 text-base   px-1 pb-3">
       We will have dedicated 24*7 available team for monitoring ground operations
 and addressing any issue in real time.
     </p>
-</Fieldset>
-<Fieldset  class="border-2 my-5 bg-white dark:bg-black dark:text-white " >
-    <template #legend>
+  </div>
+<div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4" >
         <div class="flex items-center gap-4 py-2 px-2">
            <span><i class="material-icons text-orange-400 text-4xl">record_voice_over</i></span>
             <span class="text-base md:text-xl ">Customer
 Support</span>
         </div>
-    </template>
     <p class="m-0 text-base  px-5 pb-3">
       We shall have a Dedicated Customer Support team to address any issues
 they may face. The team may be reached through call, text, WhatsApp
 groups or e-mail.
 
     </p>
-</Fieldset>
-<Fieldset  class="border-2 my-5 bg-white dark:bg-black dark:text-white " >
-    <template #legend>
+  </div>
+<div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4" >
         <div class="flex items-center gap-4 py-2 px-2">
            <span><i class="material-icons text-orange-400 text-4xl">precision_manufacturing</i></span>
             <span class=" text-base md:text-xl">Mechanized Sampling
 Process
 </span>
         </div>
-    </template>
     <p class="m-0 text-base  px-5 pb-3">
       Sampling procedure involves drawing samples from every 8th truck in which
 other trucks will get affected , which create congested environment. Multiple
 Exit points in some areas also create hindrances for sampling.
     </p>
-</Fieldset>
+  </div>
   </div>
 </div>
 <div class="bg-white dark:bg-black text-black dark:text-white">

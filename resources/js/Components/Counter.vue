@@ -1,5 +1,5 @@
 <template>
-    <div class="text-4xl text-orange-300 font-bold">
+    <div class="text-4xl text-white font-bold">
       {{ displayedValue }}+
     </div>
   </template>

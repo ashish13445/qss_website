@@ -44,35 +44,92 @@
   <h1 class="text-2xl md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 dark:text-black">Engineering Service Sector</h1>
 
 <section id="engineering" class="p-10 flex flex-col md:flex-row items-center" >
-            <div class="md:w-1/3">
+            <div class=" w-full md:w-1/3">
                 <img src="../../../../images/engineering.png" class="w-40 md:w-96" data-aos="zoom-in" data-aos-duration="1000">
             </div>
-            <div class="md:w-2/3" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="w-full md:w-1/3" data-aos="zoom-in" data-aos-duration="1000">
             <h1 class="text-medium md:text-xl font-bold py-2 text-red-600"></h1>
-            <h2 class=" font-bold text-gray-800 my-2">Core Services</h2>
-        <ul class="list-disc list-inside text-gray-700 ">
-            <li>Expediting & Progress Reporting</li>
-            <li>Plant Audits & Project Site Supervision</li>
-            <li>Expert Deputation for Overseas Inspections</li>
-            <li>Non-Destructive Testing (NDT) Services</li>
-        </ul>
+            <h2 class=" text-lg md:text-xl font-bold  m-2">Core Services</h2>
+            <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+        <span class="text-lg md:text-xl text-orange-600 flex items-center">
+            <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2"> 
+            Expediting & Progress Reporting
+        </span> 
+    </p>
+    
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+        <span class="text-lg md:text-xl text-orange-600 flex items-center">
+            <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2"> 
+            Plant Audits & Project Site Supervision
+        </span> 
+    </p>
 
-        <h2 class=" font-bold text-gray-800 my-2">Key Products</h2>
-        <ul class="list-disc list-inside text-gray-700 ">
-            <li>Transformers</li>
-            <li>Boilers</li>
-            <li>Material Handling Equipment</li>
-            <li>Transmission Towers</li>
-        </ul>
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+        <span class="text-lg md:text-xl text-orange-600 flex items-center">
+            <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2"> 
+            Expert Deputation for Overseas Inspections
+        </span> 
+    </p>
 
-        <h2 class=" font-bold text-gray-800 my-2">Tests Conducted</h2>
-        <div class=" text-gray-700 text-sm">
-            <p><strong>Non-Destructive Testing (NDT):</strong> RT (Radiographic Testing), UT (Ultrasonic Testing), MPT (Magnetic Particle Testing), PT (Penetrant Testing)</p>
-            <p><strong>Fabrication & Erection Inspections</strong></p>
-            <p><strong>Explosives Inspections</strong></p>
-            <p><strong>Packing/Loading Inspections</strong></p>
-        </div>
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+        <span class="text-lg md:text-xl text-orange-600 flex items-center">
+            <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2"> 
+            Non-Destructive Testing (NDT) Services
+        </span> 
+    </p>
+
+        <h2 class=" text-lg md:text-xl font-bold  m-2">Key Products</h2>
+        <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+        <span class="text-lg md:text-xl text-orange-600 flex items-center">
+            <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2"> 
+            Transformers
+        </span> 
+    </p>
+    
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+        <span class="text-lg md:text-xl text-orange-600 flex items-center">
+            <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2"> 
+            Boilers
+        </span> 
+    </p>
+
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+        <span class="text-lg md:text-xl text-orange-600 flex items-center">
+            <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2"> 
+            Material Handling Equipment
+        </span> 
+    </p>
+
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+        <span class="text-lg md:text-xl text-orange-600 flex items-center">
+            <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2"> 
+            Transmission Towers
+        </span> 
+    </p>
+
+    
 </div>
+<div class="w-full md:w-1/3 md:mx-20 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="3000">
+    <h2 class="bg-blue-600 text-white p-2 text-center font-semibold rounded-t-lg">
+        Inspection & Testing Services
+    </h2>
+    <table class="w-full border border-gray-300 mt-2">
+        <tbody>
+            <tr><td class="border border-gray-300 p-2">✔ Non-Destructive Testing (NDT)</td></tr>
+            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Fabrication & Erection Inspections</td></tr>
+            <tr><td class="border border-gray-300 p-2">✔ Explosives Inspections</td></tr>
+            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Packing/Loading Inspections</td></tr>
+            <tr><td class="border border-gray-300 p-2">✔ Expediting & Progress Reporting</td></tr>
+            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Plant Audits & Project Site Supervision</td></tr>
+            <tr><td class="border border-gray-300 p-2">✔ Expert Deputation for Overseas Inspections</td></tr>
+            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Transformers</td></tr>
+            <tr><td class="border border-gray-300 p-2">✔ Boilers</td></tr>
+            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Material Handling Equipment</td></tr>
+            <tr><td class="border border-gray-300 p-2">✔ Transmission Towers</td></tr>
+        </tbody>
+    </table>
+</div>
+
         </section>
         </div>
         </div>

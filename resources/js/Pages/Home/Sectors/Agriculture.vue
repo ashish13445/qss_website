@@ -46,38 +46,102 @@
 
 <section id="agriculture-products" class="py-2 md:p-10 flex flex-col md:flex-row items-center" >
             <div class="md:w-1/3">
-                <img src="../../../../images/agriculture-products.png" data-aos="zoom-in" class="w-60 md:w-full pr-10">
+                <img src="../../../../images/agriculture-products.png" data-aos="zoom-in" data-aos-duration="3000" class="w-60 md:w-full pr-10">
             </div>
            
-        <div class="w-2/3" data-aos="zoom-in" >
+        <div class="md:w-1/3" data-aos="zoom-in" >
 
-        <h2 class=" font-bold text-gray-800  my-2 ">Core Services</h2>
-        <ul class="list-disc list-inside text-gray-700 ">
-            <li>Procurement & Supervision</li>
-            <li>Laboratory Testing</li>
-            <li>Inspections, Surveys & Audits</li>
-            <li>Warehouse & Plant Oversight</li>
-            <li>Quality Certifications</li>
-        </ul>
+        <h2 class=" text-lg md:text-xl font-bold m-4 ">Core Services</h2>
+        <!-- <ul class="list-disc list-inside text-gray-700 "> -->
+            <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Procurement & Supervision</span>
+    
+    </p>
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Laboratory Testing</span>
+    
+    </p>
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Inspections, Surveys & Audits</span>
+    
+    </p>
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Warehouse & Plant Oversight</span>
+    
+    </p>
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Quality Certifications</span>
+    
+    </p>
+        <!-- </ul> -->
 
-        <h2 class="font-bold text-gray-800  my-2 ">Key Products</h2>
-        <ul class="list-disc list-inside text-gray-700 ">
-            <li>Animal Feeds</li>
-            <li>Agricultural Products</li>
-            <li>Edibles & Non-Edibles</li>
-        </ul>
-
-        <h2 class=" font-bold text-gray-800 my-2 ">Tests Conducted</h2>
-        <div class="text-sm text-gray-700 space-y-3">
-            <p><strong>Quality Parameters:</strong> Moisture, ash, gluten, oil content.</p>
-            <p><strong>Contaminants:</strong> Pesticide residue, aflatoxin.</p>
-            <p><strong>Oil-Specific Tests:</strong> FFA (Free Fatty Acids), iodine value.</p>
-            <p><strong>Others:</strong> ICUMSA color for sugar analysis.</p>
-            <p><strong>Edibles:</strong> Nutritional, contaminants, microbial, and sensory analysis.</p>
-            <p><strong>Water:</strong> pH, TDS, and microbial safety.</p>
-            <p><strong>Soft Goods:</strong> Fabric quality, durability, and chemical safety.</p>
-        </div>
+        <h2 class="text-lg md:text-xl font-bold  m-4 ">Key Products</h2>
+        <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Animal Feeds</span>
+    
+    </p>
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Agricultural Products</span>
+    
+    </p>
+    <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Edibles & Non-Edibles</span>
+    
+    </p>
+          
+        
     </div>
+    <div class=" md:w-1/3 rounded-lg shadow-md mx-auto" data-aos="zoom-in" data-aos-duration="3000">
+    <h2 class="bg-blue-600 text-white p-2 text-center font-semibold rounded-t-lg">
+        Quality Tests
+    </h2>
+    <table class="w-full border border-gray-300 mt-2">
+
+        <tbody>
+            <tr>
+                <td class="border border-gray-300 p-2">Moisture, Ash, Microbial & Sensory Analysis</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="border border-gray-300 p-2">FFA (Free Fatty Acids), Iodine Value</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 p-2">Pesticide Residue, Aflatoxin</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="border border-gray-300 p-2">Moisture, Ash, Gluten</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 p-2">Microbial & Sensory Analysis</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="border border-gray-300 p-2">ICUMSA Color</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 p-2">pH, TDS, Microbial Safety</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="border border-gray-300 p-2">Fabric Quality, Durability, Chemical Safety</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
         </section>
         </div></div>
         <Footer/>

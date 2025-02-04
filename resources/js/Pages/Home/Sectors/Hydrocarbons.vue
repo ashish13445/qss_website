@@ -44,34 +44,89 @@
   <h1 class="text-2xl md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 dark:text-black">Hydrocarbons Service Sector</h1>
 
 <section id="hydrocarbons" class="p-10 flex flex-col md:flex-row items-center" >
-            <div class="md:w-1/3">
+            <div class="w-full md:w-1/3">
                 <img src="../../../../images/hydrocarbon.png" class="w-40 md:w-full md:p-10" data-aos="zoom-in" data-aos-duration="1000">
             </div>
-            <div class="md:w-2/3" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="w-full md:w-1/3" data-aos="zoom-in" data-aos-duration="1000">
             <h1 class="text-medium md:text-xl font-bold py-2 text-red-600"></h1>
-            <h2 class=" font-bold text-gray-800 my-2">Core Services:</h2>
-        <ul class="list-disc list-inside text-gray-700  font-medium">
-            <li>Pipeline Inspections</li>
-            <li>Project Construction & Shutdown Inspections</li>
-            <li>Stage-Wise Fabrication Inspections</li>
-            <li>Technical Safety Audits</li>
-        </ul>
+            <h2 class="text-lg md:text-xl font-bold  m-2">Core Services:</h2>
+            <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Pipeline Inspections
+    </span>
+</p>
 
-        <h2 class=" font-bold text-gray-800 my-2">Key Focus Areas:</h2>
-        <ul class="list-disc list-inside text-gray-700  font-medium">
-            <li>Oil & Gas Pipelines</li>
-            <li>Petrochemical Plants</li>
-            <li>Refineries</li>
-            <li>Fertilizer Plants</li>
-            <li>City Gas Distribution Networks</li>
-        </ul>
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Project Construction & Shutdown Inspections
+    </span>
+</p>
 
-        <h2 class=" font-bold text-gray-800 my-2">Tests Conducted:</h2>
-        <div class=" text-gray-700 text-sm">
-            <p><strong class="font-semibold">Integrity Assessment:</strong> Structural soundness of pipelines and fabrication stages.</p>
-            <p><strong class="font-semibold">Safety Parameters:</strong> Compliance with industry standards for hydrocarbon handling and distribution.</p>
-            <p><strong class="font-semibold">Technical Performance Metrics:</strong> Evaluation of pipeline pressure, material resilience, and operational safety.</p>
-        </div>
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Stage-Wise Fabrication Inspections
+    </span>
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Technical Safety Audits
+    </span>
+</p>
+
+
+        <h2 class=" text-lg md:text-xl font-bold  m-2">Key Focus Areas:</h2>
+        <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Oil & Gas Pipelines
+    </span>
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Petrochemical Plants
+    </span>
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Refineries
+    </span>
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Fertilizer Plants
+    </span>
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        City Gas Distribution Networks
+    </span>
+</p>
+
+</div>
+<div class="w-full md:w-1/3 md:mx-20 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="3000">
+    <h2 class="bg-blue-600 text-white p-2 text-center font-semibold rounded-t-lg">
+        Tests Conducted
+    </h2>
+    <table class="w-full border border-gray-300 mt-2">
+        <tbody>
+            <tr><td class="border border-gray-300 p-2">✔ <strong>Integrity Assessment:</strong> Structural soundness of pipelines and fabrication stages.</td></tr>
+            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ <strong>Safety Parameters:</strong> Compliance with industry standards for hydrocarbon handling and distribution.</td></tr>
+            <tr><td class="border border-gray-300 p-2">✔ <strong>Technical Performance Metrics:</strong> Evaluation of pipeline pressure, material resilience, and operational safety.</td></tr>
+        </tbody>
+    </table>
 </div>
         </section>
         </div>

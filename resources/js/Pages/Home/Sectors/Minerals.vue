@@ -45,29 +45,90 @@
   <h1 class="text-2xl md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 dark:text-black">Metals, Minerals, Ores & Chemicals Service Sector</h1>
 
 <section id="minerals" class="p-10 flex flex-col md:flex-row items-center" >
-            <div class="md:w-1/3">
-                <img src="../../../../images/coal.svg" class="w-40 md:w-full md:p-20" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="md:w-1/3" data-aos="zoom-in" data-aos-duration="3000">
+                <img src="../../../../images/coal.svg" class="w-40 md:w-full md:p-20" >
             </div>
             <div class="md:w-2/3" data-aos="zoom-in" data-aos-duration="1000">
             <h1 class="text-medium md:text-xl font-bold py-2 text-red-600"></h1>
-            <h2 class="font-bold text-gray-800 my-2">Core Services:</h2>
-        <ul class="space-y-2 text-gray-700 text-sm">
-            <li><strong class="font-semibold">Inspection & Supervision:</strong> Quality and handling checks across the supply chain.</li>
-            <li><strong class="font-semibold">Sampling & Testing:</strong> Comprehensive material testing for quality assurance.</li>
-            <li><strong class="font-semibold">Quantity Verification:</strong> Weight and number assessments (Draught Survey, Tally).</li>
-            <li><strong class="font-semibold">Packaging & Transport Monitoring:</strong> Supervision of packing, labeling, and condition.</li>
-            <li><strong class="font-semibold">Quality Assurance & Verification:</strong> Analysis and certification for quality.</li>
-        </ul>
+            <h2 class="text-lg md:text-xl font-bold  m-2">Core Services:</h2>
+            <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Inspection & Supervision: Quality and handling checks across the supply chain.
+    </span> 
+</p>
 
-        <h2 class=" font-bold text-gray-800 my-2">Key Products:</h2>
-        <ul class="text-sm space-y-2 text-gray-700">
-            <li><strong class="font-semibold">Minerals:</strong> Iron Ore, Manganese Ore, Chrome, etc.</li>
-            <li><strong class="font-semibold">Energy Minerals:</strong> Coal, Coke, etc.</li>
-            <li><strong class="font-semibold">Industrial Minerals:</strong> Gypsum, Soda Ash, Talc, etc.</li>
-            <li><strong class="font-semibold">Cement, Steel & Fertilizer Raw Materials </strong></li>
-            <li><strong class="font-semibold">Steel & Scrap Metal </strong></li>
-            <li><strong class="font-semibold">Chemicals </strong></li>
-        </ul>
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Sampling & Testing: Comprehensive material testing for quality assurance.
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Quantity Verification: Weight and number assessments (Draught Survey, Tally).
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Packaging & Transport Monitoring: Supervision of packing, labeling, and condition.
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Quality Assurance & Verification: Analysis and certification for quality.
+    </span> 
+</p>
+
+        <h2 class=" text-lg md:text-xl font-bold  m-2">Key Products:</h2>
+        <p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Minerals: Iron Ore, Manganese Ore, Chrome, etc.
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Energy Minerals: Coal, Coke, etc.
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Industrial Minerals: Gypsum, Soda Ash, Talc, etc.
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Cement, Steel & Fertilizer Raw Materials
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Steel & Scrap Metal
+    </span> 
+</p>
+
+<p class="p-2" data-aos="zoom-in" data-aos-duration="3000">  
+    <span class="text-lg md:text-xl text-orange-600 flex items-center">
+        <img src="../../../../images/arrow-right.png" alt="Icon" class="w-10 h-10 mr-2">
+        Chemicals
+    </span> 
+</p>
+
         </div>
         
         </section>
