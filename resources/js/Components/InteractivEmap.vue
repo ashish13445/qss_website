@@ -21,7 +21,7 @@
           
         >
           <!-- Background Map Image -->
-          <image href="../../images/india.svg" class="w-full md:w-auto" />
+          <image href="../../images/india.svg" class="w-auto" />
           
           <!-- Clickable Paths for States -->
           <path v-for="state in indiaStates"
