@@ -62,7 +62,7 @@
           <div 
             class=" absolute inset-0 flex flex-col items-start justify-center text-white   bg-black bg-opacity-25 px-5 md:px-20" 
           >
-          <h1 class="hidden text-white md:block text-2xl md:text-6xl font-black md:pb-5 relative z-20 " data-aos="fade-up" data-aos-duration="1500">
+          <h1 class="hidden text-white md:block text-2xl md:text-4xl xl:text-6xl font-black md:pb-5 relative z-20 " data-aos="fade-up" data-aos-duration="1500">
             ASSURING 
             <span class="text-white">QUALITY</span>; <br/>
             ENHANCING 
@@ -118,7 +118,7 @@
       <h1 class="text-black dark:text-white text-center  font-medium text-2xl md:text-5xl p-5 px-5  md:mb-24" > <span class="font-extrabold">OUR</span> SECTORS</h1>
       
    
-    <div class='grid grid-rows-3 xl:grid-rows-2 grid-flow-col gap-2 xl:gap-28 tracking-wide p-5' >
+    <div class='grid grid-rows-3 xl:grid-rows-2 grid-flow-col gap-28  xl:gap-28 tracking-wide p-5' >
   
       <Link
                 :href="route('consumer-goods')"

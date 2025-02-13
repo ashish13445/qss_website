@@ -117,25 +117,25 @@
             <tr>
                 <td class="border border-gray-300 p-2">Moisture, Ash, Microbial & Sensory Analysis</td>
             </tr>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50 dark:bg-black">
                 <td class="border border-gray-300 p-2">FFA (Free Fatty Acids), Iodine Value</td>
             </tr>
             <tr>
                 <td class="border border-gray-300 p-2">Pesticide Residue, Aflatoxin</td>
             </tr>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50 dark:bg-black">
                 <td class="border border-gray-300 p-2">Moisture, Ash, Gluten</td>
             </tr>
             <tr>
                 <td class="border border-gray-300 p-2">Microbial & Sensory Analysis</td>
             </tr>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50 dark:bg-black">
                 <td class="border border-gray-300 p-2">ICUMSA Color</td>
             </tr>
             <tr>
                 <td class="border border-gray-300 p-2">pH, TDS, Microbial Safety</td>
             </tr>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50 dark:bg-black">
                 <td class="border border-gray-300 p-2">Fabric Quality, Durability, Chemical Safety</td>
             </tr>
         </tbody>

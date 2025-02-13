@@ -123,7 +123,7 @@
     <table class="w-full border border-gray-300 mt-2">
         <tbody>
             <tr><td class="border border-gray-300 p-2">✔ <strong>Integrity Assessment:</strong> Structural soundness of pipelines and fabrication stages.</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ <strong>Safety Parameters:</strong> Compliance with industry standards for hydrocarbon handling and distribution.</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ <strong>Safety Parameters:</strong> Compliance with industry standards for hydrocarbon handling and distribution.</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ <strong>Technical Performance Metrics:</strong> Evaluation of pipeline pressure, material resilience, and operational safety.</td></tr>
         </tbody>
     </table>

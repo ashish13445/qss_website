@@ -116,15 +116,15 @@
     <table class="w-full border border-gray-300 mt-2">
         <tbody>
             <tr><td class="border border-gray-300 p-2">✔ Non-Destructive Testing (NDT)</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Fabrication & Erection Inspections</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Fabrication & Erection Inspections</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Explosives Inspections</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Packing/Loading Inspections</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Packing/Loading Inspections</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Expediting & Progress Reporting</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Plant Audits & Project Site Supervision</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Plant Audits & Project Site Supervision</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Expert Deputation for Overseas Inspections</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Transformers</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Transformers</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Boilers</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Material Handling Equipment</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Material Handling Equipment</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Transmission Towers</td></tr>
         </tbody>
     </table>

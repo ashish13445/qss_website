@@ -100,23 +100,23 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
     <table class="w-full border border-gray-300 mt-2">
         <tbody>
             <tr><td class="border border-gray-300 p-2">✔ Bakery & Confectionery Products</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Canned & Processed Foods</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Canned & Processed Foods</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Cereal, Pulses & Cereal Products</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Edible Oils & Fats</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Edible Oils & Fats</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Meat & Meat Products</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Fresh & Processed Fruits & Vegetable Products</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Fresh & Processed Fruits & Vegetable Products</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Milk & Dairy Products</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Ready-To-Eat Foods</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Ready-To-Eat Foods</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Frozen Foods</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Egg & Egg Products</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Egg & Egg Products</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Fruit & Fruit Products</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Herbs, Spices & Condiments</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Herbs, Spices & Condiments</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Honey & Honey Products</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Jam, Juices, Sauces & Concentrates</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Jam, Juices, Sauces & Concentrates</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Oil Seeds & By-Products</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Snacks & Instant Mixes</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Snacks & Instant Mixes</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Vegetable & Vegetable Products</td></tr>
-            <tr class="bg-gray-50"><td class="border border-gray-300 p-2">✔ Edible Colours & Flavours</td></tr>
+            <tr class="bg-gray-50 dark:bg-black"><td class="border border-gray-300 p-2">✔ Edible Colours & Flavours</td></tr>
             <tr><td class="border border-gray-300 p-2">✔ Fish & Seafood</td></tr>
             <tr><td class="border border-gray-300 p-2">✔  Drinking Water</td></tr>
             <tr><td class="border border-gray-300 p-2">✔  Ground Water/Surface Water</td></tr>
@@ -144,7 +144,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
                 <td class="border border-gray-300 p-2">Milk & Dairy Products</td>
                 <td class="border border-gray-300 p-2">Cream, Milk, Dahi, Chana (Paneer), Cheese, Kulfi Mix, Chakka, Shrikhand, Condensed Milk, Partly Skimmed Milk, Skimmed Condensed Milk, Pasteurized Milk, Sterilized Milk, Ice Cream</td>
             </tr>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50 dark:bg-black">
                 <td class="border border-gray-300 p-2">Oils, Fats & Related Products</td>
                 <td class="border border-gray-300 p-2">Ghee, Palm Oil, Sunflower Oil, Mustard Oil, Soybean Oil, Hydrogenated Oil, Arachis Oil, Coconut Oil, Cottonseed Oil, Grapeseed Oil, Maize Oil, Mustardseed Oil, Palm Kernel Oil, Palm Olein, Palm Stearin, Rapeseed Oil, Safflowerseed Oil, Sesame Oil</td>
             </tr>
@@ -152,7 +152,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
                 <td class="border border-gray-300 p-2">Fruit & Vegetable Products</td>
                 <td class="border border-gray-300 p-2">Soup Powders, Fruit Juice, Vegetable Juice, Canned Products, Jams, Jellies, Marmalades, Juices, Concentrates</td>
             </tr>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50 dark:bg-black">
                 <td class="border border-gray-300 p-2">Cereal, Pulses & By-Products</td>
                 <td class="border border-gray-300 p-2">Maize, Bengal Gram, Rice, Bajra, Jowar, Tur (Arhar/Rahar), Chana Dal, Cholia, Lobhia, Dalia, Kabuli Chana, Masoor, Matar, Moong, Motth, Poha, Rajma, Urad Dal</td>
             </tr>
@@ -160,7 +160,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
                 <td class="border border-gray-300 p-2">Meat & Meat Products</td>
                 <td class="border border-gray-300 p-2">Seekh Kebab, Canned Meat</td>
             </tr>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50 dark:bg-black">
                 <td class="border border-gray-300 p-2">Bakery & Confectionery Products</td>
                 <td class="border border-gray-300 p-2">Toffees, Biscuits, Chocolates</td>
             </tr>
@@ -168,7 +168,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
                 <td class="border border-gray-300 p-2">Spices & Condiments</td>
                 <td class="border border-gray-300 p-2">Whole & Ground Chilli, Coriander, Cumin, Dhania</td>
             </tr>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50 dark:bg-black">
                 <td class="border border-gray-300 p-2">Oil Seeds & By-Products</td>
                 <td class="border border-gray-300 p-2">Mustard Seeds, Palm Products, Rapeseed Oil</td>
             </tr>
@@ -176,7 +176,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
                 <td class="border border-gray-300 p-2">Nutritional Labeling & Analysis</td>
                 <td class="border border-gray-300 p-2">Milk, Dahi, Paneer, Cheese, Ice Cream, Ready-to-Eat Snacks, Canned Products</td>
             </tr>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50 dark:bg-black">
                 <td class="border border-gray-300 p-2">Coffee & By-Products</td>
                 <td class="border border-gray-300 p-2">Coffee Beans, Instant Coffee</td>
             </tr>
@@ -184,7 +184,7 @@ Our Consumer Non Durables team has the expertise to provide quality and quantity
                 <td class="border border-gray-300 p-2">Tea & Tea Products</td>
                 <td class="border border-gray-300 p-2">Green Tea, Black Tea, Herbal Tea</td>
             </tr>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50 dark:bg-black">
                 <td class="border border-gray-300 p-2">Honey & Honey Products</td>
                 <td class="border border-gray-300 p-2">Raw Honey, Processed Honey</td>
             </tr>
