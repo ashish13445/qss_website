@@ -62,7 +62,7 @@
           <div 
             class=" absolute inset-0 flex flex-col items-start justify-center text-white   bg-black bg-opacity-25 px-5 md:px-20" 
           >
-          <h1 class="hidden text-white md:block text-2xl md:text-4xl xl:text-6xl font-black md:pb-5 relative z-20 " data-aos="fade-up" data-aos-duration="1500">
+          <h1 class="hidden text-white md:block text-2xl lg:text-4xl 2xl:text-6xl font-black md:pb-5 relative z-20 " data-aos="fade-up" data-aos-duration="1500">
             ASSURING 
             <span class="text-white">QUALITY</span>; <br/>
             ENHANCING 
