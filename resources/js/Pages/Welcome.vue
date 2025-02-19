@@ -35,7 +35,7 @@
     </div>
   </div>
     </NavBar2>
-   <div class="card h-content xl:h-screen py-3">
+   <div class="card h-content xl:h-screen pb-3">
     <Galleria 
       :value="images" 
       
@@ -54,6 +54,11 @@
     :src="slotProps.item.itemImageSrc" 
     :alt="slotProps.item.alt" 
     class="w-full h-96 md:h-screen object-cover  pointer-events-none "
+    loading="eager" 
+  decoding="async"
+  fetchpriority="high"
+  data-aos="fade-up"
+  data-aos-duration="1000"
   />
   
   <!-- Gradient Overlay -->
@@ -61,13 +66,13 @@
           
          <div class="flex absolute inset-0 items-end justify-center py-0 px-5 md:px-20">
           <div class="w-1/2 flex items-center  md:py-28  " data-aos="fade-up" data-aos-duration="3000">
-    <h1 class="text-black text-xl md:text-3xl xl:text-5xl font-bold tracking-wide">
+    <h1 class="text-black md:text-3xl xl:text-5xl font-bold tracking-wide">
       ASSURING QUALITY; <br/> ENHANCING RELIABILITY
     </h1>
   </div>
   
   <div class="w-1/2 flex items-center  md:my-20  pl-5 md:px-10 border-l-4 border-blue-600" data-aos="fade-up" data-aos-duration="3000">
-    <h1 class="text-black text-lg md:text-3xl xl:text-5xl font-thin	tracking-wide">
+    <h1 class="text-black  md:text-3xl xl:text-5xl font-thin	tracking-wide">
       25 Years of Excellence in Quality Assurance &
  Third-Party Inspections
     </h1>
@@ -97,7 +102,7 @@
     <img src="../../images/inspection.png" alt="Image 1" class="w-full h-full object-cover hover:filter hover:brightness-50 hover:transition">
   </div>
 
-  <div class="flex flex-col justify-center" data-aos="fade-left" data-aos-duration="3000">
+  <div class="flex flex-col justify-center" data-aos="fade-up" data-aos-duration="3000">
     <h1 class="text-xl md:text-5xl text-center py-5">
       INSPECTION
     </h1>
@@ -105,7 +110,7 @@
 Our testing services ensure accuracy, compliance, and safety across minerals, consumer goods, agriculture, and laboratories. We use state-of-the-art technology and globally recognized methodologies to deliver precise and reliable results.        </p>
   </div>
 
-  <div class="flex flex-col justify-center" data-aos="fade-right" data-aos-duration="1000">
+  <div class="flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
     <h1 class="text-xl md:text-5xl text-center py-5 ">
       TESTING
     </h1>
@@ -496,7 +501,7 @@ import Services from '@/Components/Services.vue';
 
 const images = ref([
     {
-        itemImageSrc: '/images/hero_image.png',
+        itemImageSrc: '/images/hero_image.webp',
         alt: 'Image 1',
         
         title: 'QSSPL handles the third party sampling, preparation and analysis of coal supplied to consumers by Coal India Limited.'

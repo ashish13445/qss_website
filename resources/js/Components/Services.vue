@@ -2,13 +2,13 @@
     <div class="md:flex bg-gray-200 dark:bg-black h-content md:min-h-screen  md:p-20 md:my-3">
       <!-- Sidebar (Vertical Tabs) -->
       <div class="p-5 md:p-0 w-full md:w-1/3">
-        <h2 class="text-white text-lg  md:text-2xl font-semibold p-5 md:m-4">Sectors we work in</h2>
+        <h2 class="text-black  dark:text-white text-lg  md:text-2xl font-semibold p-5 md:m-4">Sectors we work in</h2>
         <ul class="">
           <li
             v-for="(tab, index) in tabs"
             :key="index"
             @click="selectedTab = index"
-            class="p-1 md:p-4 md:m-4 text-xs md:text-lg font-light cursor-pointer border border-white transition-all md:rounded-full "
+            class="p-3 md:p-4 md:m-4 text-xs md:text-lg font-light cursor-pointer border border-white transition-all md:rounded-full "
             :class="selectedTab === index ? 'bg-white text-gray-800' : 'hover:bg-white hover:text-gray-800 bg-gray-600 dark:bg-gray-800 text-white hover:dark:text-white'"
           >
             {{ tab.name }}
