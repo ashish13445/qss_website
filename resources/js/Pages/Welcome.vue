@@ -35,15 +35,15 @@
     </div>
   </div>
     </NavBar2>
-   <div class="card h-content xl:h-screen">
+   <div class="card h-content xl:h-screen py-3">
     <Galleria 
       :value="images" 
-      :responsiveOptions="responsiveOptions" 
-      :numVisible="2" 
+      
+      :numVisible="1" 
       :circular="true" 
       :autoPlay="true"
       :transitionInterval="5000"
-      :showItemNavigators="true"
+      :showItemNavigators="false"
       :showThumbnails="false"
     >
       <!-- Main Image Template -->
@@ -53,65 +53,78 @@
   <img 
     :src="slotProps.item.itemImageSrc" 
     :alt="slotProps.item.alt" 
-    class="w-full h-96 md:h-screen object-cover filter pointer-events-none "
+    class="w-full h-96 md:h-screen object-cover  pointer-events-none "
   />
   
   <!-- Gradient Overlay -->
-  <div class="absolute inset-0  bg-gradient-to-t from-black to-transparent"></div>
+  <div class="  "></div>
           
-          <div 
-            class=" absolute inset-0 flex flex-col items-start justify-center text-white   bg-black bg-opacity-25 px-5 md:px-20" 
-          >
-          <h1 class="hidden text-white md:block text-2xl lg:text-4xl 2xl:text-6xl font-black md:pb-5 relative z-20 " data-aos="fade-up" data-aos-duration="1500">
-            ASSURING 
-            <span class="text-white">QUALITY</span>; <br/>
-            ENHANCING 
-            <span class="text-white">RELIABILITY</span> <br/>
-</h1>
-            <!-- <p class="hidden md:block text-sm md:text-2xl md:px-20" data-aos="fade-up" data-aos-duration="1500">{{ slotProps.item.title }}</p> -->
-            <div class="mt-5 hidden md:block ">
-              <Link
-                :href="route('sector')"
-                class="font-semibold  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500 m-2 relative z-20"
-                ><Button class="text-white px-6 md:px-10 py-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-full border-orange-400 text-sm border-2 hover:border-orange-400 hover:bg-transparent">SECTORS </Button></Link
-            >
-            <Link
-                :href="route('contact')"
-                class="font-semibold  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500 m-2 relative z-20"
-                ><Button class="border-2 hover:text-white px-5 md:px-8 py-3 border-orange-400 hover:bg-gradient-to-r from-orange-500 to-red-500 rounded-full text-sm text-orange-400 ">CONTACT US </Button></Link
-            >
-            </div>
-            
-          </div>
-          <div class="absolute inset-0 flex flex-col items-end justify-center text-white bg-black bg-opacity-25 px-5 md:px-40">
-  <div class="grid grid-cols-2 gap-5">
-    <div class="bg-gradient-to-r from-orange-500 to-red-500  p-5 rounded text-center">
-      <Counter :startValue="0" :endValue="25" :duration="2000" />
-      <p class="text-white">years of experience</p>
-    </div>
-    <div class="bg-gradient-to-r from-orange-500 to-red-500 p-5 rounded text-center">
-      <Counter :startValue="0" :endValue="1650" :duration="2000" />
-      <p class="text-white">professional workforce</p>
-    </div>
-    <div class="bg-gradient-to-r from-orange-500 to-red-500 p-5 rounded text-center">
-      <Counter :startValue="0" :endValue="20" :duration="2000" />
-      <p class="text-white">states presence in india</p>
-    </div>
-    <div class="bg-gradient-to-r from-orange-500 to-red-500 p-5 rounded text-center">
-      <Counter :startValue="0" :endValue="5" :duration="2000" />
-      <p class="text-white">labs</p>
-    </div>
+         <div class="flex absolute inset-0 items-end justify-center py-0 px-5 md:px-20">
+          <div class="w-1/2 flex items-center  md:py-28  " data-aos="fade-up" data-aos-duration="3000">
+    <h1 class="text-black text-xl md:text-3xl xl:text-5xl font-bold tracking-wide">
+      ASSURING QUALITY; <br/> ENHANCING RELIABILITY
+    </h1>
   </div>
-</div>
+  
+  <div class="w-1/2 flex items-center  md:my-20  pl-5 md:px-10 border-l-4 border-blue-600" data-aos="fade-up" data-aos-duration="3000">
+    <h1 class="text-black text-lg md:text-3xl xl:text-5xl font-thin	tracking-wide">
+      25 Years of Excellence in Quality Assurance &
+ Third-Party Inspections
+    </h1>
+  </div>
+         </div>
 
   
         </div>
       </template>
     </Galleria>
     </div>
+
+    <div class="md:flex bg-white  dark:bg-black text-black dark:text-white h-content md:h-screen tracking-wide md:pl-5">
+      <div class="md:w-1/2 flex  p-10 md:p-0">
+<img src="../../images/about.png" class="w-40 h-40 md:w-60 md:h-96 my-20 flex justify-center" data-aos="zoom-in" data-aos-duration="3000">
+        <div class=" xl:p-20 text-center" data-aos="zoom-in" data-aos-duration="3000">
+          <h1 class="font-normal	  text-lg md:text-3xl">WHO WE ARE?</h1>
+          <p class="font-thin text-xs md:text-sm tracking-widest py-5">
+            We are a private organization established in 1999, with a legacy of 25 years in delivering quality services and conducting third-party inspections. We specializes in Agriculture, Engineering, Minerals, and Metals, catering to both local and global markets. The organization boasts a skilled workforce of over 1,650 professionals and maintains a global presence through strong international associations. We operates across 20+ states in India,
+             ensuring a wide-reaching market presence and the ability to meet diverse regional needs. The company has mastered third-party inspection services, ensuring top-notch quality assurance for its clients. Our commitment to precision and excellence has solidified its reputation as a trusted and proficient industry leader
+          </p>
+        </div>
+      </div>
+      <div class="md:w-1/2 bg-gray-200 dark:bg-gray-800 ">
+        <div class="grid grid-cols-2 grid-rows-2  w-full h-screen">
+  <div class="bg-gray-200 flex items-center justify-center">
+    <img src="../../images/inspection.png" alt="Image 1" class="w-full h-full object-cover hover:filter hover:brightness-50 hover:transition">
+  </div>
+
+  <div class="flex flex-col justify-center" data-aos="fade-left" data-aos-duration="3000">
+    <h1 class="text-xl md:text-5xl text-center py-5">
+      INSPECTION
+    </h1>
+    <p class="font-thin text-xs md:text-sm tracking-widest p-5 text-center">
+Our testing services ensure accuracy, compliance, and safety across minerals, consumer goods, agriculture, and laboratories. We use state-of-the-art technology and globally recognized methodologies to deliver precise and reliable results.        </p>
+  </div>
+
+  <div class="flex flex-col justify-center" data-aos="fade-right" data-aos-duration="1000">
+    <h1 class="text-xl md:text-5xl text-center py-5 ">
+      TESTING
+    </h1>
+    <p class="font-thin text-xs md:text-sm tracking-widest p-5 text-center">
+      Our testing services ensure accuracy, compliance, and safety across minerals, consumer goods, agriculture, and laboratories. We use state-of-the-art technology and globally recognized methodologies to deliver precise and reliable results.
+       </p>
+  </div>
+
+  <!-- Second Image at (1,1) -->
+  <div class="bg-gray-200 flex items-center justify-center">
+    <img src="../../images/testing.png" alt="Image 2" class="w-full h-full object-fit hover:filter hover:brightness-50 hover:transition">
+  </div>
+</div>
+
+      </div>
+    </div>
    
   
-  <div class="bg-white dark:bg-black text-black dark:text-white h-content md:px-20  relative">
+  <!-- <div class="bg-white dark:bg-black text-black dark:text-white h-content md:px-20  relative">
     <img src="../../images/bg.png" 
        class="absolute inset-0 w-full h-full opacity-10 object-cover rounded-lg" 
        alt="Coal in Bag Background">
@@ -256,7 +269,7 @@
       
       </div>
         
-    </div>
+    </div> -->
     
     
     <!-- <div class="flex justify-center md:py-0">
@@ -267,6 +280,7 @@
             >    </div>
 
     </div> -->
+    <Services/>
     <div class="bg-white dark:bg-black text-black dark:text-white h-content py-10   relative">
     <img src="../../images/bg.png" 
        class="absolute inset-0 w-full h-full opacity-10 object-cover rounded-lg" 
@@ -277,9 +291,9 @@
     <InteractivEmap data-aos="zoom-in" data-aos-duration="6000"/>
 
   </div>
-    <div class="bg-white dark:bg-black text-black dark:text-white relative h-content  p-2  border-2 rounded-lg">
+    <!-- <div class="bg-white dark:bg-black text-black dark:text-white relative h-content  p-2  border-2 rounded-lg">
   <!-- Background Image -->
-  <img src="/images/coal_in_bag.jpg" 
+  <!-- <img src="/images/coal_in_bag.jpg" 
        class="absolute inset-0 w-full h-full opacity-30 object-cover rounded-lg" 
        alt="Coal in Bag Background">
       <h1 class=" text-center  font-medium text-2xl md:text-5xl p-5 md:p-10  opacity-90" data-aos="zoom-in" data-aos-duration="2000" > <span class="font-extrabold">ABOUT</span> US</h1>
@@ -307,9 +321,9 @@ trusted and proficient industry leader.
         </div>
 
       </div>
-    </div>
+    </div>  -->
 
-<div class="h-content bg-white dark:bg-black md:px-48 py-0 pt-10 " >
+<div class="h-content bg-gray-100 dark:bg-black md:px-48 py-0 pt-10 " >
   <h1 class="text-black dark:text-white text-center font-medium text-2xl md:text-5xl px-10 ">
     <span class="font-extrabold">OUR</span> CLIENTS
   </h1>
@@ -478,20 +492,17 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import DarkModeToggle from '@/Components/DarkModeToggle.vue';
 import InteractivEmap from '@/Components/InteractivEmap.vue';
 import Counter from '@/Components/Counter.vue';
+import Services from '@/Components/Services.vue';
 
 const images = ref([
     {
-        itemImageSrc: '/images/coal.jpg',
+        itemImageSrc: '/images/hero_image.png',
         alt: 'Image 1',
         
         title: 'QSSPL handles the third party sampling, preparation and analysis of coal supplied to consumers by Coal India Limited.'
     },
     
-    {
-        itemImageSrc: '/images/farming.jpg',
-        alt: 'Image 2',
-        title: 'We are a leading Indian Inspection, Testing and Certification Group with an operational network in more than 18 cities across India'
-    }
+   
     
     // Add more images as needed
 ]);
@@ -531,6 +542,7 @@ const clients = [{image:'coal_india.png'},
 {image: 'JSW.png'},
 {image: 'APGENCO.png'},
 {image: 'RRVUNL.png'},
+{image : 'wbpdcl.png'}
 
 ];
 const certificates = [{image:'nabl-image.png'},

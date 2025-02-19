@@ -3,7 +3,7 @@
       <!-- India Map with Image -->
       <div class="w-full md:w-1/3 p-4 md:ml-20  mb-5 bg-gray-100 dark:bg-gray-900  rounded-lg shadow-md">
         <h2 class="text-xl font-semibold text-gray-800 dark:text-white">
-          {{ selectedState ? selectedState.name : "Select a State" }}
+          {{ selectedState ? selectedState.name : "Statewise presence" }}
         </h2>
         <p v-if="selectedState" class="text-gray-600 dark:text-white mt-2">
           {{ selectedState.data }}

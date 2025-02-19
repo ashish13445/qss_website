@@ -73,7 +73,7 @@ const data = [{name: 'Shashank Mehta',
         </NavBar2>
       
       <div class="bg-white">
-        <h1 class="text-2xl mt-12 md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 dark:text-black "><span class="font-extrabold pr-2">OUR</span>MANAGEMENT</h1>
+        <h1 class="text-2xl md:mt-12 md:text-5xl font-medium flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400 dark:text-black "><span class="font-extrabold pr-2">OUR</span>MANAGEMENT</h1>
 
 
         <!-- <div class="pt-10 px-10 md:px-20 grid grid-cols-2 md:grid-cols-4 gap-4   ">
@@ -139,12 +139,12 @@ const data = [{name: 'Shashank Mehta',
 
 </div>
 </div> -->
-<div style=" overflow: hidden" class="flex px-40 py-5">
+<div style=" overflow: hidden" class="flex px-5 md:px-40 py-5">
         <div class=" px-4 w-1/5">
             <img alt="user header"  class=" h-auto w-auto " src="../../../images/team/padhye.png" />
         </div>
-        <div class="w-4/5">
-            <h2 class="text-lg font-medium">Mr. Uday Padhye ( Director Technichal)</h2>
+        <div class="w-4/5 text-xs md:text-lg">
+            <h2 class="text-sm md:text-lg font-medium">Mr. Uday Padhye ( Director Technichal)</h2>
             <p class="my-4">
                <p class="py-2">
                 He is qualified with M.Sc., M.B.A. degree & having 33 years of experience in the field of Third Party Inspection and Testing related services.
@@ -166,12 +166,12 @@ He has a customer base of over 900 clients with a mix of local and International
        
 </div>
 <Divider/>    
-<div style=" overflow: hidden" class="flex px-40 py-5">
+<div style=" overflow: hidden" class="flex px-5 md:px-40 py-5">
         <div class=" px-4 w-1/5">
-            <img alt="user header"  class=" h-auto w-auto filter brightness-125" src="../../../images/team/vivek.png" />
+            <img alt="user header"  class="h-auto w-auto md:filter brightness-125" src="../../../images/team/vivek.png" />
         </div>
-        <div class="w-4/5">
-            <h2 class="text-lg font-medium">Mr. Vivek Sondhi
+        <div class="w-4/5 text-xs md:text-lg">
+            <h2 class="text-sm md:text-lg font-medium">Mr. Vivek Sondhi
                 (Director-Operations)</h2>
             <p class="my-4">
                <p class="py-2">
@@ -185,12 +185,12 @@ He has a customer base of over 900 clients with a mix of local and International
        
 </div>
 <Divider/>
-<div style=" overflow: hidden" class="flex px-40 py-5">
+<div style=" overflow: hidden" class="flex px-5 md:px-40 py-5">
         <div class=" px-4 w-1/5">
             <img alt="user header"  class=" h-auto w-auto filter brightness-125" src="../../../images/team/mridul.png" />
         </div>
-        <div class="w-4/5">
-            <h2 class="text-lg font-medium">Mr. Mridul Kohli
+        <div class="w-4/5 text-xs md:text-lg">
+            <h2 class="text-sm md:text-lg font-medium">Mr. Mridul Kohli
                 ( Director-Marketing )</h2>
             <p class="my-4">
                <p class="py-2">
@@ -202,12 +202,12 @@ He has a customer base of over 900 clients with a mix of local and International
        
 </div>
 <Divider/> 
-<div style=" overflow: hidden" class="flex px-40 py-5">
+<div style=" overflow: hidden" class="flex px-5 ms:px-40 py-5">
         <div class=" px-4 w-1/5">
             <img alt="user header"  class=" h-auto w-auto filter brightness-125" src="../../../images/team/nakul_gupta.png" />
         </div>
-        <div class="w-4/5">
-            <h2 class="text-lg font-medium">Mr. Nakul Gupta
+        <div class="w-4/5 text-sm md:text-lg">
+            <h2 class="text-sm md:text-lgfont-medium">Mr. Nakul Gupta
                 ( Executive Directive/CEO )</h2>
             <p class="my-4">
                <p class="py-2">
