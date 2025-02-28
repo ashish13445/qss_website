@@ -224,7 +224,7 @@
                     autocomplete="reporting_manager_ids"
                 >
                 <option value="">Choose Reporting Manager</option>  
-                <!-- <option :value="user.id" v-for="user in AllUsers[0].areas[0].users">{{ user.name }}</option> -->
+                <option :value="user.id" v-for="user in AllUsers[0]?AllUsers[0].areas[0].users : ''">{{ user.name }}</option>
               </select>
                 <!-- <MultiSelect v-model="form" :options="areas" optionLabel="name"  placeholder="Select Areas"
                       :maxSelectedLabels="10" class="w-full md:w-[20rem]" /> -->
