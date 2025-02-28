@@ -198,6 +198,7 @@ class UserController extends Controller
     {
         // Use the CheckRole middleware to ensure the user has the 'admin' role
         $users = Project::with('areas.users.timeEntries')->get();
+        dump($users);
         return response()->json($users);
        
      
