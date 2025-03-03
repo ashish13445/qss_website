@@ -12,6 +12,7 @@ use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\HolidaysController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\SalaryController;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -263,5 +264,13 @@ Route::post('/attendance/delete',[TimeEntryController::class,'destroy'])->name('
 Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::post('/admin/user/createNewPassword',[NewPasswordController::class,'CreateNewPassword']);
 });
+
+Route::middleware(['role:admin'])->group(function () {
+    Route::get('/salary/upload', [SalaryController::class, 'uploadForm'])->name('admin.salary.upload.form');
+Route::post('/salary/upload', [SalaryController::class, 'upload'])->name('salary.upload');
+
+});
+Route::get('/salary/list', [SalaryController::class, 'listSalaries']);
+Route::post('/salary/slip', [SalaryController::class, 'downloadSalarySlip'])->name('salary.slip');
 
 require __DIR__.'/auth.php';

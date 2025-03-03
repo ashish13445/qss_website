@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Providers;
+// use Maatwebsite\Excel\ExcelServiceProvider;
+// use Illuminate\Support\Facades\App;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // App::bind('excel', function () {
+        //     return new ExcelServiceProvider(app());
+        // });
     }
 
     /**

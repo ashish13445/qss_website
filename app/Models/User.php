@@ -6,6 +6,7 @@ use App\Models\TimeEntry;
 use App\Models\Project;
 use App\Models\Area;
 use App\Models\Leave;
+use App\Models\Salary;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -101,6 +102,10 @@ public function project()
 public function areas()
 {
     return $this->belongsToMany(Area::class);
+}
+public function salaries()
+{
+    return $this->hasMany(Salary::class, 'employee_id', 'employee_id'); // Match the correct foreign key
 }
 
 public function area(){
