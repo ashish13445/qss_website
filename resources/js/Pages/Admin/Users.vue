@@ -992,7 +992,7 @@ const isLoading = ref(true);
 const getAllUsers = async () => {
   try {
     isLoading.value = true; // Show loading state
-    const response = await axios.get('/admin/users', { timeout: 60000 }); // Increase timeout for large data
+    const response = await axios.get('/admin/users'); // Increase timeout for large data
     AllUsers.value = response.data;
   } catch (error) {
     console.error("Error fetching users:", error);
@@ -1175,31 +1175,17 @@ const exportCSV = () => {
   csvContent += 'Total Present,Total Absent,Rest,Overtime\r\n'; // Add extra columns
 
   // Check if AllUsers is properly loaded
-  if (!Array.isArray(AllUsers.value) || AllUsers.value.length === 0) {
-    console.error("AllUsers is not loaded or empty.");
-    alert("User data is not available.");
-    return;
-  }
+  
 
   // Iterate over users
   AllUsers.value.forEach(project => {
-    if (!Array.isArray(project.areas)) {
-      console.warn(`Project ${project.title} has no areas defined.`);
-      return;
-    }
+    
 
     project.areas.forEach(area => {
-      if (!Array.isArray(area.users)) {
-        console.warn(`Area ${area.name} in project ${project.title} has no users.`);
-        return;
-      }
+      
 
       area.users.forEach(user => {
-        if (!Array.isArray(user.time_entries)) {
-          console.warn(`User ${user.name} has no valid time entries.`);
-          return;
-        }
-
+        
         // Filter entries from the previous month
         const previousMonthTimeEntries = user.time_entries.filter(entry => {
           const entryDate = new Date(entry.date);
