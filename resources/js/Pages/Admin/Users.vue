@@ -1070,6 +1070,7 @@ const exportCSV = () => {
 
   // Iterate over users
   users.value.forEach(user => {
+    console.log(user);
     // Filter entries from the previous month
     const previousMonthTimeEntries = user.time_entries.filter(entry => {
       const entryDate = new Date(entry.date); // Assuming each time entry has a 'date' property
@@ -1147,92 +1148,123 @@ const exportCSV = () => {
       date.setDate(date.getDate() + 1);
     }
     return dates;
-    
-  }
+  };
 
   // Get the current date
   const currentDate = new Date();
 
   // Calculate the previous month
-  const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth()-1 ,1);
-  
+  const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
+
   // Get all dates of the previous month
   const datesOfPreviousMonth = getDatesOfPreviousMonth(previousMonth.getFullYear(), previousMonth.getMonth());
 
   // Construct the header row with dates
   datesOfPreviousMonth.forEach(date => {
-    const dateString = date.toDateString(); // Get date in 'YYYY-MM-DD' format
+    const dateString = date.toISOString().split('T')[0]; // Format 'YYYY-MM-DD'
     csvContent += `${dateString},`;
   });
-  csvContent += 'Total Present, Total Absent, Rest, Overtime\r\n'; // Add extra columns
+  csvContent += 'Total Present,Total Absent,Rest,Overtime\r\n'; // Add extra columns
+
+  // Check if AllUsers is properly loaded
+  if (!Array.isArray(AllUsers.value) || AllUsers.value.length === 0) {
+    console.error("AllUsers is not loaded or empty.");
+    alert("User data is not available.");
+    return;
+  }
 
   // Iterate over users
   AllUsers.value.forEach(project => {
+    if (!Array.isArray(project.areas)) {
+      console.warn(`Project ${project.title} has no areas defined.`);
+      return;
+    }
+
     project.areas.forEach(area => {
-      area.users.forEach(user => {
-    // Filter entries from the previous month
-    const previousMonthTimeEntries = user.time_entries.filter(entry => {
-      const entryDate = new Date(entry.date); // Assuming each time entry has a 'date' property
-      return entryDate.getFullYear() === previousMonth.getFullYear() && entryDate.getMonth() === previousMonth.getMonth();
-    });
-
-    // Create a map of entries by date for quick lookup
-    const entriesByDate = new Map();
-    previousMonthTimeEntries.forEach(entry => {
-      const entryDate = new Date(entry.date).toDateString() // Get date in 'YYYY-MM-DD' format
-      entriesByDate.set(entryDate, entry);
-    });
-
-   
-    // Initialize the CSV row with user data
-    let csvRow = `${user.name},${user.employee_id},${user.designation},${user.manday},${project.title},${area.name}`;
-    
-    // Variables to track total present and absent days
-    let totalPresent = 0;
-    let totalAbsent = 0;
-    let totalRest = 0;
-    let totalOverTime = 0;
-    // Iterate over all dates of the previous month
-    datesOfPreviousMonth.forEach(date => {
-      const dateString = date.toDateString(); // Get date in 'YYYY-MM-DD' format
-      if (entriesByDate.has(dateString)) {
-        const entry = entriesByDate.get(dateString);
-        csvRow += `,${entry.remarks}`; // Modify to include relevant entry details
-        if(entry.remarks == 'present'){
-          if(entry.shift_no == 1 || entry.shift_no == null){
-            totalPresent++;
-          }
-          else{
-            totalPresent++;
-            totalOverTime++;
-          }
-
-        }
-        else{
-          totalRest++;
-        }
-      } else {
-        csvRow += `,A`;
-        totalAbsent++;
+      if (!Array.isArray(area.users)) {
+        console.warn(`Area ${area.name} in project ${project.title} has no users.`);
+        return;
       }
+
+      area.users.forEach(user => {
+        if (!Array.isArray(user.time_entries)) {
+          console.warn(`User ${user.name} has no valid time entries.`);
+          return;
+        }
+
+        // Filter entries from the previous month
+        const previousMonthTimeEntries = user.time_entries.filter(entry => {
+          const entryDate = new Date(entry.date);
+          return (
+            entryDate.getFullYear() === previousMonth.getFullYear() &&
+            entryDate.getMonth() === previousMonth.getMonth()
+          );
+        });
+
+        // Create a map of entries by date for quick lookup
+        const entriesByDate = new Map();
+        previousMonthTimeEntries.forEach(entry => {
+          const entryDate = new Date(entry.date).toISOString().split('T')[0]; // 'YYYY-MM-DD' format
+          entriesByDate.set(entryDate, entry);
+        });
+
+        // Initialize the CSV row with user data
+        let csvRow = `${user.name},${user.employee_id},${user.designation},${user.manday},${project.title},${area.name}`;
+
+        // Variables to track total present, absent, rest, and overtime
+        let totalPresent = 0;
+        let totalAbsent = 0;
+        let totalRest = 0;
+        let totalOverTime = 0;
+
+        // Iterate over all dates of the previous month
+        datesOfPreviousMonth.forEach(date => {
+          const dateString = date.toISOString().split('T')[0]; // 'YYYY-MM-DD' format
+
+          if (entriesByDate.has(dateString)) {
+            const entry = entriesByDate.get(dateString);
+            csvRow += `,${entry.remarks || 'N/A'}`; // Include remarks, default to 'N/A' if missing
+
+            if (entry.remarks === 'present') {
+              if (entry.shift_no === 1 || entry.shift_no == null) {
+                totalPresent++;
+              } else {
+                totalPresent++;
+                totalOverTime++;
+              }
+            } else {
+              totalRest++;
+            }
+          } else {
+            csvRow += `,A`; // Mark as Absent
+            totalAbsent++;
+          }
+        });
+
+        // Add total present, total absent, rest, and overtime
+        csvRow += `,${totalPresent},${totalAbsent},${totalRest},${totalOverTime}\r\n`;
+
+        // Append row to CSV content
+        csvContent += csvRow;
+      });
     });
-
-    // Add total present, total absent, rest, and overtime
-    csvRow += `,${totalPresent},${totalAbsent},${totalRest},${totalOverTime}\r\n`; // Assuming rest and overtime values are 0 for now
-
-    csvContent += csvRow;
   });
-});
-});
-   // Output the final CSV content
-      // Create a link element and trigger a click to download the CSV
-      const encodedUri = encodeURI(csvContent);
-      const link = document.createElement('a');
-      link.setAttribute('href', encodedUri);
-      link.setAttribute('download', 'users_atendance.csv');
-      document.body.appendChild(link);
-      link.click();
-    };
+
+  // Check if CSV content is empty (excluding headers)
+  if (csvContent.split('\n').length <= 2) {
+    console.error("No valid user attendance data found.");
+    alert("No attendance data available to export.");
+    return;
+  }
+
+  // Output the final CSV content
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement('a');
+  link.setAttribute('href', encodedUri);
+  link.setAttribute('download', 'users_attendance.csv');
+  document.body.appendChild(link);
+  link.click();
+};
 
 
 
