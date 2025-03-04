@@ -17,8 +17,10 @@
       <Tag class="md:m-3 mr-3" icon="pi pi-user" severity="success" ><span  class="mx-2">Active Manpower: {{ presentUsers.length }}  </span></Tag>
       <Tag class="md:m-3 mr-3" icon="pi pi-user" severity="info" ><span class="mx-2">On Rest: {{ restUsers.length }}  </span></Tag>
       <Tag class="md:m-3 mr-3" icon="pi pi-user" severity="danger" ><span class="mx-2">on Overtime: {{ overtimeUsers.length }}  </span></Tag>
-
-      <PrimaryButton v-tooltip="'Export as CSV'" class="my-2 mr-2" @click="exportAllCSV"><i class="pi pi-file-export"></i></PrimaryButton>
+      <div v-if="isLoading">Loading...</div>
+      <div v-else>
+      <PrimaryButton  v-tooltip="'Export as CSV'" class="my-2 mr-2" :disabled="!AllUsers || AllUsers.length === 0" @click="exportAllCSV"><i class="pi pi-file-export"></i></PrimaryButton>
+      </div>
     </h1>
     
     <Modal :show="isRegisterModalOpen" @close="closeRegisterModal" >
@@ -987,12 +989,20 @@ const closeUpdateRoleModal = ()=>{
 
 }
 const AllUsers = ref([]);
-const getAllUsers = () => {
-  axios.get('/admin/users')
-  .then((res)=>{
-    AllUsers.value = res.data;
-  });
-}
+const isLoading = ref(true);
+
+const getAllUsers = async () => {
+  try {
+    isLoading.value = true; // Show loading state
+    const response = await axios.get('/admin/users', { timeout: 60000 }); // Increase timeout for large data
+    AllUsers.value = response.data;
+  } catch (error) {
+    console.error("Error fetching users:", error);
+  } finally {
+    isLoading.value = false; // Hide loading state
+  }
+};
+
 const selectedUserEmail = ref('');
 onMounted(getAllUsers);
 const openCreateNewPassword = (data)=>{
