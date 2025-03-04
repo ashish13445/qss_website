@@ -1176,7 +1176,7 @@ const exportCSV = () => {
     project.areas.forEach((area) => {
       area.users.forEach((user) => {
         // Filter entries from the previous month
-        console.log(user.timeEntries);
+        console.log(user);
         const previousMonthTimeEntries = user.timeEntries.filter((entry) => {
           const entryDate = new Date(entry.date);
           return (
