@@ -197,16 +197,22 @@ class UserController extends Controller
     public function viewAllUsers()
     {
         // Use the CheckRole middleware to ensure the user has the 'admin' role
-        $users = [];
-
-        Project::with('areas.users.timeEntries')
-            ->chunk(500, function ($chunk) use (&$users) {
-                foreach ($chunk as $project) {
-                    $users[] = $project;
+        try {
+            // Get the start and end of the previous month
+            $previousMonthStart = now()->subMonth()->startOfMonth();
+            $previousMonthEnd = now()->subMonth()->endOfMonth();
+    
+            // Fetch users with areas and time entries only from the previous month
+            $users = Project::with([
+                'areas.users.timeEntries' => function ($query) use ($previousMonthStart, $previousMonthEnd) {
+                    $query->whereBetween('date', [$previousMonthStart, $previousMonthEnd]);
                 }
-            });
-        
-        return response()->json($users);
+            ])->get();
+    
+            return response()->json($users);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
        
      
     }
