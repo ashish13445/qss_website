@@ -1176,14 +1176,13 @@ const exportCSV = () => {
     project.areas.forEach((area) => {
       area.users.forEach((user) => {
         // Filter entries from the previous month
-        console.log(user);
-        const previousMonthTimeEntries = user.time_entries?user.time_entries.filter((entry) => {
+        const previousMonthTimeEntries = user.timeEntries.filter((entry) => {
           const entryDate = new Date(entry.date);
           return (
             entryDate.getFullYear() === previousMonth.getFullYear() &&
             entryDate.getMonth() === previousMonth.getMonth()
           );
-        }):[];
+        });
 
         // Create a map of entries by date for quick lookup
         const entriesByDate = new Map();
