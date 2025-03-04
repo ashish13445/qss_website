@@ -1149,16 +1149,13 @@ const exportCSV = () => {
   // Helper function to get all dates of the previous month
   const getDatesOfPreviousMonth = (year, month) => {
   let dates = [];
-  let date = new Date(year, month, 1);
-
+  let date = new Date(year, month, 1); // Start of month
+  
   while (date.getMonth() === month) {
-    // Push date in 'YYYY-MM-DD' format in LOCAL TIME
-    let formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
-    dates.push(formattedDate);
-    
-    date.setDate(date.getDate() + 1);
+    dates.push(new Date(date)); // Ensure it's a Date object
+    date.setDate(date.getDate() + 1); // Move to next day
   }
-
+  
   return dates;
 };
 
@@ -1171,10 +1168,8 @@ const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth()
 // Get all dates of the previous month
 const datesOfPreviousMonth = getDatesOfPreviousMonth(previousMonth.getFullYear(), previousMonth.getMonth());
 // Construct the header row with dates
-datesOfPreviousMonth.forEach((date) => {
- 
-  csvContent += `${date},`;
-});
+csvContent += datesOfPreviousMonth.join(",") + ",";
+
   csvContent += "Total Present,Total Absent,Rest,Overtime\r\n"; // Add extra columns
 
   // Iterate over users
@@ -1192,11 +1187,15 @@ datesOfPreviousMonth.forEach((date) => {
 
         // Create a map of entries by date for quick lookup
         const entriesByDate = new Map();
-        previousMonthTimeEntries.forEach((entry) => {
-          const entryDate = new Date(entry.date); // 'YYYY-MM-DD' format
-          entriesByDate.set(entryDate, entry);
-        });
 
+previousMonthTimeEntries.forEach((entry) => {
+  const entryDate = new Date(entry.date);
+
+  // Format as 'YYYY-MM-DD' in local time (IST or any local time zone)
+  const formattedDate = `${entryDate.getFullYear()}-${String(entryDate.getMonth() + 1).padStart(2, "0")}-${String(entryDate.getDate()).padStart(2, "0")}`;
+
+  entriesByDate.set(formattedDate, entry);
+});
         // Initialize the CSV row with user data
         let csvRow = `${user.name},${user.employee_id},${user.designation},${user.manday},${project.title},${area.name}`;
 
@@ -1208,26 +1207,29 @@ datesOfPreviousMonth.forEach((date) => {
 
         // Iterate over all dates of the previous month
         datesOfPreviousMonth.forEach((date) => {
-          const dateString = date; // 'YYYY-MM-DD' format
-          if (entriesByDate.has(dateString)) {
-            const entry = entriesByDate.get(dateString);
-            csvRow += `,${entry.remarks}`;
+  // Convert date to local YYYY-MM-DD format
+  const dateString = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 
-            if (entry.remarks === "present") {
-              if (entry.shift_no === 1 || entry.shift_no === null) {
-                totalPresent++;
-              } else {
-                totalPresent++;
-                totalOverTime++;
-              }
-            } else {
-              totalRest++;
-            }
-          } else {
-            csvRow += ",A";
-            totalAbsent++;
-          }
-        });
+  if (entriesByDate.has(dateString)) {
+    const entry = entriesByDate.get(dateString);
+    csvRow += `,${entry.remarks}`;
+
+    if (entry.remarks === "present") {
+      if (entry.shift_no === 1 || entry.shift_no === null) {
+        totalPresent++;
+      } else {
+        totalPresent++;
+        totalOverTime++;
+      }
+    } else {
+      totalRest++;
+    }
+  } else {
+    csvRow += ",A";
+    totalAbsent++;
+  }
+});
+
 
         // Add total present, total absent, rest, and overtime
         csvRow += `,${totalPresent},${totalAbsent},${totalRest},${totalOverTime}\r\n`;
