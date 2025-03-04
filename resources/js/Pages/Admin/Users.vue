@@ -1187,7 +1187,7 @@ const exportCSV = () => {
       area.users.forEach(user => {
         
         // Filter entries from the previous month
-        const previousMonthTimeEntries = user.time_entries.filter(entry => {
+        const previousMonthTimeEntries = user.time_entries.value.filter(entry => {
           const entryDate = new Date(entry.date);
           return (
             entryDate.getFullYear() === previousMonth.getFullYear() &&
