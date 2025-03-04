@@ -196,24 +196,28 @@ class UserController extends Controller
 
     public function viewAllUsers()
     {
-        // Use the CheckRole middleware to ensure the user has the 'admin' role
-        try {
-        // Get the start and end of the previous month
-        $previousMonthStart = Carbon::now()->subMonth()->firstOfMonth(); // First day of previous month
-$previousMonthEnd = Carbon::now()->subMonth()->lastOfMonth(); // Last day of previous month
+        $previousMonthStart = Carbon::now()->subMonth()->firstOfMonth();
+$previousMonthEnd = Carbon::now()->subMonth()->lastOfMonth();
 
-// Fetch users with areas and only time entries from the previous month
-$users = Project::with([
-    'areas.users.timeEntries' => function ($query) use ($previousMonthStart, $previousMonthEnd) {
-        $query->whereBetween('date', [$previousMonthStart, $previousMonthEnd]);
-    }
-])->get();
+// Open memory-efficient JSON response
+$responseData = [];
 
-        return response()->json($users);
-    } catch (\Exception $e) {
-        return response()->json(['error' => $e->getMessage()], 500);
+Project::with('areas.users.timeEntries')->chunk(10, function ($projects) use ($previousMonthStart, $previousMonthEnd, &$responseData) {
+    foreach ($projects as $project) {
+        foreach ($project->areas as $area) {
+            foreach ($area->users as $user) {
+                // Filter time entries only from the previous month
+                $user->timeEntries = $user->timeEntries->filter(function ($entry) use ($previousMonthStart, $previousMonthEnd) {
+                    return $entry->date >= $previousMonthStart && $entry->date <= $previousMonthEnd;
+                })->values(); // Reset array keys
+            }
+        }
+        $responseData[] = $project;
     }
-       
+});
+
+// Return the response in JSON
+return response()->json($responseData);
      
     }
 
