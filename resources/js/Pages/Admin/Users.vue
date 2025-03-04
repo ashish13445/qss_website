@@ -1143,8 +1143,8 @@ const exportCSV = () => {
 
 
     const exportAllCSV = () => {
-      let csvContent = 'data:text/csv;charset=utf-8,';
-  csvContent += 'Name,Employee Id,Designation,Manday,Location,SubLocation,'; // Header row
+  let csvContent = "data:text/csv;charset=utf-8,";
+  csvContent += "Name,Employee Id,Designation,Manday,Location,SubLocation,"; // Header row
 
   // Helper function to get all dates of the previous month
   const getDatesOfPreviousMonth = (year, month) => {
@@ -1155,89 +1155,94 @@ const exportCSV = () => {
       date.setDate(date.getDate() + 1);
     }
     return dates;
-    
-  }
+  };
 
   // Get the current date
   const currentDate = new Date();
-
   // Calculate the previous month
-  const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth()-1 ,1);
-  
+  const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
   // Get all dates of the previous month
   const datesOfPreviousMonth = getDatesOfPreviousMonth(previousMonth.getFullYear(), previousMonth.getMonth());
 
   // Construct the header row with dates
-  datesOfPreviousMonth.forEach(date => {
-    const dateString = date.toDateString(); // Get date in 'YYYY-MM-DD' format
+  datesOfPreviousMonth.forEach((date) => {
+    const dateString = date.toISOString().split("T")[0]; // 'YYYY-MM-DD' format
     csvContent += `${dateString},`;
   });
-  csvContent += 'Total Present, Total Absent, Rest, Overtime\r\n'; // Add extra columns
+  csvContent += "Total Present,Total Absent,Rest,Overtime\r\n"; // Add extra columns
 
   // Iterate over users
-  AllUsers.value.forEach(user => {
-    // Filter entries from the previous month
-    const previousMonthTimeEntries = user.time_entries.filter(entry => {
-      const entryDate = new Date(entry.date); // Assuming each time entry has a 'date' property
-      return entryDate.getFullYear() === previousMonth.getFullYear() && entryDate.getMonth() === previousMonth.getMonth();
-    });
+  AllUsers.value.forEach((project) => {
+    project.areas.forEach((area) => {
+      area.users.forEach((user) => {
+        // Filter entries from the previous month
+        console.log(user);
+        const previousMonthTimeEntries = user.time_entries?user.time_entries.filter((entry) => {
+          const entryDate = new Date(entry.date);
+          return (
+            entryDate.getFullYear() === previousMonth.getFullYear() &&
+            entryDate.getMonth() === previousMonth.getMonth()
+          );
+        }):[];
 
-    // Create a map of entries by date for quick lookup
-    const entriesByDate = new Map();
-    previousMonthTimeEntries.forEach(entry => {
-      const entryDate = new Date(entry.date).toDateString() // Get date in 'YYYY-MM-DD' format
-      entriesByDate.set(entryDate, entry);
-    });
+        // Create a map of entries by date for quick lookup
+        const entriesByDate = new Map();
+        previousMonthTimeEntries.forEach((entry) => {
+          const entryDate = new Date(entry.date).toISOString().split("T")[0]; // 'YYYY-MM-DD' format
+          entriesByDate.set(entryDate, entry);
+        });
 
-   
-    // Initialize the CSV row with user data
-    let csvRow = `${user.name},${user.employee_id},${user.designation},${user.manday},${user.project.title},${user.area.name}`;
-    
-    // Variables to track total present and absent days
-    let totalPresent = 0;
-    let totalAbsent = 0;
-    let totalRest = 0;
-    let totalOverTime = 0;
-    // Iterate over all dates of the previous month
-    datesOfPreviousMonth.forEach(date => {
-      const dateString = date.toDateString(); // Get date in 'YYYY-MM-DD' format
-      if (entriesByDate.has(dateString)) {
-        const entry = entriesByDate.get(dateString);
-        csvRow += `,${entry.remarks}`; // Modify to include relevant entry details
-        if(entry.remarks == 'present'){
-          if(entry.shift_no == 1 || entry.shift_no == null){
-            totalPresent++;
+        // Initialize the CSV row with user data
+        let csvRow = `${user.name},${user.employee_id},${user.designation},${user.manday},${project.title},${area.name}`;
+
+        // Variables to track total present and absent days
+        let totalPresent = 0;
+        let totalAbsent = 0;
+        let totalRest = 0;
+        let totalOverTime = 0;
+
+        // Iterate over all dates of the previous month
+        datesOfPreviousMonth.forEach((date) => {
+          const dateString = date.toISOString().split("T")[0]; // 'YYYY-MM-DD' format
+          if (entriesByDate.has(dateString)) {
+            const entry = entriesByDate.get(dateString);
+            csvRow += `,${entry.remarks}`;
+
+            if (entry.remarks === "present") {
+              if (entry.shift_no === 1 || entry.shift_no === null) {
+                totalPresent++;
+              } else {
+                totalPresent++;
+                totalOverTime++;
+              }
+            } else {
+              totalRest++;
+            }
+          } else {
+            csvRow += ",A";
+            totalAbsent++;
           }
-          else{
-          totalPresent++;
-            totalOverTime++;
-          }
+        });
 
-        }
-        else{
-          totalRest++;
-        }
-      } else {
-        csvRow += `,A`;
-        totalAbsent++;
-      }
+        // Add total present, total absent, rest, and overtime
+        csvRow += `,${totalPresent},${totalAbsent},${totalRest},${totalOverTime}\r\n`;
+
+        csvContent += csvRow;
+      });
     });
-
-    // Add total present, total absent, rest, and overtime
-    csvRow += `,${totalPresent},${totalAbsent},${totalRest},${totalOverTime}\r\n`; // Assuming rest and overtime values are 0 for now
-
-    csvContent += csvRow;
   });
 
-   // Output the final CSV content
-      // Create a link element and trigger a click to download the CSV
-      const encodedUri = encodeURI(csvContent);
-      const link = document.createElement('a');
-      link.setAttribute('href', encodedUri);
-      link.setAttribute('download', 'users_atendance.csv');
-      document.body.appendChild(link);
-      link.click();
+  // Create a link element and trigger a click to download the CSV
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", "users_attendance.csv");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link); // Cleanup
 };
+
+
 
 
 
