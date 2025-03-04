@@ -1245,11 +1245,7 @@ const exportCSV = () => {
   });
 
   // Check if CSV content is empty (excluding headers)
-  if (csvContent.split('\n').length <= 2) {
-    console.error("No valid user attendance data found.");
-    alert("No attendance data available to export.");
-    return;
-  }
+  
 
   // Output the final CSV content
   const encodedUri = encodeURI(csvContent);
