@@ -1148,27 +1148,32 @@ const exportCSV = () => {
 
   // Helper function to get all dates of the previous month
   const getDatesOfPreviousMonth = (year, month) => {
-    let dates = [];
-    let date = new Date(year, month, 1);
-    while (date.getMonth() === month) {
-      dates.push(new Date(date));
-      date.setDate(date.getDate() + 1);
-    }
-    return dates;
-  };
+  let dates = [];
+  let date = new Date(year, month, 1);
 
-  // Get the current date
-  const currentDate = new Date();
-  // Calculate the previous month
-  const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
-  // Get all dates of the previous month
-  const datesOfPreviousMonth = getDatesOfPreviousMonth(previousMonth.getFullYear(), previousMonth.getMonth());
+  while (date.getMonth() === month) {
+    // Push date in 'YYYY-MM-DD' format without timezone shifts
+    dates.push(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+    date.setDate(date.getDate() + 1);
+  }
 
-  // Construct the header row with dates
-  datesOfPreviousMonth.forEach((date) => {
-    const dateString = date.toISOString().split("T")[0]; // 'YYYY-MM-DD' format
-    csvContent += `${dateString},`;
-  });
+  return dates;
+};
+
+// Get the current date
+const currentDate = new Date();
+
+// Calculate the previous month
+const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
+
+// Get all dates of the previous month
+const datesOfPreviousMonth = getDatesOfPreviousMonth(previousMonth.getFullYear(), previousMonth.getMonth());
+
+// Construct the header row with dates
+datesOfPreviousMonth.forEach((date) => {
+  const dateString = date.toISOString().split("T")[0]; // Correctly formatted 'YYYY-MM-DD'
+  csvContent += `${dateString},`;
+});
   csvContent += "Total Present,Total Absent,Rest,Overtime\r\n"; // Add extra columns
 
   // Iterate over users
