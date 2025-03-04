@@ -17,10 +17,8 @@
       <Tag class="md:m-3 mr-3" icon="pi pi-user" severity="success" ><span  class="mx-2">Active Manpower: {{ presentUsers.length }}  </span></Tag>
       <Tag class="md:m-3 mr-3" icon="pi pi-user" severity="info" ><span class="mx-2">On Rest: {{ restUsers.length }}  </span></Tag>
       <Tag class="md:m-3 mr-3" icon="pi pi-user" severity="danger" ><span class="mx-2">on Overtime: {{ overtimeUsers.length }}  </span></Tag>
-      <div v-if="isLoading">Loading...</div>
-      <div v-else>
+
       <PrimaryButton  v-tooltip="'Export as CSV'" class="my-2 mr-2" :disabled="!AllUsers || AllUsers.length === 0" @click="exportAllCSV"><i class="pi pi-file-export"></i></PrimaryButton>
-      </div>
     </h1>
     
     <Modal :show="isRegisterModalOpen" @close="closeRegisterModal" >
