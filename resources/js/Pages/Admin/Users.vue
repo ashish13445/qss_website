@@ -1152,8 +1152,10 @@ const exportCSV = () => {
   let date = new Date(year, month, 1);
 
   while (date.getMonth() === month) {
-    // Push date in 'YYYY-MM-DD' format without timezone shifts
-    dates.push(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+    // Push date in 'YYYY-MM-DD' format in LOCAL TIME
+    let formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+    dates.push(formattedDate);
+    
     date.setDate(date.getDate() + 1);
   }
 
@@ -1168,11 +1170,10 @@ const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth()
 
 // Get all dates of the previous month
 const datesOfPreviousMonth = getDatesOfPreviousMonth(previousMonth.getFullYear(), previousMonth.getMonth());
-
 // Construct the header row with dates
 datesOfPreviousMonth.forEach((date) => {
-  const dateString = date.toISOString().split("T")[0]; // Correctly formatted 'YYYY-MM-DD'
-  csvContent += `${dateString},`;
+ 
+  csvContent += `${date},`;
 });
   csvContent += "Total Present,Total Absent,Rest,Overtime\r\n"; // Add extra columns
 
@@ -1181,7 +1182,6 @@ datesOfPreviousMonth.forEach((date) => {
     project.areas.forEach((area) => {
       area.users.forEach((user) => {
         // Filter entries from the previous month
-        console.log(user);
         const previousMonthTimeEntries = user.timeEntries.filter((entry) => {
           const entryDate = new Date(entry.date);
           return (
@@ -1193,7 +1193,7 @@ datesOfPreviousMonth.forEach((date) => {
         // Create a map of entries by date for quick lookup
         const entriesByDate = new Map();
         previousMonthTimeEntries.forEach((entry) => {
-          const entryDate = new Date(entry.date).toISOString().split("T")[0]; // 'YYYY-MM-DD' format
+          const entryDate = new Date(entry.date); // 'YYYY-MM-DD' format
           entriesByDate.set(entryDate, entry);
         });
 
@@ -1208,7 +1208,7 @@ datesOfPreviousMonth.forEach((date) => {
 
         // Iterate over all dates of the previous month
         datesOfPreviousMonth.forEach((date) => {
-          const dateString = date.toISOString().split("T")[0]; // 'YYYY-MM-DD' format
+          const dateString = date; // 'YYYY-MM-DD' format
           if (entriesByDate.has(dateString)) {
             const entry = entriesByDate.get(dateString);
             csvRow += `,${entry.remarks}`;
