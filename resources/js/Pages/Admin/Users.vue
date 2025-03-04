@@ -18,7 +18,7 @@
       <Tag class="md:m-3 mr-3" icon="pi pi-user" severity="info" ><span class="mx-2">On Rest: {{ restUsers.length }}  </span></Tag>
       <Tag class="md:m-3 mr-3" icon="pi pi-user" severity="danger" ><span class="mx-2">on Overtime: {{ overtimeUsers.length }}  </span></Tag>
 
-      <PrimaryButton  v-tooltip="'Export as CSV'" class="my-2 mr-2" :disabled="!AllUsers || AllUsers.length === 0" @click="exportAllCSV"><i class="pi pi-file-export"></i></PrimaryButton>
+      <PrimaryButton  v-tooltip="'Export as CSV'" class="my-2 mr-2"  @click="exportAllCSV"><i class="pi pi-file-export"></i></PrimaryButton>
     </h1>
     
     <Modal :show="isRegisterModalOpen" @close="closeRegisterModal" >
