@@ -200,24 +200,23 @@ class UserController extends Controller
 $previousMonthEnd = Carbon::now()->subMonth()->lastOfMonth();
 
 // Open memory-efficient JSON response
-$responseData = [];
+$projects = Project::all();
 
-Project::with('areas.users.timeEntries')->chunk(10, function ($projects) use ($previousMonthStart, $previousMonthEnd, &$responseData) {
-    foreach ($projects as $project) {
-        foreach ($project->areas as $area) {
-            foreach ($area->users as $user) {
-                // Filter time entries only from the previous month
-                $user->timeEntries = $user->timeEntries->filter(function ($entry) use ($previousMonthStart, $previousMonthEnd) {
-                    return $entry->date >= $previousMonthStart && $entry->date <= $previousMonthEnd;
-                })->values(); // Reset array keys
-            }
+foreach ($projects as $project) {
+    $project->load('areas.users'); // Load related data only when accessed
+
+    foreach ($project->areas as $area) {
+        foreach ($area->users as $user) {
+            // Load only required time entries
+            $user->timeEntries = $user->timeEntries()
+                ->whereBetween('date', [$previousMonthStart, $previousMonthEnd])
+                ->get();
         }
-        $responseData[] = $project;
     }
-});
+}
 
-// Return the response in JSON
-return response()->json($responseData);
+return response()->json($projects);
+
      
     }
 
