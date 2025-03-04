@@ -197,8 +197,15 @@ class UserController extends Controller
     public function viewAllUsers()
     {
         // Use the CheckRole middleware to ensure the user has the 'admin' role
-        $users = Project::with('areas.users.timeEntries')->get(); // Paginate with 10 per page
-        dump($users);
+        $users = [];
+
+        Project::with('areas.users.timeEntries')
+            ->chunk(500, function ($chunk) use (&$users) {
+                foreach ($chunk as $project) {
+                    $users[] = $project;
+                }
+            });
+        
         return response()->json($users);
        
      
