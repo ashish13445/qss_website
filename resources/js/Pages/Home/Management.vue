@@ -139,7 +139,7 @@ const data = [{name: 'Shashank Mehta',
 
 </div>
 </div> -->
-<div class="md:flex px-32">
+<div class="md:flex px-0 mx-0 md:px-32 ">
  
 <div class="w-screen  py-5 ">
         <div class="  flex justify-center">
