@@ -68,7 +68,7 @@ defineProps({
       </NavBar2>
 <div class="w-full md:tracking-wider ">
 
-        <div class=" flex justify-evenly   w-full ">
+        <div class=" flex justify-evenly   w-full h-screen">
           
           <section class="relative ">
 <img class="h-full object-cover opacity-50 " src="../../../../public/images/grain.png" >
