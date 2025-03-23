@@ -70,9 +70,9 @@ defineProps({
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/Udham_registration_QSSPL.pdf" pdfImage="../../../images/certificates/Udham_registration_QSSPL.png" pdfName="Udham Registration QSSPL" /></div>
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/MSME_qspl.pdf" pdfImage="../../../images/certificates/MSME_qspl.png" pdfName="MSME QSSPL" /></div>
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL.pdf" pdfImage="../../../images/certificates/NABL.png" pdfName="NABL" /></div> -->
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-MP.pdf" pdfImage="../../../images/certificates/NABL-image.webp" pdfName="NABL MP" /></div> 
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-MAHARASHTRA.pdf" pdfImage="../../../images/certificates/NABL-image.webp" pdfName="NABL MAHARASHTRA" /></div> 
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-GUJRAT.pdf" pdfImage="../../../images/certificates/NABL-image.webp" pdfName="NABL GUJRAT" /></div> 
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-MP.pdf" pdfImage="../../../images/certificates/NABL-new.webp" pdfName="NABL MP" /></div> 
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-MAHARASHTRA.pdf" pdfImage="../../../images/certificates/NABL-new.webp" pdfName="NABL MAHARASHTRA" /></div> 
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-GUJRAT.pdf" pdfImage="../../../images/certificates/NABL-new.webp" pdfName="NABL GUJRAT" /></div> 
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/QAI-CHHATISGARH.pdf" pdfImage="../../../images/certificates/QAI.png" pdfName="QAI CHHATTISGARH" /></div> 
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/QAI-JHARKHAND.pdf" pdfImage="../../../images/certificates/QAI.png" pdfName="QAI JHARKHAND" /></div> 
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/IBP-ASSAM.pdf" pdfImage="../../../images/certificates/IBP.png" pdfName="IBP ASSAM" /></div> 
