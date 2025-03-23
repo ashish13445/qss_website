@@ -9,7 +9,7 @@ const items = [
   { label: 'About Us', to: 'about'},
   { label: 'Our Sectors' , to: 'sector'},
   { label: 'Our Services' , to: 'services'},
-  { label: 'Our Presence' , to: 'background'},
+  { label: 'Our Team' , to: 'management'},
   { label: 'Certificates', to: 'certificates' },
   
   // { label: 'C', to: 'about' },

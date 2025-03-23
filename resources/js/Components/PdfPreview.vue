@@ -2,9 +2,9 @@
   <div>
     <div v-if="!fullScreen" @click="toggleFullScreen" class="w-full h-full flex justify-center items-center">
       
-    <div class="p-1 bg-white text-center text-xl font-bold rounded border-4 border-black hover:border-gray-400 transition duration-300">
-      <img :src="pdfImage" alt="Thumbnail" class="cursor-pointer h-48 md:h-96" />
-      <p>{{ pdfName }}</p>
+    <div class="p-1 bg-white text-center text-xs md:text-xl font-bold rounded border-2 hover:border-gray-400 transition duration-300">
+      <img :src="pdfImage" alt="Thumbnail" class="cursor-pointer h-32 md:h-48 w-screen" />
+      <p >{{ pdfName }}</p>
     </div>
 
     

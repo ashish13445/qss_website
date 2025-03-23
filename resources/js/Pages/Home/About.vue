@@ -117,59 +117,8 @@ QSSPL Services are customer focused and customized, dedicated to the customers c
 
             
             
-                      <div class="pt-96 md:p-20 relative ">
-            <div class="flex text-center">
-              <div class=" w-1/2 m-3  bg-gray-100 md:flex pb-3 md:pb-0 items-center">
-                <div class="md:w-2/5"><img src="../../../images/employees.png" ></div>
-                <div class="md:w-3/5 p-3 md:text-xl ">
-                  1000+ Employees      
-                </div> 
-              </div>
-              <div  class=" w-1/2 m-3  bg-gray-100  md:flex pb-3 md:pb-0 items-center">
-                <div class="md:w-1/3"><img src="../../../images/testing.png" ></div>
-                <div class="md:w-2/3 p-3 md:text-xl">
-                  Coal Sampling & Testing     
-                </div> 
-              </div>
-        
-            </div>
-            <div class="flex text-center">
-              <div  class=" w-1/2 m-3  bg-gray-100  md:flex  md:pb-0 items-center">
-                <div class="md:w-2/5"><img src="../../../images/certified.png" ></div>
-                <div class="md:w-3/5 p-3 md:text-xl">
-                  NABL, NABCB,ISO 9001:2015    
-                </div> 
-              </div>
-              <div class=" w-1/2 m-3  bg-gray-100  md:flex pb-3 md:pb-0 items-center">
-                <div class="md:w-1/3"><img src="../../../images/hydrocarbon.png" ></div>
-                <div class="md:w-2/3 p-3 md:text-xl">
-                  Hydrocarbon Safety Audits    
-                </div> 
-              </div>
-            </div>
-            <div class="flex text-center">
-              <div  class=" w-1/2 m-3  bg-gray-100  md:flex pb-3 md:pb-0 items-center">
-                <div class="md:w-2/5"><img src="../../../images/office.png" ></div>
-                <div class="md:w-3/5 p-3 md:text-xl">
-                  5 Offices across India    
-                </div> 
-              </div>
-              <div  class=" w-1/2 m-3  bg-gray-100  md:flex pb-3 md:pb-0 items-center">
-                <div class="md:w-2/5"><img src="../../../images/engineer.png" ></div>
-                <div class="md:w-3/5 p-3 md:text-xl">
-                  Engineering Equipments Inspection   
-                </div> 
-              </div>
-            </div>
-
-
-
-
-
-
-
-
-          </div>
+                      
+          
 </div>
       <Footer/>  
 </template>

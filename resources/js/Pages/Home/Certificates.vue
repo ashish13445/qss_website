@@ -63,13 +63,22 @@ defineProps({
       <div class=" dark:bg-black h-content md:mt-12">
         <h1 class="text-2xl md:text-5xl font-extrabold flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400  ">CERTIFICATES</h1>
 
-      <div  class="p-5 md:p-10  grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade" data-aos-duration="3000">
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABCB.pdf" pdfImage="../../../images/certificates/NABCB.png" pdfName="NABCB" /></div>
+      <div  class="p-5 md:p-10  grid grid-cols-2 md:grid-cols-5 gap-2" data-aos="fade" data-aos-duration="3000">
+<!-- <div class=""><PdfPreview pdfUrl="../../../images/certificates/NABCB.pdf" pdfImage="../../../images/certificates/NABCB.png" pdfName="NABCB" /></div>
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/PNGRB.pdf" pdfImage="../../../images/certificates/PNGRB.png" pdfName="PNGRB" /></div>
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/ISO_9001_mumbai.pdf" pdfImage="../../../images/certificates/ISO_9001_mumbai.png" pdfName="ISO 9001 Mumbai" /></div>
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/Udham_registration_QSSPL.pdf" pdfImage="../../../images/certificates/Udham_registration_QSSPL.png" pdfName="Udham Registration QSSPL" /></div>
 <div class=""><PdfPreview pdfUrl="../../../images/certificates/MSME_qspl.pdf" pdfImage="../../../images/certificates/MSME_qspl.png" pdfName="MSME QSSPL" /></div>
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL.pdf" pdfImage="../../../images/certificates/NABL.png" pdfName="NABL" /></div>
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL.pdf" pdfImage="../../../images/certificates/NABL.png" pdfName="NABL" /></div> -->
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-MP.pdf" pdfImage="../../../images/certificates/NABL-image.webp" pdfName="NABL MP" /></div> 
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-MAHARASHTRA.pdf" pdfImage="../../../images/certificates/NABL-image.webp" pdfName="NABL MAHARASHTRA" /></div> 
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-GUJRAT.pdf" pdfImage="../../../images/certificates/NABL-image.webp" pdfName="NABL GUJRAT" /></div> 
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/QAI-CHHATISGARH.pdf" pdfImage="../../../images/certificates/QAI.png" pdfName="QAI CHHATTISGARH" /></div> 
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/QAI-JHARKHAND.pdf" pdfImage="../../../images/certificates/QAI.png" pdfName="QAI JHARKHAND" /></div> 
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/IBP-ASSAM.pdf" pdfImage="../../../images/certificates/IBP.png" pdfName="IBP ASSAM" /></div> 
+<div class=""><PdfPreview pdfUrl="../../../images/certificates/UDYAM-REGISTRATION.pdf" pdfImage="../../../images/certificates/Udyam.webp" pdfName="UDYAM" /></div> 
+
+
 
     </div>
     </div>

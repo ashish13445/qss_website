@@ -107,8 +107,9 @@
       INSPECTION
     </h1>
     <p class="font-thin text-xs md:text-sm tracking-widest p-5 text-center">
-Our testing services ensure accuracy, compliance, and safety across minerals, consumer goods, agriculture, and laboratories. We use state-of-the-art technology and globally recognized methodologies to deliver precise and reliable results.        </p>
-  </div>
+      we specialize in providing comprehensive inspection services to ensure the highest standards of quality, safety, and compliance across various industries. Our expert team meticulously evaluates products, processes, and systems to help businesses minimize risks and improve efficiency.
+    </p>
+    </div>
 
   <div class="flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
     <h1 class="text-xl md:text-5xl text-center py-5 ">
@@ -293,7 +294,7 @@ Our testing services ensure accuracy, compliance, and safety across minerals, co
       <h1 class="text-black dark:text-white text-center  font-medium text-2xl md:text-5xl p-5 px-5  md:mb-5" > <span class="font-extrabold">OUR</span> PRESENCE</h1>
       
     
-    <InteractivEmap data-aos="zoom-in" data-aos-duration="6000"/>
+    <InteractivEmap data-aos="zoom-in" data-aos-duration="3000"/>
 
   </div>
     <!-- <div class="bg-white dark:bg-black text-black dark:text-white relative h-content  p-2  border-2 rounded-lg">
@@ -345,6 +346,8 @@ trusted and proficient industry leader.
           class="md:opacity-80 hover:opacity-100 h-12 md:h-24 w-auto dark:grayscale dark:invert dark:hover:grayscale-0 dark:hover:invert-0 transition-all"
           :src="`../../images/clients/${client.image}`"
           alt="Client logo"
+          data-aos="zoom-in"
+          data-aos-duration="3000"
         />
       </div>
     </div>
@@ -356,7 +359,7 @@ trusted and proficient industry leader.
   <h1 class="text-2xl md:text-5xl font-medium flex justify-center  md:p-10"><span class="font-extrabold pr-1">WHY </span> QSSPL ?</h1>
 
   <div class="md:flex ">
-    <div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4" >
+    <div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4"  data-aos="fade-up" data-aos-duration="1000">
         <div class="flex items-center gap-4 py-2 px-2 ">
            <span><i class="material-icons text-orange-400 text-4xl px-2">devices</i></span>
             <span class="text-base md:text-xl ">IT Solution</span>
@@ -367,7 +370,7 @@ tracking of samples. The platform will have live streaming of CCTV footage
 from Sample preparation room
     </p>
   </div>
-<div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4" >
+<div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4" data-aos="fade-up" data-aos-duration="2000" >
         <div class="flex items-center gap-4 py-2 px-2">
            <span><i class="material-icons text-orange-400 text-4xl">video_call</i></span>
             <span class=" text-base md:text-xl">Monitoring</span>
@@ -377,7 +380,7 @@ from Sample preparation room
 and addressing any issue in real time.
     </p>
   </div>
-<div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4" >
+<div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4"  data-aos="fade-up" data-aos-duration="3000">
         <div class="flex items-center gap-4 py-2 px-2">
            <span><i class="material-icons text-orange-400 text-4xl">record_voice_over</i></span>
             <span class="text-base md:text-xl ">Customer
@@ -390,7 +393,7 @@ groups or e-mail.
 
     </p>
   </div>
-<div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4" >
+<div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4"  data-aos="fade-up" data-aos-duration="4000" >
         <div class="flex items-center gap-4 py-2 px-2">
            <span><i class="material-icons text-orange-400 text-4xl">precision_manufacturing</i></span>
             <span class=" text-base md:text-xl">Mechanized Sampling
@@ -447,7 +450,7 @@ Exit points in some areas also create hindrances for sampling.
      </div>
     
      <!-- <Divider layout="vertical" class="md:border-2 border-red-600" /> -->
-      <img src="/images/contact-us.png" class="w-auto h-96 hidden xl:block">
+      <img src="/images/contact-us.png" class="w-auto h-96 hidden xl:block" data-aos="fade-left" data-aos-duration="3000">
 
      <div class="w-full   md:m-20 p-5 md:p-0 flex flex-col items-center ">
         <div class="bg-orange-100 dark:bg-black  p-5 rounded font-medium m-2 w-full">
