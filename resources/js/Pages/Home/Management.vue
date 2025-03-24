@@ -146,7 +146,7 @@ const data = [{name: 'Shashank Mehta',
             <img alt="user header"  class=" h-auto w-auto " src="../../../images/team/padhye.png" />
         </div>
         <div class=" text-xs md:text-lg text-center my-5 p-5 bg-red-900 text-white hover:bg-red-700">
-            <h2 class="text-sm md:text-md font-medium">Mr. Uday Padhye<br/>(Director Technichal)</h2>
+            <h2 class="text-sm md:text-md font-medium">Mr. Uday Padhye<br/>Director Technichal</h2>
             
         </div>
        
@@ -158,18 +158,18 @@ const data = [{name: 'Shashank Mehta',
         </div>
         <div class="text-xs md:text-lg text-center  my-5 p-5 bg-red-900 text-white hover:bg-red-700">
             <h2 class="text-sm md:text-md font-medium">Mr. Vivek Sondhi <br/>
-                (Director-Operations)</h2>
+                Director-Operations</h2>
            
         </div>
        
 </div>
 <Divider/>
-<div  class="w-screen  py-10 ">
+<div  class="w-screen  py-5 ">
         <div class=" flex justify-center ">
             <img alt="user header"  class="w-auto h-auto filter brightness-125" src="../../../images/team/mridul.png" />
         </div>
         <div class=" text-xs md:text-lg text-center  my-5 p-5 bg-red-900 hover:bg-red-700  text-white  ">
-            <h2 class="text-sm md:text-md font-medium">Mr. Mridul Kohli<br/>(Director-Marketing)</h2>
+            <h2 class="text-sm md:text-md font-medium">Mr. Mridul Kohli<br/>Director-Marketing</h2>
            
                
     
@@ -183,7 +183,7 @@ const data = [{name: 'Shashank Mehta',
         </div>
         <div class=" text-sm md:text-lg text-center  my-5 p-5 bg-red-900 text-white hover:bg-red-700">
             <h2 class="text-sm  md:text-md font-medium">Mr. Nakul Gupta <br/>
-                ( Executive Directive/CEO )</h2>
+                Executive Directive/CEO</h2>
             
         </div>
        

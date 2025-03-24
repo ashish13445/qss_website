@@ -9,6 +9,8 @@ import NavLink from '@/Components/NavLink.vue';
 const isMobileMenuOpen = ref(false);
 const isHovered = ref(false);
 const activeSubMenu = ref(null);
+const isAboutHovered = ref(false);
+
 const isSectorHovered = ref(false);
 // Show the specific submenu when hovered
 const showSubMenu = (service) => {
@@ -67,8 +69,34 @@ onBeforeUnmount(() => {
             <div class="flex ">
                 <NavLink :href="route('home')" :active="route().current('home')" class=" text-black dark:text-white hover:text-gray-700  p-3 xl:px-7 text-base " ><i class="material-icons text-blue-300">home</i></NavLink>
            
-                  <NavLink :href="route('about')" :active="route().current('about')" class="text-black dark:text-white  hover:text-gray-700  p-3  xl:px-7 text-base ">ABOUT US</NavLink>
-                
+                  <!-- <NavLink :href="route('about')" :active="route().current('about')" class="text-black dark:text-white  hover:text-gray-700  p-3  xl:px-7 text-base ">ABOUT US</NavLink> -->
+                  <div 
+    class="relative" 
+    @mouseenter="isAboutHovered = true" 
+    @mouseleave="isAboutHovered = false">
+    
+    <div
+      class=" dark:text-white hover:text-gray-700 p-3 xl:px-7 text-base mb-2">
+      About QSS
+</div>
+                  <div 
+      v-if="isAboutHovered" 
+      class="absolute left-0 w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+      <ul class="py-2 md:text-sm text-gray-800 dark:text-gray-200">
+        <li>
+          <Link :href="route('about')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">About Us </Link>
+        </li>
+        <li>
+          <Link :href="route('management')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Our Team </Link>
+        </li>
+        <li>
+          <Link :href="route('mission')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between">Our Mission ,Vision & Purpose</Link>
+        </li>
+        <li>
+        </li>
+</ul>
+</div>
+</div>
             <!-- <div 
     class="relative" 
     @mouseenter="isHovered = true" 
@@ -174,7 +202,6 @@ onBeforeUnmount(() => {
  <!---- <NavLink :href="route('background')" :active="route().current('background')" class="  text-black dark:text-white  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">OUR BACKGROUND</NavLink>-->
             <NavLink :href="route('certificates')" :active="route().current('certificates')" class="  text-black dark:text-white  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">CERTIFICATES</NavLink>
             <NavLink :href="route('locations')" :active="route().current('locations')" class="  text-black dark:text-white  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">LOCATIONS</NavLink>
-            <NavLink :href="route('management')" :active="route().current('management')" class="  text-black dark:text-white  hover:text-gray-700  p-3 xl:px-7 text-base font-bol">OUR TEAM</NavLink>
 
         </div>
                 

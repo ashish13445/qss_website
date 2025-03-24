@@ -157,6 +157,22 @@ Route::get('/management', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 })->name('management');
+Route::get('/mission', function () {
+    return Inertia::render('Home/Mission', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('mission');
+Route::get('/vision', function () {
+    return Inertia::render('Home/Vision', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('vision');
 
 Route::get('/dashboard', function () {
     if (auth()->user()->hasRole('admin')) {
