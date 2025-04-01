@@ -196,51 +196,59 @@ if (!empty($clockedInUsers)) {
 
 public function markRestDaysForMonth($nextMonth)
     {
-        $officeUsers = User::where('project_id', 1)->get();
+        // $officeUsers = User::where('project_id', 1)->get();
         
-        User::query()->update(['rest_days'=>5]);
-        $firstDayOfMonth = Carbon::parse($nextMonth)->startOfMonth();
-        $lastDayOfMonth = Carbon::parse($nextMonth)->endOfMonth();
+        // User::query()->update(['rest_days'=>5]);
+        // $firstDayOfMonth = Carbon::parse($nextMonth)->startOfMonth();
+        // $lastDayOfMonth = Carbon::parse($nextMonth)->endOfMonth();
 
-        for ($date = $firstDayOfMonth; $date->lte($lastDayOfMonth); $date->addDay()) {
-            if ($date->dayOfWeek === Carbon::SUNDAY) {
-                foreach ($officeUsers as $user) {
+        // for ($date = $firstDayOfMonth; $date->lte($lastDayOfMonth); $date->addDay()) {
+        //     if ($date->dayOfWeek === Carbon::SUNDAY) {
+        //         foreach ($officeUsers as $user) {
 
-                    $existingEntry = TimeEntry::where('user_id', $user->id)
-                    ->where('date', $date->toDateString())
-                    ->where('remarks', 'rest')
-                    ->exists();
-                    if(!$existingEntry){
-                        TimeEntry::create([
-                            'user_id' => $user->id,
-                            'date' => $date->toDateString(),
-                            'remarks' => 'rest',
-                        ]);
-                    }
+        //             $existingEntry = TimeEntry::where('user_id', $user->id)
+        //             ->where('date', $date->toDateString())
+        //             ->where('remarks', 'rest')
+        //             ->exists();
+        //             if(!$existingEntry){
+        //                 TimeEntry::create([
+        //                     'user_id' => $user->id,
+        //                     'date' => $date->toDateString(),
+        //                     'remarks' => 'rest',
+        //                 ]);
+        //             }
 
-                }
-            }
+        //         }
+        //     }
 
-            if ($date->dayOfWeek === Carbon::SATURDAY) {
-                foreach ($officeUsers as $user) {
+        //     if ($date->dayOfWeek === Carbon::SATURDAY) {
+        //         foreach ($officeUsers as $user) {
 
-                    $existingEntry = TimeEntry::where('user_id', $user->id)
-                    ->where('date', $date->toDateString())
-                    ->where('remarks', 'work from home')
-                    ->exists();
-                    if(!$existingEntry){
-                        TimeEntry::create([
-                            'user_id' => $user->id,
-                            'date' => $date->toDateString(),
-                            'remarks' => 'work from home',
-                        ]);
-                    }
+        //             $existingEntry = TimeEntry::where('user_id', $user->id)
+        //             ->where('date', $date->toDateString())
+        //             ->where('remarks', 'work from home')
+        //             ->exists();
+        //             if(!$existingEntry){
+        //                 TimeEntry::create([
+        //                     'user_id' => $user->id,
+        //                     'date' => $date->toDateString(),
+        //                     'remarks' => 'work from home',
+        //                 ]);
+        //             }
 
-                }
-            }
-        }
+        //         }
+        //     }
+        // }
 
-        return 'Rest days marked for the next month.';
+        // return 'Rest days marked for the next month.';
+        $startOfMonth = Carbon::now()->startOfMonth()->toDateString();
+$endOfMonth = Carbon::now()->endOfMonth()->toDateString();
+        $entry = TimeEntry::whereIn('user_id', User::where('project_id', '!=', 1)->pluck('id'))
+    ->whereBetween('date', [$startOfMonth, $endOfMonth])
+    ->get();
+
+    return $entry;
+
     }
 
     public function markRestForProjectUsers(Request $request){
@@ -305,6 +313,7 @@ function countSundaysInMonth($year, $month)
 
     return $totalSundays;
 }
+
     public function markRestForProjectUsersForDate(Request $request){
         $date = Carbon::parse($request->rest_date);
 
