@@ -245,7 +245,7 @@ public function markRestDaysForMonth($nextMonth)
 $endOfMonth = Carbon::now()->endOfMonth()->toDateString();
         $entry = TimeEntry::whereIn('user_id', User::where('project_id', '!=', 1)->pluck('id'))
     ->whereBetween('date', [$startOfMonth, $endOfMonth])
-    ->get();
+    ->delete();
 
     return $entry;
 
