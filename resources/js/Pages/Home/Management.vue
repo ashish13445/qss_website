@@ -146,7 +146,7 @@ const data = [{name: 'Shashank Mehta',
             <img alt="user header"  class=" h-auto w-auto " src="../../../images/team/padhye.png" />
         </div>
         <div class=" text-xs md:text-lg text-center my-5 p-5 bg-red-900 text-white hover:bg-red-700">
-            <h2 class="text-sm md:text-md font-medium">Mr. Uday Padhye<br/>Director Technichal</h2>
+            <h2 class="text-sm md:text-md font-medium">Mr. Uday Padhye<br/>Director Technical</h2>
             
         </div>
        

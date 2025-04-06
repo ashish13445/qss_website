@@ -88,7 +88,7 @@
     <div class="md:flex bg-white  dark:bg-black text-black dark:text-white h-content md:h-screen tracking-wide md:pl-5">
       <div class="md:w-1/2 flex  p-10 md:p-0">
 <img src="../../images/about.png" class="w-40 h-40 md:w-60 md:h-96 my-20 flex justify-center" data-aos="zoom-in" data-aos-duration="3000">
-        <div class=" xl:p-20 text-center" data-aos="zoom-in" data-aos-duration="3000">
+        <div class=" xl:p-20 " data-aos="zoom-in" data-aos-duration="3000">
           <h1 class="font-normal	  text-lg md:text-3xl">WHO WE ARE?</h1>
           <p class="font-thin text-xs md:text-sm tracking-widest py-5">
             We are a private organization established in 1999, with a legacy of 25 years in delivering quality services and conducting third-party inspections. We specializes in Agriculture, Engineering, Minerals, and Metals, catering to both local and global markets. The organization boasts a skilled workforce of over 1,650 professionals and maintains a global presence through strong international associations. We operates across 20+ states in India,
@@ -106,7 +106,7 @@
     <h1 class="text-xl md:text-5xl text-center py-5">
       INSPECTION
     </h1>
-    <p class="font-thin text-xs md:text-sm tracking-widest p-5 text-center">
+    <p class="font-thin text-xs md:text-sm  p-5 ">
       we specialize in providing comprehensive inspection services to ensure the highest standards of quality, safety, and compliance across various industries. Our expert team meticulously evaluates products, processes, and systems to help businesses minimize risks and improve efficiency.
     </p>
     </div>
@@ -115,7 +115,7 @@
     <h1 class="text-xl md:text-5xl text-center py-5 ">
       TESTING
     </h1>
-    <p class="font-thin text-xs md:text-sm tracking-widest p-5 text-center">
+    <p class="font-thin text-xs md:text-sm  p-5 ">
       Our testing services ensure accuracy, compliance, and safety across minerals, consumer goods, agriculture, and laboratories. We use state-of-the-art technology and globally recognized methodologies to deliver precise and reliable results.
        </p>
   </div>
