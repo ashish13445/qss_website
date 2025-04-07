@@ -504,7 +504,7 @@ import Services from '@/Components/Services.vue';
 
 const images = ref([
     {
-        itemImageSrc: '/images/hero_image.webp',
+        itemImageSrc: '/images/hero_image_2.webp',
         alt: 'Image 1',
         
         title: 'QSSPL handles the third party sampling, preparation and analysis of coal supplied to consumers by Coal India Limited.'
