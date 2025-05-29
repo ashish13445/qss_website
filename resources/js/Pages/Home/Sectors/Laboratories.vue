@@ -86,8 +86,16 @@
     </span> 
 </p>
 </div>
+
+
         </section>
+
+
         </div></div>
+               <div class="md:mt-0 tracking-wider p-10">
+  Our Laboratory sector includes a specialized Inspection and Testing Division, offering high-quality and reliable services. To learn more, please visit our 
+  <a href="https://www.qitservices.in/" target="_blank" rel="noopener noreferrer" class="text-orange-600 font-bold">Inspection and Testing Division website</a>.
+</div>
         <Footer/>
 </template>
 <script setup>
