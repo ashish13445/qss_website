@@ -79,35 +79,33 @@ defineProps({
 
               <div class="py-10 px-5 hover:border-red-800 rounded text-xs md:text-sm ">
 
-                Quality Services and Solutions Private Limited (QSSPL) is a private organization established in 1999, with a legacy
-of 25 years in delivering quality services and conducting third-party inspections. QSSPL specializes in Agriculture,
-Engineering, Minerals, and Metals, catering to both local and global markets. The organization boasts a skilled
-workforce of over 1,650 professionals and maintains a global presence through strong international associations.
-QSSPL operates across 20+ states in India, ensuring a wide-reaching market presence and the ability to meet
-diverse regional needs. The company has mastered third-party inspection services, ensuring top-notch quality
-assurance for its clients. QSSPL’s commitment to precision and excellence has solidified its reputation as a
-trusted and proficient industry leader.
-QSSPL professionalism is firmly anchored within our salient Core Values namely: <br/><br/>
+                Quality Services and Solutions Private Limited (QSSPL) has been a trusted name in third-party inspections and testing services since 1999. With 25 years of industry excellence, we have built a strong legacy of delivering precision-driven, customer-centric services across diverse industrial sectors, including Agriculture & Food, Engineering and Minerals & Metals.
+Our commitment to uncompromising quality and integrity has enabled us to serve both local and international markets with exceptional expertise. Backed by a team of 1,700+ skilled professionals and a robust global network, QSSPL operates across 20+ states in India, ensuring extensive market reach and the ability to meet region-specific needs.
+At QSSPL, we have mastered the art of third-party inspection, delivering rigorous testing services that uphold the highest industry standards. Our Core Values define our professional ethos and commitment to excellence:
+
+
+
+
+
+
 <ol class="">
   <li>
-    1. Impartiality
+    ✅ Impartiality – Delivering unbiased and transparent inspections.
   </li>
   <li>
-    2. Independence
-  </li>
+✅ Independence – Operating with complete autonomy for objective assessments.  </li>
 <li>
-  3. Integrity
+ ✅ Integrity – Upholding the highest ethical standards.
 </li>
 <li>
-  4. Expertise
+ ✅ Expertise – Leveraging deep industry knowledge and skilled professionals.
 </li>
 <li>
-  5. Quality of Service
-
+✅ Quality of Service – Ensuring excellence in every engagement.
 </li>
 </ol>
 <br/>
-QSSPL Services are customer focused and customized, dedicated to the customers cause, responsive, efficient, value adding and most of all cost effective without compromising <span class="text-red-600">“Quality of Service”</span>.
+Our services are tailored to meet our client's unique needs, focusing on efficiency, responsiveness, and value addition. At QSSPL, we believe in delivering cost-effective solutions without ever compromising on quality, making us a partner of choice for businesses seeking excellence and reliability in inspection & testing services.
 
               </div>
              

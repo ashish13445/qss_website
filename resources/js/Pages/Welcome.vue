@@ -91,9 +91,10 @@
         <div class=" xl:p-20 " data-aos="zoom-in" data-aos-duration="3000">
           <h1 class="font-normal	  text-lg md:text-3xl">WHO WE ARE?</h1>
           <p class="font-thin text-xs md:text-sm tracking-widest py-5">
-            We are a private organization established in 1999, with a legacy of 25 years in delivering quality services and conducting third-party inspections. We specializes in Agriculture, Engineering, Minerals, and Metals, catering to both local and global markets. The organization boasts a skilled workforce of over 1,650 professionals and maintains a global presence through strong international associations. We operates across 20+ states in India,
-             ensuring a wide-reaching market presence and the ability to meet diverse regional needs. The company has mastered third-party inspection services, ensuring top-notch quality assurance for its clients. Our commitment to precision and excellence has solidified its reputation as a trusted and proficient industry leader
-          </p>
+            A leading third-party inspection and testing services provider committed to delivering impartial, reliable, and high-quality assessments across industries such as Agriculture, Consumer Goods, Engineering, Minerals, and Metals.
+With a strong nationwide presence, QSSPL operates NABL-accredited laboratories across various locations, ensuring that our testing services meet international quality and compliance standards. Our expertise in inspection and testing helps businesses maintain regulatory compliance, enhance product integrity, and ensure operational excellence.
+At QSSPL, we go beyond inspection—we deliver trust, accuracy, and confidence to support businesses in achieving their quality and safety objectives efficiently and cost-effectively.
+</p>
         </div>
       </div>
       <div class="md:w-1/2 bg-gray-200 dark:bg-gray-800 ">
@@ -107,8 +108,7 @@
       INSPECTION
     </h1>
     <p class="font-thin text-xs md:text-sm  p-5 ">
-      we specialize in providing comprehensive inspection services to ensure the highest standards of quality, safety, and compliance across various industries. Our expert team meticulously evaluates products, processes, and systems to help businesses minimize risks and improve efficiency.
-    </p>
+We offer comprehensive and impartial third-party inspection services to ensure quality, compliance, and reliability across industries. Our expertise helps businesses meet regulatory standards, minimize risks, and enhance product integrity.    </p>
     </div>
 
   <div class="flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
@@ -116,8 +116,7 @@
       TESTING
     </h1>
     <p class="font-thin text-xs md:text-sm  p-5 ">
-      Our testing services ensure accuracy, compliance, and safety across minerals, consumer goods, agriculture, and laboratories. We use state-of-the-art technology and globally recognized methodologies to deliver precise and reliable results.
-       </p>
+We provide precise, reliable, and NABL-accredited testing services across multiple industries, ensuring compliance with national and international standards. Our state-of-the-art laboratories deliver accurate results that help businesses maintain quality, safety, and regulatory compliance with confidence.       </p>
   </div>
 
   <!-- Second Image at (1,1) -->
@@ -361,49 +360,47 @@ trusted and proficient industry leader.
   <div class="md:flex ">
     <div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4"  data-aos="fade-up" data-aos-duration="1000">
         <div class="flex items-center gap-4 py-2 px-2 ">
-           <span><i class="material-icons text-orange-400 text-4xl px-2">devices</i></span>
-            <span class="text-base md:text-xl ">IT Solution</span>
+           <span><i class="material-icons text-orange-400 text-4xl px-2">verified</i></span>
+            <span class="text-base md:text-lg ">Legacy of Trust</span>
         </div>
     <p class="m-0 text-base  px-5 pb-3">
-      We would deploy digital platform for sample collection, preparation and
-tracking of samples. The platform will have live streaming of CCTV footage
-from Sample preparation room
+     25+ years of industry experience
     </p>
   </div>
 <div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4" data-aos="fade-up" data-aos-duration="2000" >
         <div class="flex items-center gap-4 py-2 px-2">
-           <span><i class="material-icons text-orange-400 text-4xl">video_call</i></span>
-            <span class=" text-base md:text-xl">Monitoring</span>
+           <span><i class="material-icons text-orange-400 text-4xl">devices</i></span>
+            <span class=" text-base md:text-lg">Technical Excellence</span>
         </div>
     <p class="m-0 text-base   px-1 pb-3">
-      We will have dedicated 24*7 available team for monitoring ground operations
-and addressing any issue in real time.
+      Advanced labs and trained personnel
     </p>
   </div>
 <div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4"  data-aos="fade-up" data-aos-duration="3000">
         <div class="flex items-center gap-4 py-2 px-2">
-           <span><i class="material-icons text-orange-400 text-4xl">record_voice_over</i></span>
-            <span class="text-base md:text-xl ">Customer
-Support</span>
+           <span><i class="material-icons text-orange-400 text-4xl">badge</i></span>
+            <span class="text-base md:text-lg ">Accredited Assurance</span>
         </div>
     <p class="m-0 text-base  px-5 pb-3">
-      We shall have a Dedicated Customer Support team to address any issues
-they may face. The team may be reached through call, text, WhatsApp
-groups or e-mail.
-
+     Internationally recognized certifications
     </p>
   </div>
 <div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4"  data-aos="fade-up" data-aos-duration="4000" >
         <div class="flex items-center gap-4 py-2 px-2">
-           <span><i class="material-icons text-orange-400 text-4xl">precision_manufacturing</i></span>
-            <span class=" text-base md:text-xl">Mechanized Sampling
-Process
-</span>
+           <span><i class="material-icons text-orange-400 text-4xl">person_search</i></span>
+            <span class=" text-base md:text-lg">Client Customization</span>
         </div>
     <p class="m-0 text-base  px-5 pb-3">
-      Sampling procedure involves drawing samples from every 8th truck in which
-other trucks will get affected , which create congested environment. Multiple
-Exit points in some areas also create hindrances for sampling.
+      Services tailored to meet unique client requirements
+    </p>
+  </div>
+  <div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4"  data-aos="fade-up" data-aos-duration="3000">
+        <div class="flex items-center gap-4 py-2 px-2">
+           <span><i class="material-icons text-orange-400 text-4xl">travel_explore</i></span>
+            <span class="text-base md:text-lg ">Pan-India Reach</span>
+        </div>
+    <p class="m-0 text-base  px-5 pb-3">
+    Strong presence across major industrial zones
     </p>
   </div>
   </div>
