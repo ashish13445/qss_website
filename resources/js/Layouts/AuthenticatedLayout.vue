@@ -60,13 +60,13 @@ onUnmounted(stopPolling);
             <nav class="bg-white dark:bg-black dark:text-white border-b border-gray-100 ">
 
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between h-16">
+                    <div class="flex justify-between h-20">
                         <div class="flex">
 
-                            <div class="shrink-0 flex items-center">
+                            <div class="shrink-0 flex ">
                                 <Link :href="route('dashboard')">
                                     <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800 dark:text-white"
+                                        class="block h-5 w-16 fill-current text-gray-800 dark:text-white"
                                     />
                                 </Link>
                             </div>

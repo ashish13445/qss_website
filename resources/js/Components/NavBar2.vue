@@ -58,13 +58,13 @@ onBeforeUnmount(() => {
 
 <nav class="md:fixed   md:z-30 top-0 md:w-full  	">
   <div class="mx-auto  px-2 sm:px-6 lg:px-8 bg-white  dark:bg-black   dark:text-white" >
-    <div class="relative md:flex h-16 md:h-14  md:items-center justify-between border-b-2 md:border-0 ">
+    <div class="relative md:flex h-16 md:h-20  md:items-center justify-between border-b-2 md:border-0 ">
       
       <div class="flex flex-1 items-center justify-center  sm:justify-start">
         <div class="hidden md:flex flex-shrink-0 items-center">
             <ApplicationLogo/>
         </div>
-        <div class="hidden sm:ml-6 md:block h-full w-full">
+        <div class="hidden  md:block h-full w-full">
           <div class="flex  justify-between items-center h-full">
             <div class="flex ">
                 <NavLink :href="route('home')" :active="route().current('home')" class=" text-black dark:text-white hover:text-gray-700  p-3 xl:px-7 text-base " ><i class="material-icons text-blue-300">home</i></NavLink>
