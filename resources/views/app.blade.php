@@ -29,7 +29,7 @@
 
     {{-- Manifest & Icons --}}
     <link rel="manifest" href="/manifest.json">
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+<link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     {{-- Fonts & Styles --}}
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet">

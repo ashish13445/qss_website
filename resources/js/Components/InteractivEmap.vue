@@ -78,7 +78,10 @@ export default {
           data: "Our Testing Laboratory is located in Delhi.",
           locations: [
             {
-              city: "Delhi Laboratory",
+              city: "Okhla Office & Laboratory",
+              address: "Quality services & Solutions pvt ltd. Plot no. 10, second floor, DSIDC, SCHEME Ill, Ind. area, phase -|| , okhla, New Delhi - 110020",
+              phone: "+918595343496",
+              email: "qss_del@qssindia.com"
              
             }]
         },
@@ -118,8 +121,11 @@ export default {
       locations: [
             {
               city: "Noida Office",
-             
-            }]
+              address: "B-27 Logix Technova, Noida-132 , Uttar Pradesh-201301",
+              phone: "+91-731-4001048/49",
+              email: "info@qssindia.in"
+            }
+          ]
         }
         ,
         {
