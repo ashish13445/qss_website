@@ -22,12 +22,25 @@ defineProps({
         type: String,
         required: true,
     },
+     metaTitle: String,
+  metaDescription: String
 });
+
+const certificates = [
+  { name: "NABL MP", url: "/images/certificates/NABL-MP.pdf", image: "/images/certificates/nabl-new.png" },
+  { name: "NABL Maharashtra", url: "/images/certificates/NABL-MAHARASHTRA.pdf", image: "/images/certificates/nabl-new.png" },
+  { name: "QAI Chhattisgarh", url: "/images/certificates/QAI-CHHATISGARH.pdf", image: "/images/certificates/QAI.png" },
+  { name: "QAI Jharkhand", url: "/images/certificates/QAI-JHARKHAND.pdf", image: "/images/certificates/QAI.png" },
+  { name: "IBP Assam", url: "/images/certificates/IBP-ASSAM.pdf", image: "/images/certificates/IBP.png" },
+  { name: "UDYAM Registration", url: "/images/certificates/UDYAM-REGISTRATION.pdf", image: "/images/certificates/Udyam.png" },
+]
 </script>
 
 <template >
-    <Head title="Certificates" />
-    
+<Head>
+    <title>{{ metaTitle }}</title>
+    <meta name="description" :content="metaDescription">
+  </Head>    
       <NavBar2 class="">
         <div class="flex items-center">
     <DarkModeToggle/>
@@ -41,11 +54,7 @@ defineProps({
         >
 
         <template v-else>
-            <Link
-                :href="route('contact')"
-                class=" text-black dark:text-white hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
-                ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
-            >
+            
             <Link
                 :href="route('login')"
                 class="font-semibold  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
@@ -63,24 +72,25 @@ defineProps({
       <div class=" dark:bg-black h-content md:mt-12">
         <h1 class="text-2xl md:text-5xl font-extrabold flex justify-center py-5 md:py-10 bg-gradient-to-r from-orange-100 to-red-400  ">CERTIFICATES</h1>
 
-      <div  class="p-5 md:p-10  grid grid-cols-2 md:grid-cols-5 gap-2" data-aos="fade" data-aos-duration="3000">
-<!-- <div class=""><PdfPreview pdfUrl="../../../images/certificates/NABCB.pdf" pdfImage="../../../images/certificates/NABCB.png" pdfName="NABCB" /></div>
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/PNGRB.pdf" pdfImage="../../../images/certificates/PNGRB.png" pdfName="PNGRB" /></div>
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/ISO_9001_mumbai.pdf" pdfImage="../../../images/certificates/ISO_9001_mumbai.png" pdfName="ISO 9001 Mumbai" /></div>
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/Udham_registration_QSSPL.pdf" pdfImage="../../../images/certificates/Udham_registration_QSSPL.png" pdfName="Udham Registration QSSPL" /></div>
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/MSME_qspl.pdf" pdfImage="../../../images/certificates/MSME_qspl.png" pdfName="MSME QSSPL" /></div>
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL.pdf" pdfImage="../../../images/certificates/NABL.png" pdfName="NABL" /></div> -->
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-MP.pdf" pdfImage="../../../images/certificates/nabl-new.png" pdfName="NABL MP" /></div> 
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-MAHARASHTRA.pdf" pdfImage="../../../images/certificates/nabl-new.png" pdfName="NABL MAHARASHTRA" /></div> 
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/NABL-GUJRAT.pdf" pdfImage="../../../images/certificates/nabl-new.png" pdfName="NABL GUJRAT" /></div> 
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/QAI-CHHATISGARH.pdf" pdfImage="../../../images/certificates/QAI.png" pdfName="QAI CHHATTISGARH" /></div> 
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/QAI-JHARKHAND.pdf" pdfImage="../../../images/certificates/QAI.png" pdfName="QAI JHARKHAND" /></div> 
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/IBP-ASSAM.pdf" pdfImage="../../../images/certificates/IBP.png" pdfName="IBP ASSAM" /></div> 
-<div class=""><PdfPreview pdfUrl="../../../images/certificates/UDYAM-REGISTRATION.pdf" pdfImage="../../../images/certificates/Udyam.png" pdfName="UDYAM" /></div> 
+      <div class="p-5 md:p-10 grid grid-cols-2 md:grid-cols-4 gap-6">
+  <div v-for="(cert, index) in certificates" :key="index" 
+       class="bg-white dark:bg-gray-900 rounded-xl shadow-md hover:shadow-xl transition p-4 flex flex-col items-center">
+    
+    <!-- Certificate Thumbnail -->
+    <img :src="cert.image" alt="cert.pdf" class="h-32 object-contain mb-3" />
+    
+    <!-- Title -->
+    <h2 class="text-center font-semibold text-sm md:text-base mb-2">{{ cert.name }}</h2>
 
+    <!-- Action -->
+    <a :href="cert.url" target="_blank">
+      <Button class="bg-red-600 hover:bg-red-700 text-white text-xs md:text-sm rounded-full px-4 py-2">
+        View Certificate
+      </Button>
+    </a>
+  </div>
+</div>
 
-
-    </div>
     </div>
         
  <Footer/>

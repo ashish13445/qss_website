@@ -1,41 +1,52 @@
 <template>
-    <div class="md:flex bg-gray-200 dark:bg-black h-content md:min-h-screen  md:p-20 md:my-3">
-      <!-- Sidebar (Vertical Tabs) -->
-      <div class="p-5 md:p-0 w-full md:w-1/3">
-        <h2 class="text-black  dark:text-white text-lg  md:text-2xl font-semibold p-5 md:m-4">Sectors we work in</h2>
-        <ul class="">
-          <li
-            v-for="(tab, index) in tabs"
-            :key="index"
-            @click="selectedTab = index"
-            class="p-3 md:p-4 md:m-4 text-xs md:text-lg font-light cursor-pointer border border-white transition-all md:rounded-full "
-            :class="selectedTab === index ? 'bg-white text-gray-800' : 'hover:bg-white hover:text-gray-800 bg-gray-600 dark:bg-gray-800 text-white hover:dark:text-white'"
-          >
-            {{ tab.name }}
-          </li>
-        </ul>
-      </div>
-  
-      <!-- Content Area -->
-      <div class="md:w-2/3  flex flex-col md:flex-row  items-center justify-center text-center">
-        <img
-          :src="tabs[selectedTab].image"
-          alt="Sector Image"
-          class="w-24 h-24 md:w-60 md:h-60 rounded-full object-cover mb-4"
-        />
-        <div class="m-5 p-5 md:p-10 bg-gray-600 rounded-lg ml-5">
-            <h1 class="text-lg md:text-2xl text-white p-5">{{ tabs[selectedTab].name }}</h1>
-        <p class="text-white max-w-md ">
-            <section v-html="tabs[selectedTab].content"></section>
-
-        </p>
-        <Link :href="currentRoute" class=" text-white underline  items-center justify-between">Read More </Link>
-
+  <div class="md:flex bg-gray-100 dark:bg-black min-h-screen md:p-20 md:my-3">
+    
+    <!-- Sidebar (Vertical Tabs) -->
+    <div class="p-6 w-full md:w-1/3">
+      <h2 class="text-black dark:text-white text-2xl font-bold mb-6">
+        SECTORS WE WORK IN
+      </h2>
+      <ul class="space-y-3">
+        <li
+          v-for="(tab, index) in tabs"
+          :key="index"
+          @click="selectedTab = index"
+          class="py-3 px-5 text-base cursor-pointer rounded-lg font-medium transition-all duration-300"
+          :class="selectedTab === index 
+            ? 'bg-orange-600 text-white shadow-md' 
+            : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'"
+        >
+          {{ tab.name }}
+        </li>
+      </ul>
     </div>
+
+    <!-- Content Area -->
+    <div class="md:w-2/3 flex flex-col md:flex-row items-center justify-center text-center md:text-left">
+      <img
+        :src="tabs[selectedTab].image"
+        alt="Sector Image"
+        class="w-28 h-28 md:w-60 md:h-60 rounded-full object-cover shadow-lg"
+      />
+
+      <div class="m-6 p-6 md:p-10 bg-white dark:bg-gray-800 rounded-xl shadow-md ml-0 md:ml-6">
+        <h1 class="text-xl md:text-3xl font-semibold text-gray-900 dark:text-white mb-4">
+          {{ tabs[selectedTab].name }}
+        </h1>
         
+        <p class="text-gray-700 dark:text-gray-300 max-w-md mb-4">
+          <section v-html="tabs[selectedTab].content"></section>
+        </p>
+
+        <Link :href="currentRoute" 
+          class="inline-block text-blue-600 dark:text-blue-400 font-medium hover:underline">
+          Read More →
+        </Link>
       </div>
     </div>
-  </template>
+  </div>
+</template>
+
   
   <script setup >
 import { Link } from '@inertiajs/vue3';

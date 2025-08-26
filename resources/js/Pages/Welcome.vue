@@ -14,16 +14,18 @@
 
         <template v-else>
           <div class="">
-            <Link
-                :href="route('contact')"
-                class=" text-black dark:text-white   hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
-                ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
-            >
+            
     
             <Link
                 :href="route('login')"
                 class="  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
-                ><Button class="border-2  p-2 px-4 border-orange-400 rounded-full text-sm md:font-extrabold text-orange-400 ">Login </Button></Link
+                ><button 
+  class="px-5 py-2 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 
+         text-white font-semibold shadow-md hover:shadow-lg 
+         hover:from-orange-600 hover:to-pink-600 
+         transition-all duration-300 ease-in-out">
+  Login
+</button></Link
             >
     
           </div>
@@ -35,7 +37,9 @@
     </div>
   </div>
     </NavBar2>
-   <div class="card h-content xl:h-screen pb-3">
+    <div class="md:flex">
+
+   <div class="card h-content xl:h-screen  mt-10 md:mt-0 pb-3 w-full md:w-2/3">
     <Galleria 
       :value="images" 
       
@@ -48,12 +52,12 @@
     >
       <!-- Main Image Template -->
       <template #item="slotProps">
-        <div class="relative w-full h-full max-h-screen">
+        <div class="relative w-full h-full  max-h-screen">
   <!-- Image -->
   <img 
     :src="slotProps.item.itemImageSrc" 
     :alt="slotProps.item.alt" 
-    class="w-full h-96 md:h-screen object-cover  pointer-events-none "
+    class="w-full h-80 md:h-screen object-cover  pointer-events-none "
     loading="eager" 
   decoding="async"
   fetchpriority="high"
@@ -64,25 +68,45 @@
   <!-- Gradient Overlay -->
   <div class="  "></div>
           
-         <div class="flex absolute inset-0 items-end justify-center py-0 px-5 md:px-20">
-          <div class="w-1/2 flex items-center  md:py-28  " data-aos="fade-up" data-aos-duration="3000">
-    <h1 class="text-black md:text-3xl xl:text-5xl font-bold tracking-wide">
-      ASSURING QUALITY; <br/> ENHANCING RELIABILITY
+        <div class="flex absolute inset-0 items-end justify-center py-0 px-5 md:ml-20 ">
+  <!-- Left Text -->
+  <div class="md:w-1/2 md:flex items-center md:py-20" data-aos="fade-up" data-aos-duration="3000">
+    <h1 class="text-black text-sm sm:text-sm md:text-3xl xl:text-5xl font-bold tracking-wide leading-snug">
+      ASSURING QUALITY;<br/>ENHANCING RELIABILITY
     </h1>
   </div>
-  
-  <div class="w-1/2 flex items-center  md:my-20  pl-5 md:px-10 border-l-4 border-blue-600" data-aos="fade-up" data-aos-duration="3000">
-    <h1 class="text-black  md:text-3xl xl:text-5xl font-thin	tracking-wide">
-      25 Years of Excellence in Quality Assurance &
- Third-Party Inspections
+
+  <!-- Right Text -->
+  <div class="md:w-1/2 md:flex items-center mt-10 md:my-20 pl-5 md:px-20 border-l-4 border-orange-600" data-aos="fade-up" data-aos-duration="3000">
+    <h1 class="text-black text-lg sm:text-sm md:text-xl xl:text-3xl font-light tracking-wide leading-snug">
+      25 Years of Excellence in Quality Assurance &<br/>
+      Third-Party Inspections
     </h1>
   </div>
-         </div>
+</div>
 
   
         </div>
       </template>
     </Galleria>
+    </div>
+    <div class="md:w-1/3 flex justify-center md:justify-end items-center mt-10 md:mt-14">
+      <Galleria
+        :value="carousel_images"
+        :circular="true"
+        :transitionInterval="4000"
+        :showThumbnails="false" 
+        class="w-full md:w-3/4 h-80 md:h-full"
+      >
+        <template #item="slotProps">
+          <img 
+            :src="slotProps.item.itemImageSrc" 
+            :alt="slotProps.item.alt" 
+            class="w-full h-full object-fit"
+          />
+        </template>
+      </Galleria>
+    </div>
     </div>
 
     <div class="md:flex bg-white  dark:bg-black text-black dark:text-white h-content md:h-screen tracking-wide md:pl-5">
@@ -98,7 +122,7 @@ At QSSPL, we go beyond inspection—we deliver trust, accuracy, and confidence t
         </div>
       </div>
       <div class="md:w-1/2 bg-gray-200 dark:bg-gray-800 ">
-        <div class="grid grid-cols-2 grid-rows-2  w-full h-screen">
+        <div class="grid grid-cols-2 grid-rows-2  w-full h-content md:h-screen">
   <div class="bg-gray-200 flex items-center justify-center">
     <img src="../../images/inspection.png" alt="Image 1" class="w-full h-full object-cover hover:filter hover:brightness-50 hover:transition">
   </div>
@@ -121,7 +145,7 @@ We provide precise, reliable, and NABL-accredited testing services across multip
 
   <!-- Second Image at (1,1) -->
   <div class="bg-gray-200 flex items-center justify-center">
-    <img src="../../images/testing.png" alt="Image 2" class="w-full h-full object-fit hover:filter hover:brightness-50 hover:transition">
+    <img src="../../images/testing.jpg" alt="Image 2" class="w-full h-full object-fit hover:filter hover:brightness-50 hover:transition">
   </div>
 </div>
 
@@ -129,164 +153,8 @@ We provide precise, reliable, and NABL-accredited testing services across multip
     </div>
    
   
-  <!-- <div class="bg-white dark:bg-black text-black dark:text-white h-content md:px-20  relative">
-    <img src="../../images/bg.png" 
-       class="absolute inset-0 w-full h-full opacity-10 object-cover rounded-lg" 
-       alt="Coal in Bag Background">
-      <h1 class="text-black dark:text-white text-center  font-medium text-2xl md:text-5xl p-5 px-5  md:mb-24" > <span class="font-extrabold">OUR</span> SECTORS</h1>
-      
-   
-    <div class='grid grid-rows-3 xl:grid-rows-2 grid-flow-col gap-28  xl:gap-28 tracking-wide p-5' >
-  
-      <Link
-                :href="route('consumer-goods')"
-        data-aos="zoom-in"  class='select-none h-20 md:h-auto w-48 md:w-full  relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl hover:text-white'>
-            <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-28  ' src="/images/consumer_goods.png" width={200} height={200} alt="consulting" />
-            <h2 class='text-md  md:font-extrabold  py-5  md:pt-20 px-2  text-center'>Consumer Goods</h2>
-            <div class="hidden sm:block">
-              <div class=' px-5 pt-2 text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2 '>
-              <p class=" md:mb-4 text-xs md:text-sm px-5 ">
-    QSS specializes in two key categories:
-  </p>
-  <ul class="px-5 list-disc list-inside space-y-1 text-xs md:text-sm  text-ellipsis overflow-hidden whitespace-pre-wrap ">
-    <li><span class="">Consumer Non-Durables (FMCG):</span> Expert services for perishable items like frozen fruits, vegetables, seafood, processed foods, and water.</li>
-    <li><span class="">Soft Goods:</span> Tailored solutions to meet diverse needs.</li>
-  </ul>
-</div> 
-            </div>
-           
-</Link>
-<Link
-                :href="route('agriculture')"
-            data-aos="zoom-in"  data-aos-duration="2000" class=' select-none h-20  md:mt-0 h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
-          <img class='hidden md:block absolute w-32 md:w-60 -top-16 md:-top-36 mr-5' src="/images/agriculture-products.png" width={200} height={200} alt="marketing"/>
-            <h2 class='text-md  md:font-extrabold py-5  md:pt-20 px-2  text-center'>Agriculture Produce & Products</h2>
-            <div class="hidden sm:block">
-            <div class='px-5 pt-2 text-xs  text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-2'>
-              <p class="text-xs md:text-sm px-5">We offer comprehensive solutions, including:</p>
-              <ul class="px-5 list-disc list-inside space-y-1 text-xs  md:text-sm p-2 text-ellipsis overflow-hidden whitespace-pre-wrap">
-    <li><span class="">Procurement Supervision</span></li>
-    <li><span class="">Quality & Weight Control</span></li>
-    <li><span class="">Sampling & Process Monitoring</span></li>
-    <li><span class="">Laboratory & Auditing Services</span></li>
-    <li>
-      <span class="">Surveys</span> (insurance, draught, damage, etc.)
-    </li>
-    <li><span class="">Plant & Warehouse Management</span></li>
-    <li><span class="">Loading/Discharge Supervision</span></li>
-    <li><span class="">Photographic Documentation</span></li>
-  </ul>
-</div>
-            </div>
-      </Link>
-      <Link
-                :href="route('engineering')"
-          data-aos="zoom-in"  data-aos-duration="4000" class=' select-none h-20 md:h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
-          <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/engineering.png" width={200} height={200} alt="staffing"/>
-            <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Engineering </h2>
-            <div class="hidden sm:block">
-            <div class='px-5   text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
-              <p class="text-xs md:text-sm px-5">
-    Our services encompass a wide range of inspection activities across various sectors, including:
-  </p>
-  <ul class="list-disc px-5 list-inside space-y-1 text-xs md:text-sm md:pb-5 text-xs p-2 text-ellipsis overflow-hidden whitespace-pre-wrap">
-    <li><span class="">General Engineering Industry</span></li>
-    <li><span class="">Telecom Industry</span></li>
-    <li><span class="">Foundries</span></li>
-    <li><span class="">Power & Energy Sector</span></li>
-    <li><span class="">Electrical & Electronic Industries</span></li>
-    <li><span class="">Generation, Transmission, and Distribution</span></li>
-    <li><span class="">Cement Industry</span></li>
-    <li><span class="">Automobile Industry</span></li>
-    <li><span class="">Material Handling Equipment</span></li>
-    <li><span class="">Oil & Gas Sector</span></li>
-  </ul></div>
-        </div>
-        
-      </Link>
-      <Link
-                :href="route('laboratories')"
-                
-         data-aos="zoom-in"  data-aos-duration="4000" class=' select-none h-20 md:h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
-          <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/microscope.png" width={200} height={200} alt="staffing"/>
-            <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Laboratories </h2>
-            <div class="hidden sm:block">
-            <div class='px-5  text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
-    
-  <ul class="list-disc px-5 list-inside space-y-1 text-xs md:text-sm md:pb-5 text-xs p-2 text-ellipsis overflow-hidden whitespace-pre-wrap">
-    <li>Independent and Impartial Assistance: Reliable, accurate, and impartial analytical results.</li>
-            <li>Comprehensive Product Analysis: Testing ensures compliance from exploration to delivery.</li>
-            <li>Skilled Team & Advanced Techniques: Staffed with experts using classical and modern techniques for reliable results.</li>
-            <li>ISO/IEC 17025:2017 Compliant: Adheres to international testing standards.</li>
-            <li>NABL & EIC Accredited: Laboratories certified for mineral and material testing and global compliance.</li>
-       
-  </ul></div>
-        </div>
-        
-      </Link>
-      <Link
-                :href="route('hydrocarbons')"
-           data-aos="zoom-in"  data-aos-duration="4000" class=' select-none h-20 md:h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
-          <img class='hidden md:block absolute w-20 md:w-60 -top-10 md:-top-32 ' src="/images/hydrocarbon.png" width={200} height={200} alt="staffing"/>
-            <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Hydrocarbons </h2>
-            <div class="hidden sm:block">
-            <div class='px-5 text-sm  text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
-              <h2 class="px-5 text-sm ">Core Services:</h2>
-        <ul class="list-disc list-inside  text-sm px-5">
-            <li>Pipeline Inspections</li>
-            <li>Project Construction & Shutdown Inspections</li>
-            <li>Stage-Wise Fabrication Inspections</li>
-            <li>Technical Safety Audits</li>
-        </ul>
-
-        <h2 class=" px-5 text-sm ">Key Focus Areas:</h2>
-        <ul class="list-disc list-inside  text-sm   px-5">
-            <li>Oil & Gas Pipelines</li>
-            <li>Petrochemical Plants</li>
-            <li>Refineries</li>
-            <li>Fertilizer Plants</li>
-            <li>City Gas Distribution Networks</li>
-        </ul>
-      </div>
-        </div>
-        
-      </Link>
-      <Link
-                :href="route('minerals')"
-              data-aos="zoom-in"  data-aos-duration="4000" class=' select-none h-20 md:h-auto w-48 md:w-full relative  flex flex-col items-center border-2 md:border-4 border-orange-500 hover:bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-3xl  hover:text-white'>
-          <img class='hidden md:block absolute w-20 md:w-48 -top-10 md:-top-32 ' src="/images/coal.svg" width={200} height={200} alt="staffing"/>
-            <h2 class='text-md  md:font-extrabold py-5 md:pt-20  px-2 md:px-5 text-center'>Metals, Minerals & Ores </h2>
-            <div class="hidden sm:block">
-            <div class='px-5   text-xs md:text-sm text-ellipsis overflow-hidden whitespace-pre-wrap  w-42 mb-1'>
-              <h2 class="px-5 text-sm ">Core Services:</h2>
-        <ul class="list-disc list-inside  text-sm px-5">
-          <li>Inspection & Supervision: Quality and handling checks across the supply chain.</li>
-            <li>Sampling & Testing: Comprehensive material testing for quality assurance.</li>
-            <li>Quantity Verification: Weight and number assessments (Draught Survey, Tally).</li>
-            <li>Packaging & Transport Monitoring: Supervision of packing, labeling, and condition.</li>
-            <li>Quality Assurance & Verification: Analysis and certification for quality.</li>
-        </ul>
-
-      </div>
-        </div>
-        
-  </Link>
-      
-      </div>
-        
-    </div> -->
-    
-    
-    <!-- <div class="flex justify-center md:py-0">
-      <Link
-                :href="route('sector')"
-                class="  hover:text-gray-900   focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500 m-2"
-                ><Button class="px-5 py-3  md:px-10 md:py-5 bg-gradient-to-r  from-orange-200 to-red-500 md:from-orange-500  md:to-red-500 rounded-full border-orange-400 text-medium border-2 hover:border-orange-400 hover:bg-transparent">Check out more </Button></Link
-            >    </div>
-
-    </div> -->
     <Services/>
-    <div class="bg-white dark:bg-black text-black dark:text-white h-content py-10   relative">
+    <div class="bg-white dark:bg-black text-black dark:text-white h-content py-10   relative hidden md:block">
     <img src="../../images/bg.png" 
        class="absolute inset-0 w-full h-full opacity-10 object-cover rounded-lg" 
        alt="Coal in Bag Background">
@@ -334,7 +202,7 @@ trusted and proficient industry leader.
   </h1>
   <div class="md:py-10 py-5 px-5">
     <div
-      class="border-2 border-gray-300 dark:border-gray-700  grid md:grid-cols-5 grid-cols-3 dark:bg-black"
+      class="border-2 border-gray-300 dark:border-gray-700  grid md:grid-cols-9 grid-cols-3 dark:bg-black"
     >
       <div
         class="flex justify-center border border-gray-300 dark:border-gray-700 p-2"
@@ -342,7 +210,7 @@ trusted and proficient industry leader.
         :key="client.id"
       >
         <img
-          class="md:opacity-80 hover:opacity-100 h-12 md:h-24 w-auto dark:grayscale dark:invert dark:hover:grayscale-0 dark:hover:invert-0 transition-all"
+          class="md:opacity-80 hover:opacity-100 h-12 md:h-20 w-auto dark:grayscale dark:invert dark:hover:grayscale-0 dark:hover:invert-0 transition-all"
           :src="`../../images/clients/${client.image}`"
           alt="Client logo"
           data-aos="zoom-in"
@@ -511,6 +379,21 @@ const images = ref([
     
     // Add more images as needed
 ]);
+
+const carousel_images = [
+  { itemImageSrc: '/images/hero-banner.png', alt: 'Image 1' },
+  { itemImageSrc: '/images/img2.jpg', alt: 'Image 2' },
+  { itemImageSrc: '/images/img3.jpg', alt: 'Image 3' },
+  // Add more images as needed
+]
+
+// Reference for the right carousel Galleria
+
+// Optional: handle thumbnail click to sync with main image
+const onThumbnailClick = (event) => {
+  console.log('Clicked thumbnail index:', event.index)
+  // You can add logic here to update the main Galleria
+}
 const responsiveOptions = ref([
     {
         breakpoint: '1300px',
@@ -547,7 +430,11 @@ const clients = [{image:'coal_india.png'},
 {image: 'JSW.png'},
 {image: 'APGENCO.png'},
 {image: 'RRVUNL.png'},
-{image : 'wbpdcl.png'}
+{image : 'wbpdcl.png'},
+{image : 'skh.png'},
+{image : 'aal.png'},
+
+
 
 ];
 const certificates = [{image:'nabl-image.png'},

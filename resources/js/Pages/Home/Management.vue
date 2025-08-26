@@ -22,6 +22,8 @@ defineProps({
         type: String,
         required: true,
     },
+     metaTitle: String,
+  metaDescription: String
 });
 const data = [{name: 'Shashank Mehta',
                 title: 'Director',
@@ -30,8 +32,10 @@ const data = [{name: 'Shashank Mehta',
 </script>
 
 <template >
-    <Head title="Management" />
-    
+<Head>
+    <title>{{ metaTitle }}</title>
+    <meta name="description" :content="metaDescription">
+  </Head>    
       <NavBar2>
             <div class="flex align-items-center">
     <DarkModeToggle/>
@@ -47,11 +51,7 @@ const data = [{name: 'Shashank Mehta',
 
         <template v-else>
             
-            <Link
-                :href="route('contact')"
-                class=" text-black  dark:text-white hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
-                ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
-            >
+            
             <Link
                 :href="route('login')"
                 class="font-semibold  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"

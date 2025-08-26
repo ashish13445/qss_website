@@ -1,7 +1,9 @@
 
 <template >
-    <Head title="Contact" />
-    <div class="bg-tint-primary h-content">
+<Head>
+    <title>{{ metaTitle }}</title>
+    <meta name="description" :content="metaDescription">
+  </Head>    <div class="bg-tint-primary h-content">
       <NavBar2 class="">
         <div class="flex align-items-center gap-2">
     <DarkModeToggle/>
@@ -15,11 +17,7 @@
         >
 
         <template v-else>
-            <Link
-                :href="route('contact')"
-                class=" text-black dark:text-white hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-orange-500"
-                ><Button class="  p-2 text-sm ">CONTACT US</Button></Link
-            >
+            
             <Link
                 :href="route('login')"
                 class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
@@ -171,6 +169,8 @@ defineProps({
         type: String,
         required: true,
     },
+     metaTitle: String,
+  metaDescription: String
 });
 
 
