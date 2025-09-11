@@ -37,9 +37,9 @@
     </div>
   </div>
     </NavBar2>
-    <div class="md:flex">
+    <div class="lg:flex">
 
-   <div class="card h-content xl:h-screen  mt-10 md:mt-0 pb-3 w-full md:w-2/3">
+   <div class="card h-content xl:h-screen  mt-10 md:mt-0 pb-3 w-full xl:w-2/3">
     <Galleria 
       :value="images" 
       
@@ -57,7 +57,7 @@
   <img 
     :src="slotProps.item.itemImageSrc" 
     :alt="slotProps.item.alt" 
-    class="w-full h-80 md:h-screen object-cover  pointer-events-none "
+    class="w-full h-80 md:h-[80vh] xl:h-screen object-cover  pointer-events-none "
     loading="eager" 
   decoding="async"
   fetchpriority="high"
@@ -78,10 +78,10 @@
 
   <!-- Right Text -->
   <div class="md:w-1/2 md:flex items-center mt-10 md:my-20 pl-5 md:px-20 border-l-4 border-orange-600" data-aos="fade-up" data-aos-duration="3000">
-    <h1 class="text-black text-lg sm:text-sm md:text-xl xl:text-3xl font-light tracking-wide leading-snug">
+    <h2 class="text-black text-lg sm:text-sm md:text-xl xl:text-3xl font-light tracking-wide leading-snug">
       25 Years of Excellence in Quality Assurance &<br/>
       Third-Party Inspections
-    </h1>
+    </h2>
   </div>
 </div>
 
@@ -90,13 +90,13 @@
       </template>
     </Galleria>
     </div>
-    <div class="md:w-1/3 flex justify-center md:justify-end items-center mt-10 md:mt-14">
+    <div class="lg:w-1/3 flex justify-center lg:justify-end items-center mt-10 md:mt-14">
       <Galleria
         :value="carousel_images"
         :circular="true"
         :transitionInterval="4000"
         :showThumbnails="false" 
-        class="w-full md:w-3/4 h-80 md:h-full"
+        class="w-full lg:w-3/4 h-80 lg:h-full"
       >
         <template #item="slotProps">
           <img 
@@ -111,9 +111,9 @@
 
     <div class="md:flex bg-white  dark:bg-black text-black dark:text-white h-content md:h-screen tracking-wide md:pl-5">
       <div class="md:w-1/2 flex  p-10 md:p-0">
-<img src="../../images/about.png" class="w-40 h-40 md:w-60 md:h-96 my-20 flex justify-center" data-aos="zoom-in" data-aos-duration="3000">
+<img alt="image indicating coal loading" src="../../images/about.png" class="w-40 h-40 md:w-60 md:h-96 my-20 flex justify-center" data-aos="zoom-in" data-aos-duration="3000">
         <div class=" xl:p-20 " data-aos="zoom-in" data-aos-duration="3000">
-          <h1 class="font-normal	  text-lg md:text-3xl">WHO WE ARE?</h1>
+          <h2 class="font-normal	  text-lg md:text-3xl">WHO WE ARE?</h2>
           <p class="font-thin text-xs md:text-sm tracking-widest py-5">
             A leading third-party inspection and testing services provider committed to delivering impartial, reliable, and high-quality assessments across industries such as Agriculture, Consumer Goods, Engineering, Minerals, and Metals.
 With a strong nationwide presence, QSSPL operates NABL-accredited laboratories across various locations, ensuring that our testing services meet international quality and compliance standards. Our expertise in inspection and testing helps businesses maintain regulatory compliance, enhance product integrity, and ensure operational excellence.
@@ -124,28 +124,28 @@ At QSSPL, we go beyond inspection—we deliver trust, accuracy, and confidence t
       <div class="md:w-1/2 bg-gray-200 dark:bg-gray-800 ">
         <div class="grid grid-cols-2 grid-rows-2  w-full h-content md:h-screen">
   <div class="bg-gray-200 flex items-center justify-center">
-    <img src="../../images/inspection.png" alt="Image 1" class="w-full h-full object-cover hover:filter hover:brightness-50 hover:transition">
+    <img alt="image indicating qss ground inspection" src="../../images/inspection.png"  class="w-full h-full object-cover hover:filter hover:brightness-50 hover:transition">
   </div>
 
   <div class="flex flex-col justify-center" data-aos="fade-up" data-aos-duration="3000">
-    <h1 class="text-xl md:text-5xl text-center py-5">
+    <h2 class="text-xl lg:text-5xl text-center py-5">
       INSPECTION
-    </h1>
+    </h2>
     <p class="font-thin text-xs md:text-sm  p-5 ">
 We offer comprehensive and impartial third-party inspection services to ensure quality, compliance, and reliability across industries. Our expertise helps businesses meet regulatory standards, minimize risks, and enhance product integrity.    </p>
     </div>
 
   <div class="flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
-    <h1 class="text-xl md:text-5xl text-center py-5 ">
+    <h2 class="text-xl lg:text-5xl text-center py-5 ">
       TESTING
-    </h1>
+    </h2>
     <p class="font-thin text-xs md:text-sm  p-5 ">
 We provide precise, reliable, and NABL-accredited testing services across multiple industries, ensuring compliance with national and international standards. Our state-of-the-art laboratories deliver accurate results that help businesses maintain quality, safety, and regulatory compliance with confidence.       </p>
   </div>
 
   <!-- Second Image at (1,1) -->
   <div class="bg-gray-200 flex items-center justify-center">
-    <img src="../../images/testing.jpg" alt="Image 2" class="w-full h-full object-fit hover:filter hover:brightness-50 hover:transition">
+    <img alt="image indicating qss lab testing" src="../../images/testing.jpg"  class="w-full h-full object-fit hover:filter hover:brightness-50 hover:transition">
   </div>
 </div>
 
@@ -158,7 +158,7 @@ We provide precise, reliable, and NABL-accredited testing services across multip
     <img src="../../images/bg.png" 
        class="absolute inset-0 w-full h-full opacity-10 object-cover rounded-lg" 
        alt="Coal in Bag Background">
-      <h1 class="text-black dark:text-white text-center  font-medium text-2xl md:text-5xl p-5 px-5  md:mb-5" > <span class="font-extrabold">OUR</span> PRESENCE</h1>
+      <h2 class="text-black dark:text-white text-center  font-medium text-2xl md:text-5xl p-5 px-5  md:mb-5" > <span class="font-extrabold">OUR</span> PRESENCE</h2>
       
     
     <InteractivEmap data-aos="zoom-in" data-aos-duration="3000"/>
@@ -169,7 +169,7 @@ We provide precise, reliable, and NABL-accredited testing services across multip
   <!-- <img src="/images/coal_in_bag.jpg" 
        class="absolute inset-0 w-full h-full opacity-30 object-cover rounded-lg" 
        alt="Coal in Bag Background">
-      <h1 class=" text-center  font-medium text-2xl md:text-5xl p-5 md:p-10  opacity-90" data-aos="zoom-in" data-aos-duration="2000" > <span class="font-extrabold">ABOUT</span> US</h1>
+      <h2 class=" text-center  font-medium text-2xl md:text-5xl p-5 md:p-10  opacity-90" data-aos="zoom-in" data-aos-duration="2000" > <span class="font-extrabold">ABOUT</span> US</h2>
       <p class="tracking-wide font-medium text-sm md:text-xl  text-center relative md:px-40 " data-aos="zoom-in" data-aos-duration="2000">
         Quality Services and Solutions Private Limited (QSSPL) is a private organization established in 1999, with a legacy
 of 25 years in delivering quality services and conducting third-party inspections. QSSPL specializes in Agriculture,
@@ -197,9 +197,9 @@ trusted and proficient industry leader.
     </div>  -->
 
 <div class="h-content bg-gray-100 dark:bg-black md:px-48 py-0 pt-10 " >
-  <h1 class="text-black dark:text-white text-center font-medium text-2xl md:text-5xl px-10 ">
+  <h2 class="text-black dark:text-white text-center font-medium text-2xl md:text-5xl px-10 ">
     <span class="font-extrabold">OUR</span> CLIENTS
-  </h1>
+  </h2>
   <div class="md:py-10 py-5 px-5">
     <div
       class="border-2 border-gray-300 dark:border-gray-700  grid md:grid-cols-9 grid-cols-3 dark:bg-black"
@@ -223,7 +223,7 @@ trusted and proficient industry leader.
 
 
 <div class="h-content p-10 bg-gray-200 dark:bg-black dark:text-white">
-  <h1 class="text-2xl md:text-5xl font-medium flex justify-center  md:p-10"><span class="font-extrabold pr-1">WHY </span> QSSPL ?</h1>
+  <h2 class="text-2xl md:text-5xl font-medium flex justify-center  md:p-10"><span class="font-extrabold pr-1">WHY </span> QSSPL ?</h2>
 
   <div class="md:flex ">
     <div  class="border-2 my-5 bg-white dark:bg-black dark:text-white px-4"  data-aos="fade-up" data-aos-duration="1000">
@@ -276,7 +276,7 @@ trusted and proficient industry leader.
 <div class="bg-white dark:bg-black text-black dark:text-white">
 
 
-<h1 class="text-2xl md:text-5xl font-medium flex justify-center pt-10 md:pt-20 "><span class="font-extrabold pr-1">CONTACT </span>US</h1>
+<h2 class="text-2xl md:text-5xl font-medium flex justify-center pt-10 md:pt-20 "><span class="font-extrabold pr-1">CONTACT </span>US</h2>
 
 <div class="md:py-10  md:flex  w-full items-center">
   
@@ -315,7 +315,7 @@ trusted and proficient industry leader.
      </div>
     
      <!-- <Divider layout="vertical" class="md:border-2 border-red-600" /> -->
-      <img src="/images/contact-us.png" class="w-auto h-96 hidden xl:block" data-aos="fade-left" data-aos-duration="3000">
+      <img src="/images/contact-us.png" alt="contact us phone " class="w-auto h-96 hidden xl:block" data-aos="fade-left" data-aos-duration="3000">
 
      <div class="w-full   md:m-20 p-5 md:p-0 flex flex-col items-center ">
         <div class="bg-orange-100 dark:bg-black  p-5 rounded font-medium m-2 w-full">
@@ -370,7 +370,7 @@ import Services from '@/Components/Services.vue';
 const images = ref([
     {
         itemImageSrc: '/images/hero_image_2.webp',
-        alt: 'Image 1',
+        alt: 'qss text with services filled',
         
         title: 'QSSPL handles the third party sampling, preparation and analysis of coal supplied to consumers by Coal India Limited.'
     },
@@ -381,9 +381,9 @@ const images = ref([
 ]);
 
 const carousel_images = [
-  { itemImageSrc: '/images/hero-banner.png', alt: 'Image 1' },
-  { itemImageSrc: '/images/img2.jpg', alt: 'Image 2' },
-  { itemImageSrc: '/images/img3.jpg', alt: 'Image 3' },
+  { itemImageSrc: '/images/hero-banner.webp', alt: 'qss banner' },
+  // { itemImageSrc: '/images/img2.jpg', alt: 'Image 2' },
+  // { itemImageSrc: '/images/img3.jpg', alt: 'Image 3' },
   // Add more images as needed
 ]
 
@@ -404,35 +404,35 @@ const responsiveOptions = ref([
         numVisible: 1
     }
 ]);
-const clients = [{image:'coal_india.png'},
+const clients = [{image:'coal_india.webp'},
 
 // {image:'hpgcl.png'},
-{image: 'mahagenco.png'},
-{image: 'mp_power.png'},
-{image: 'npl.png'},
-{image: 'ntpc.png'},
+{image: 'mahagenco.webp'},
+{image: 'mp_power.webp'},
+{image: 'npl.webp'},
+{image: 'ntpc.webp'},
 // {image: 'qci.png'},
-{image: 'rpcl.png'},
-{image: 'UPRVUNL.png'},
-{image: 'vedanta.png'},
-{image: 'aditya_birla.png'},
-{image: 'HPSIBL.png'},
-{image: 'HITACHI.png'},
-{image: 'BSES_YAMUNA.png'},
-{image: 'ABB.png'},
-{image: 'ITC.png'},
-{image: 'MPMKVVCL.png'},
-{image: 'JINDAL_POWER.png'},
-{image: 'TATA_POWER.png'},
-{image: 'CSPGCL.png'},
-{image: 'GSECL.png'},
-{image: 'DB_POWER.png'},
-{image: 'JSW.png'},
-{image: 'APGENCO.png'},
-{image: 'RRVUNL.png'},
-{image : 'wbpdcl.png'},
-{image : 'skh.png'},
-{image : 'aal.png'},
+{image: 'rpcl.webp'},
+{image: 'UPRVUNL.webp'},
+{image: 'vedanta.webp'},
+{image: 'aditya_birla.webp'},
+{image: 'HPSIBL.webp'},
+{image: 'HITACHI.webp'},
+{image: 'BSES_YAMUNA.webp'},
+{image: 'ABB.webp'},
+{image: 'ITC.webp'},
+{image: 'MPMKVVCL.webp'},
+{image: 'JINDAL_POWER.webp'},
+{image: 'TATA_POWER.webp'},
+{image: 'CSPGCL.webp'},
+{image: 'GSECL.webp'},
+{image: 'DB_POWER.webp'},
+{image: 'JSW.webp'},
+{image: 'APGENCO.webp'},
+{image: 'RRVUNL.webp'},
+{image : 'wbpdcl.webp'},
+{image : 'skh.webp'},
+{image : 'aal.webp'},
 
 
 

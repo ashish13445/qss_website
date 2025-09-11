@@ -33,7 +33,7 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Home | QSSPL',
+         'metaTitle' => 'Inspection and Testing Services in india | Quality Services & Solutions',
         'metaDescription' => 'Learn about QSSPL’s 25+ years of excellence in third-party inspections, testing, and certifications.',
     ]);
 })->name('home');
@@ -44,7 +44,7 @@ Route::get('/about', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'About | QSSPL',
+         'metaTitle' => '25 years of Third party Inspection and Testing |  Quality Services & Solutions',
         'metaDescription' => 'Learn about QSSPL’s 25+ years of excellence in third-party inspections, testing, and certifications.',
     ]);
 })->name('about');
@@ -54,7 +54,7 @@ Route::get('/sector', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Sectors we serve in | QSSPL',
+         'metaTitle' => 'Sectors we serve in |  Quality Services & Solutions',
         'metaDescription' => 'QSSPL provides inspection, sampling, and testing services for power, mining, minerals, engineering, and consumer goods sectors',
     ]);
 })->name('sector');
@@ -64,7 +64,7 @@ Route::get('/consumer-goods', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Consumer Goods Sector| QSSPL',
+         'metaTitle' => 'Inspection and testing in Consumer Goods Sector|  Quality Services & Solutions',
         'metaDescription' => 'Learn about what are the services QSSPL provides in consumer goods sector',
 
     ]);
@@ -75,7 +75,7 @@ Route::get('/agriculture', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Agriculture Sector | QSSPL',
+         'metaTitle' => 'Inspection and testing in Agriculture Sector |  Quality Services & Solutions',
         'metaDescription' => 'Learn about what are the services QSSPL provides in Agriculture  sector',
 
     ]);
@@ -86,7 +86,7 @@ Route::get('/engineering', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-          'metaTitle' => 'Engineering Sector | QSSPL',
+          'metaTitle' => 'Inspection and testing in  Engineering Sector |  Quality Services & Solutions',
         'metaDescription' => 'Learn about what are the services QSSPL provides in Engineering  sector',
     ]);
 })->name('engineering');
@@ -96,7 +96,7 @@ Route::get('/hydrocarbons', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Hydrocarbons Sector | QSSPL',
+         'metaTitle' => 'Inspection and testing in Hydrocarbons Sector |  Quality Services & Solutions',
         'metaDescription' => 'Learn about what are the services QSSPL provides in Hydrocarbons  sector',
     ]);
 })->name('hydrocarbons');
@@ -107,7 +107,7 @@ Route::get('/laboratories', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Laboratories Sector | QSSPL',
+         'metaTitle' => 'Inspection and testing in Laboratories Sector |  Quality Services & Solutions',
         'metaDescription' => 'Learn about what are the services QSSPL provides in Laboratories  sector',
     ]);
 })->name('laboratories');
@@ -117,7 +117,7 @@ Route::get('/minerals', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Metals And Minerals Sector | QSSPL',
+         'metaTitle' => 'Inspection and testing in  Metals And Minerals Sector |  Quality Services & Solutions',
         'metaDescription' => 'Learn about what are the services QSSPL provides in Metals & Minerals  sector',
     ]);
 })->name('minerals');
@@ -127,7 +127,7 @@ Route::get('/services', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Services | QSSPL',
+         'metaTitle' => 'Inspection and testing Services |  Quality Services & Solutions',
         'metaDescription' => 'Learn about what are the services QSSPL provides in Agriculture  sector',
     ]);
 })->name('services');
@@ -137,7 +137,7 @@ Route::get('/locations', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Locations | QSSPL',
+         'metaTitle' => 'Locations  |  Quality Services & Solutions',
         'metaDescription' => 'Learn about what are the QSSPLs presence worldwide',
     ]);
 })->name('locations');
@@ -147,7 +147,7 @@ Route::get('/background', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Background | QSSPL',
+         'metaTitle' => 'Background |  Quality Services & Solutions',
         'metaDescription' => 'Learn about what are the background of QSSPL',
     ]);
 })->name('background');
@@ -157,7 +157,7 @@ Route::get('/certificates', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Certificates  | QSSPL',
+         'metaTitle' => 'Certificates  |  Quality Services & Solutions',
         'metaDescription' => 'Learn about the certifications QSSPL has been validated with',
     ]);
 })->name('certificates');
@@ -167,7 +167,7 @@ Route::get('/contact', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Contact | QSSPL',
+         'metaTitle' => 'Contact |  Quality Services & Solutions',
         'metaDescription' => 'Contact Us ',
     ]);
 })->name('contact');
@@ -177,7 +177,7 @@ Route::get('/career', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Career | QSSPL',
+         'metaTitle' => 'Career |  Quality Services & Solutions',
         'metaDescription' => '',
     ]);
 })->name('career');
@@ -187,7 +187,7 @@ Route::get('/management', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Management | QSSPL',
+         'metaTitle' => 'Management |  Quality Services & Solutions',
         'metaDescription' => 'Learn about our experienced leaders',
     ]);
 })->name('management');
@@ -197,7 +197,7 @@ Route::get('/mission', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'Mission | QSSPL',
+         'metaTitle' => 'Mission |  Quality Services & Solutions',
         'metaDescription' => 'Learn about our mission and purpose',
     ]);
 })->name('mission');
@@ -207,7 +207,7 @@ Route::get('/vision', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-         'metaTitle' => 'vision | QSSPL',
+         'metaTitle' => 'vision |  Quality Services & Solutions',
         'metaDescription' => '',
     ]);
 })->name('vision');

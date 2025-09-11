@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: yourdomain.com/sitemap.xml
+Sitemap: https://qssindia.com/sitemap.xml

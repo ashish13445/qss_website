@@ -66,7 +66,7 @@ onBeforeUnmount(() => {
       </div>
 
       <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center ml-10 space-x-6">
+      <div class="hidden lg:flex items-center ml-10 space-x-6">
         <NavLink :href="route('home')" :active="route().current('home')" class="text-black dark:text-white hover:text-gray-700 p-2 text-base !font-bold">
           <i class="material-icons text-blue-300">home</i>
         </NavLink>
@@ -106,12 +106,12 @@ onBeforeUnmount(() => {
       </div>
 
       <!-- Right Slot -->
-      <div class="hidden md:flex items-center ml-auto">
+      <div class="hidden lg:flex items-center ml-auto">
         <slot />
       </div>
 
       <!-- Mobile Menu Button -->
-      <div class="md:hidden">
+      <div class="lg:hidden">
         <button @click="toggleMobileMenu" type="button" class="inline-flex items-center justify-center w-10 h-10 text-black dark:text-white focus:outline-none">
           <svg v-if="!isMobileMenuOpen" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -126,7 +126,7 @@ onBeforeUnmount(() => {
 
   <!-- Mobile Menu -->
   <transition name="fade">
-    <div v-if="isMobileMenuOpen" class="md:hidden px-4 pt-2 pb-4 space-y-2 bg-white dark:bg-gray-800 shadow-lg rounded-b-lg">
+    <div v-if="isMobileMenuOpen" class="lg:hidden px-4 pt-2 pb-4 space-y-2 bg-white dark:bg-gray-800 shadow-lg rounded-b-lg">
       <Link :href="route('home')" class="block py-2">Home</Link>
       <Link :href="route('about')" class="block py-2">About Us</Link>
       <Link :href="route('sector')" class="block py-2">Our Sectors</Link>
