@@ -112,12 +112,12 @@
      </div>
     
      <!-- <Divider layout="vertical" class="md:border-2 border-red-600" /> -->
-      <img src="/images/contact-us.png" class="w-auto h-96 hidden md:block">
+      <img src="/images/contact-us-2.png" class="w-auto h-96 hidden md:block">
 
      <div class="w-full   md:m-20 p-10 md:p-0 flex flex-col items-center ">
         <div class="bg-orange-100 dark:bg-black p-5 rounded font-medium m-2 w-full">
-            <a href="tel:+918591924990">
-            <span><i class="pi pi-phone pr-2"></i>8591924990</span>
+            <a href="tel:+918104963103">
+            <span><i class="pi pi-phone pr-2"></i>+91 8104963103</span>
             
             </a>
         </div>

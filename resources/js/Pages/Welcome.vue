@@ -315,12 +315,12 @@ trusted and proficient industry leader.
      </div>
     
      <!-- <Divider layout="vertical" class="md:border-2 border-red-600" /> -->
-      <img src="/images/contact-us.png" alt="contact us phone " class="w-auto h-96 hidden xl:block" data-aos="fade-left" data-aos-duration="3000">
+      <img src="/images/contact-us-2.png" alt="contact us phone " class="w-auto h-96 hidden xl:block" data-aos="fade-left" data-aos-duration="3000">
 
      <div class="w-full   md:m-20 p-5 md:p-0 flex flex-col items-center ">
         <div class="bg-orange-100 dark:bg-black  p-5 rounded font-medium m-2 w-full">
-            <a href="tel:+918591924990">
-            <span><i class="pi pi-phone pr-2"></i>8591924990</span>
+            <a href="tel:+918104963103">
+            <span><i class="pi pi-phone pr-2"></i>+91 8104963103</span>
             
             </a>
         </div>
@@ -382,6 +382,7 @@ const images = ref([
 
 const carousel_images = [
   { itemImageSrc: '/images/hero-banner.webp', alt: 'qss banner' },
+  { itemImageSrc: '/images/qss-make-in-india.webp', alt: 'make in india' },
   // { itemImageSrc: '/images/img2.jpg', alt: 'Image 2' },
   // { itemImageSrc: '/images/img3.jpg', alt: 'Image 3' },
   // Add more images as needed
