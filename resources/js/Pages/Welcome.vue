@@ -286,44 +286,82 @@ trusted and proficient industry leader.
         <InputGroupAddon>
             <i class="pi pi-user"></i>
         </InputGroupAddon>
-        <InputText placeholder="Name" />
+        <InputText v-model="form.name" placeholder="Name" required="true" :class="{ 'p-invalid': errors.name }" />
+       
     </InputGroup>
-    
+     <small v-if="errors.name" class="p-error">
+          Name is required
+      </small>
     <InputGroup class="">
         <InputGroupAddon>
             <i class="pi pi-id-card"></i>
         </InputGroupAddon>
-        <InputNumber placeholder="Organization" />
+        <InputText v-model="form.organization" placeholder="Organization" required="true" />
+        
     </InputGroup>
-    
+    <small v-if="errors.organization" class="p-error">
+          Organization is required
+      </small>
     <InputGroup class="">
         <InputGroupAddon>
             <i class="pi pi-google"></i>
         </InputGroupAddon>
-        <InputText placeholder="Email" />
+        <InputText v-model="form.email" placeholder="Email" required="true" />
+       
     </InputGroup>
+     <small v-if="errors.email" class="p-error">
+          email is required
+      </small>
     <InputGroup class="">
         <InputGroupAddon>
             <i class="pi pi-phone"></i>
         </InputGroupAddon>
-        <InputText placeholder="Contact" />
+        <InputText v-model="form.contact" placeholder="Contact" required="true" />
+        
     </InputGroup>
+    <small v-if="errors.contact" class="p-error">
+          Contact No. is required
+      </small>
     <InputGroup class="">
-        <InputText placeholder="Query" />
+        <InputText v-model="form.query" placeholder="Query" required="true" />
+        
     </InputGroup>
-    <PrimaryButton class="">Submit</PrimaryButton>
+    <small v-if="errors.query" class="p-error">
+          Query is required
+      </small>
+    <InputGroup class="">
+    <Dropdown
+    v-model="form.department"
+    :options="departments"
+    optionLabel="label"
+    optionValue="value"
+    placeholder="Select Department"
+    required="true"
+    
+/>
+
+</InputGroup>
+<small v-if="errors.department" class="p-error">
+          Department is required
+      </small>
+
+<PrimaryButton @click="submitForm"  icon="pi pi-spin pi-spinner"
+    :loading="loading"
+    :disabled="loading">Submit</PrimaryButton>
+
+
      </div>
     
      <!-- <Divider layout="vertical" class="md:border-2 border-red-600" /> -->
       <img src="/images/contact-us-2.png" alt="contact us phone " class="w-auto h-96 hidden xl:block" data-aos="fade-left" data-aos-duration="3000">
 
      <div class="w-full   md:m-20 p-5 md:p-0 flex flex-col items-center ">
-        <div class="bg-orange-100 dark:bg-black  p-5 rounded font-medium m-2 w-full">
+        <!-- <div class="bg-orange-100 dark:bg-black  p-5 rounded font-medium m-2 w-full">
             <a href="tel:+918104963103">
             <span><i class="pi pi-phone pr-2"></i>+91 8104963103</span>
             
             </a>
-        </div>
+        </div> -->
 <div class="border-2  border-orange-900   rounded font-extrabold m-2 w-full flex items-center">
     <div>
         <span class="p-5"><i class="pi pi-google"></i></span>
@@ -354,19 +392,20 @@ import NavBar2 from '@/Components/NavBar2.vue';
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
 import Carousel from 'primevue/carousel';
-import { ref, onMounted } from "vue";
+import { ref, onMounted ,reactive} from "vue";
 import Galleria from 'primevue/galleria';
 
 import InputGroup from 'primevue/inputgroup';
 import InputGroupAddon from 'primevue/inputgroupaddon';
 import InputText from 'primevue/inputtext';
+import Dropdown from 'primevue/dropdown';
 import InputNumber from 'primevue/inputnumber';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import DarkModeToggle from '@/Components/DarkModeToggle.vue';
 import InteractivEmap from '@/Components/InteractivEmap.vue';
 import Counter from '@/Components/Counter.vue';
 import Services from '@/Components/Services.vue';
-
+import axios from 'axios';
 const images = ref([
     {
         itemImageSrc: '/images/hero_image_2.webp',
@@ -379,6 +418,75 @@ const images = ref([
     
     // Add more images as needed
 ]);
+
+const loading = ref(false)
+const form = reactive({
+    name: '',
+    organization: '',
+    email: '',
+    contact: '',
+    query: '',
+    department: ''
+})
+const departments = [
+    { label: 'Sales', value: 'sales' },
+    { label: 'Support', value: 'support' },
+    { label: 'Accounts', value: 'accounts' },
+    { label: 'HR', value: 'hr' },
+     {label: 'IT', value: 'IT' },
+]
+
+const errors = reactive({})
+
+const submitForm = async() => {
+    errors.name = !form.name
+    errors.email = !form.email
+    errors.organization = !form.organization
+    errors.contact = !form.contact
+    errors.department = !form.department
+    errors.query = !form.query
+
+    // stop if any error exists
+    if (Object.values(errors).some(e => e)) {
+        return
+    }
+     if (loading.value) return
+
+    loading.value = true
+
+    // submit API
+   try {
+        const response = await axios.post('/api/contact', {
+            name: form.name,
+            organization: form.organization,
+            email: form.email,
+            contact: form.contact,
+            query: form.query,
+            department: form.department
+        })
+
+        // success
+        alert('Form submitted successfully')
+
+        // reset form
+        Object.keys(form).forEach(key => form[key] = '')
+
+    } catch (error) {
+        console.error(error)
+
+        if (error.response?.status === 422) {
+            // Laravel validation errors
+            console.log(error.response.data.errors)
+        } else {
+           alert('Submission failed')
+        }
+    }
+    finally {
+        loading.value = false
+    }
+
+
+}
 
 const carousel_images = [
   { itemImageSrc: '/images/hero-banner.webp', alt: 'qss banner' },

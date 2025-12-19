@@ -6,6 +6,8 @@ use App\Http\Controllers\Api\NotificationController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\TimeEntryController;
+use App\Http\Controllers\ContactController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     $user = $request->user()->load('reportingManagers');
     return response()->json($user);
 });
+
+Route::post('/contact', [ContactController::class, 'store']);
 
 Route::get('/notifications', [NotificationController::class, 'index']);
 Route::get('/notifications/markAsRead/{id}', [NotificationController::class, 'markNotificationAsRead']);
