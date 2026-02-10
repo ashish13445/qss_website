@@ -103,7 +103,7 @@ onBeforeUnmount(() => {
         <NavLink :href="route('certificates')" :active="route().current('certificates')" class="text-black dark:text-white hover:text-gray-700  text-base !font-bold">CERTIFICATES</NavLink>
         <NavLink :href="route('locations')" :active="route().current('locations')" class="text-black dark:text-white hover:text-gray-700  text-base !font-bold">LOCATIONS</NavLink>
         <NavLink :href="route('contact')" :active="route().current('contact')" class="text-black dark:text-white hover:text-gray-700  text-base !font-bold">CONTACT</NavLink>
-                <NavLink :href="route('investor')" :active="route().current('investor')" class="text-black dark:text-white hover:text-gray-700  text-base !font-bold">INVESTORS</NavLink>
+          <NavLink :href="route('investor')" :active="route().current('investor')" class="text-black dark:text-white hover:text-gray-700  text-base !font-bold">INVESTORS</NavLink>
       </div>
 
       <!-- Right Slot -->
@@ -133,6 +133,7 @@ onBeforeUnmount(() => {
       <Link :href="route('sector')" class="block py-2">Our Sectors</Link>
       <Link :href="route('background')" class="block py-2">Our Background</Link>
       <Link :href="route('certificates')" class="block py-2">Certificates</Link>
+      <Link :href="route('investor')" class="block py-2">Investors</Link>
       <Link :href="route('contact')" class="block py-2">Contact</Link>
       <div class="font-bold"><slot /></div>
     </div>

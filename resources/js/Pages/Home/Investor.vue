@@ -35,16 +35,16 @@ const inactive =
 const csrDocuments = [
   {
     title: 'CSR Policy',
-    file: '/investor/csr/csr-policy.pdf'
+    file: '/images/investor/csr/csr-policy.pdf'
   }
 ]
 
 const annualReturns = [
-  { year: '2020–21', file: '/investor/annual-return/2020-21.pdf' },
-  { year: '2021–22', file: '/investor/annual-return/2021-22.pdf' },
-  { year: '2022–23', file: '/investor/annual-return/2022-23.pdf' },
-  { year: '2023–24', file: '/investor/annual-return/2023-24.pdf' },
-  { year: '2024–25', file: '/investor/annual-return/2024-25.pdf' }
+  { year: '2020–21', file: '/images/investor/annual-return/2020-21.pdf' },
+  { year: '2021–22', file: '/images/investor/annual-return/2021-22.pdf' },
+  { year: '2022–23', file: '/images/investor/annual-return/2022-23.pdf' },
+  { year: '2023–24', file: '/images/investor/annual-return/2023-24.pdf' },
+  { year: '2024–25', file: '/images/investor/annual-return/2024-25.pdf' }
 ]
 </script>
 <template>
