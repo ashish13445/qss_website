@@ -6,9 +6,23 @@ import DarkModeToggle from '@/Components/DarkModeToggle.vue'
 import { ref } from 'vue'
 
 defineProps({
-  metaTitle: String,
+    canLogin: {
+        type: Boolean,
+    },
+    canRegister: {
+        type: Boolean,
+    },
+    laravelVersion: {
+        type: String,
+        required: true,
+    },
+    phpVersion: {
+        type: String,
+        required: true,
+    },
+     metaTitle: String,
   metaDescription: String
-})
+});
 
 const activeTab = ref('csr')
 
@@ -42,6 +56,33 @@ const annualReturns = [
   <NavBar2>
     <div class="flex align-items-center">
       <DarkModeToggle />
+
+        <div v-if="canLogin" class="p-2">
+        <Link
+            v-if="$page.props.auth.user"
+            :href="route('dashboard')"
+            class="text-black md:text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+            ><Button class="border-2 p-4 border-red-600 text-red-600 ">Dashboard</Button></Link
+        >
+
+        <template v-else>
+            
+            
+            <Link
+                :href="route('login')"
+                class="font-semibold  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                ><Button class="border-2  p-2 rounded-full text-sm border-red-600 md:font-extrabold text-red-600 ">Employee Login </Button></Link
+            >
+
+            
+
+            
+          
+    
+        </template>
+
+    </div>
+
     </div>
   </NavBar2>
 
