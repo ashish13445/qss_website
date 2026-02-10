@@ -201,6 +201,16 @@ Route::get('/mission', function () {
         'metaDescription' => 'Learn about our mission and purpose',
     ]);
 })->name('mission');
+Route::get('/investor', function () {
+    return Inertia::render('Home/Investor', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+         'metaTitle' => 'Investor |  Quality Services & Solutions',
+        'metaDescription' => 'Learn about our mission and purpose',
+    ]);
+})->name('investor');
 Route::get('/vision', function () {
     return Inertia::render('Home/Vision', [
         'canLogin' => Route::has('login'),

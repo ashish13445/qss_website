@@ -103,6 +103,7 @@ onBeforeUnmount(() => {
         <NavLink :href="route('certificates')" :active="route().current('certificates')" class="text-black dark:text-white hover:text-gray-700  text-base !font-bold">CERTIFICATES</NavLink>
         <NavLink :href="route('locations')" :active="route().current('locations')" class="text-black dark:text-white hover:text-gray-700  text-base !font-bold">LOCATIONS</NavLink>
         <NavLink :href="route('contact')" :active="route().current('contact')" class="text-black dark:text-white hover:text-gray-700  text-base !font-bold">CONTACT</NavLink>
+                <NavLink :href="route('investor')" :active="route().current('investor')" class="text-black dark:text-white hover:text-gray-700  text-base !font-bold">INVESTORS</NavLink>
       </div>
 
       <!-- Right Slot -->
