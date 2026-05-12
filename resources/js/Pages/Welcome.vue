@@ -37,9 +37,10 @@
     </div>
   </div>
     </NavBar2>
-    <div class="lg:flex">
+    <div class="lg:flex ">
 
-   <div class="card h-content xl:h-screen  mt-10 md:mt-0 pb-3 w-full xl:w-2/3">
+   <div class=" card h-content xl:h-content  mt-10 md:mt-0  w-full xl:w-2/3">
+    
     <Galleria 
       :value="images" 
       
@@ -57,16 +58,17 @@
   <img 
     :src="slotProps.item.itemImageSrc" 
     :alt="slotProps.item.alt" 
-    class="w-full h-80 md:h-[80vh] xl:h-screen object-cover  pointer-events-none "
+    class="w-full h-80 md:h-[80vh] xl:h-[90vh] object-cover  pointer-events-none "
     loading="eager" 
   decoding="async"
   fetchpriority="high"
   data-aos="fade-up"
   data-aos-duration="1000"
   />
-  
+
   <!-- Gradient Overlay -->
   <div class="  "></div>
+  
           
         <div class="flex absolute inset-0 items-end justify-center py-0 px-5 md:ml-20 ">
   <!-- Left Text -->
@@ -76,6 +78,7 @@
     </h1>
   </div>
 
+
   <!-- Right Text -->
   <div class="md:w-1/2 md:flex items-center mt-10 md:my-20 pl-5 md:px-20 border-l-4 border-orange-600" data-aos="fade-up" data-aos-duration="3000">
     <h2 class="text-black text-lg sm:text-sm md:text-xl xl:text-3xl font-light tracking-wide leading-snug">
@@ -83,13 +86,26 @@
       Third-Party Inspections
     </h2>
   </div>
-</div>
 
-  
+</div>
+        <div class="bg-yellow-100 border border-yellow-400  overflow-hidden relative">
+    <marquee behavior="scroll" direction="left" scrollamount="10">
+        <a 
+            href="/pdfs/egm.pdf" 
+            target="_blank"
+            class="text-red-600 font-semibold hover:underline"
+        >
+            NOTICE: Extraordinary general meeting of the members of Quality Services & Solutions on 1st June, 2026
+        </a>
+    </marquee>
+    </div>
+
         </div>
       </template>
     </Galleria>
+    
     </div>
+    
     <div class="lg:w-1/3 flex justify-center lg:justify-end items-center mt-10 md:mt-14">
       <Galleria
         :value="carousel_images"
@@ -108,6 +124,10 @@
       </Galleria>
     </div>
     </div>
+
+
+
+
 
     <div class="md:flex bg-white  dark:bg-black text-black dark:text-white h-content md:h-screen tracking-wide md:pl-5">
       <div class="md:w-1/2 flex  p-10 md:p-0">
