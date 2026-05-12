@@ -53,7 +53,7 @@
     >
       <!-- Main Image Template -->
       <template #item="slotProps">
-        <div class="relative w-full h-full  max-h-screen">
+        <div class="relative w-full h-full  max-h-screen pb-20">
   <!-- Image -->
   <img 
     :src="slotProps.item.itemImageSrc" 
@@ -88,7 +88,7 @@
   </div>
 
 </div>
-        <div class="bg-yellow-100 border border-yellow-400  overflow-hidden relative">
+        <div class="bg-yellow-100 border border-yellow-400  overflow-hidden relative  md:mt-10 ">
     <marquee behavior="scroll" direction="left" scrollamount="10">
         <a 
             href="/pdfs/egm.pdf" 
