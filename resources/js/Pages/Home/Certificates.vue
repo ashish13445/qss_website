@@ -33,7 +33,7 @@ const certificates = [
   { name: "QAI Jharkhand", url: "/images/certificates/QAI-JHARKHAND.pdf", image: "/images/certificates/QAI.png" },
   { name: "IBP Assam", url: "/images/certificates/IBP-ASSAM.pdf", image: "/images/certificates/IBP.png" },
 //   { name: "UDYAM Registration", url: "/images/certificates/UDYAM-REGISTRATION.pdf", image: "/images/certificates/Udyam.png" },
-  { name: "UDYAM Registration", url: "/images/certificates/msme-2.pdf", image: "/images/certificates/Udyam.png" },
+  { name: "UDYAM Registration", url: "/images/certificates/MSME-2.pdf", image: "/images/certificates/Udyam.png" },
 ]
 </script>
 
